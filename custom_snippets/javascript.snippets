@@ -1,0 +1,64 @@
+extends javascript, javascriptreact
+
+#### React hooks ####
+# useState hook
+snippet juseS "React.useState" b
+const [${1:state}, set`!p snip.rv=t[1].capitalize()`] = useState(${2:initialState});
+endsnippet
+
+# useEffect hook
+snippet juseE "React.useEffect" b
+useEffect(() => {
+	${1:// Code}
+	return ${2: // Cleanup function}
+}, [${3: /* dependencies */}]);
+endsnippet
+
+#### DOC STRING ####
+snippet DOC "Doc string" b
+/**
+	* @param {${1:type}} ${2:paramName}: ${3:param context}
+	* @return {${4:type}}: ${5:return value context}
+	*/
+endsnippet
+
+#### Functions ####
+global !p
+import re
+# get file name
+def file_name():
+	file_name= snip.fn
+	return re.match("\w*", file_name).group().capitalize()
+
+#get tag name
+def tag_name(arg1):
+	tag_name = arg1 
+	if tag_name:
+		return re.findall("[a-z]\S*", tag_name)[0]
+	else:
+		return ""
+endglobal
+
+#### Functional Components ####
+
+# function components default export
+snippet jfce "Javascript functional component" b
+import React from 'react';
+
+const `!p snip.rv=file_name()` = ({ ${3:/* props */} }) => {
+
+	return (
+		<></>
+	);
+};
+
+export default `!p snip.rv=file_name()`;
+endsnippet
+
+#### TAGS ####
+# get tag name function 
+snippet tag "HTML tags"
+<${1}>
+	${2:{/* content */}}
+</`!p snip.rv=tag_name(t[1])`>
+endsnippet
