@@ -7,7 +7,7 @@ extends typescript, typescriptreact
 #### HOOKS ####
 # useState
 snippet tuseS "Typescript React.useState" b
-const [${1:/* state */}, set`!p snip.rv=t[1].capitalize()`] = useState<${2:/* type */}>(${3:/* initialState */});
+const [${1:state}, set`!p snip.rv=t[1].capitalize()`] = useState<${2:any}>(${3:null});
 endsnippet
 
 # useEffect
@@ -18,44 +18,71 @@ useEffect(() => {
 }, [${3:/* dependencies */}])
 endsnippet
 
-#### Functions ####
+#### Functions for string interpolation ####
 global !p
 import re
-# get file name
+# get file name for `tfce ` snippet
 def file_name():
-	file_name= snip.fn
-	return re.match("\w*", file_name).group().capitalize()
+	file_name= snip.basename
+	return file_name.capitalize()
 
-#get tag name
+# get tag name for `tag` snippet
 def tag_name(arg1):
 	tag_name = arg1 
 	if tag_name:
 		return re.findall("[a-z]\S*", tag_name)[0]
 	else:
 		return ""
+
+# get params for docstring `DOC` snippet 
+def get_params(args: str, return_type: str):
+	"""
+	:param args: passed arguements of function
+	:param return_type: return type of function
+	"""
+	doc_string = "" # to concat parsed params and types
+	try:
+		arg_array = args.split(",") # splitting arguements
+		for arg in arg_array:
+			arg_parsed = arg.split(":") # splitting type and name 
+			arg_name = arg_parsed[0].strip()
+			arg_type = arg_parsed[1].strip()
+			if not doc_string:
+				doc_string += "\t* @param {% s} % s: \n" % (arg_type, arg_name)
+			else:
+				doc_string += "\t\t* @param {% s} % s: \n" % (arg_type, arg_name)
+	except:
+		pass
+	if doc_string:
+		return doc_string.strip()
+	else:
+		return "* no params"
+	
 endglobal
+
 
 #### Functional Components ####
 
-# function components default export
-snippet tfce "TypeScript functional component" b
+# function components with props and default export
+snippet tfce "TypeScript functional component with export default" b
 import React from 'react';
 
-interface `!p snip.rv=file_name()`Props {
-	${1:/* prop */}: ${2:/* prop type */};
+interface `!p snip.rv=file_name()`PropTypes {
+	${1:prop}: ${2:any};
 }
 
-const `!p snip.rv=file_name()`: React.FC<`!p snip.rv=file_name()`Props> = ({ ${3:/* props */} }): JSX.Element => {
-
+const `!p snip.rv=file_name()`: React.FC<`!p snip.rv=file_name()`PropTypes> = ({ ${3:/* props */} }): JSX.Element => {
+	${0:// codes}
 	return (
-		<></>
+		<>`!p snip.rv=file_name()` component</>
 	);
 };
 
 export default `!p snip.rv=file_name()`;
 endsnippet
 
-#### TAGS ####
+#### TSX TAGS ####
+
 # get tag name function 
 snippet tag "HTML tags"
 <${1}>
@@ -64,10 +91,20 @@ snippet tag "HTML tags"
 endsnippet
 
 #### DOC STRING ####
-snippet DOC "Doc string" b
-/**
-	* @param {${1:type}} ${2:paramName}: ${3:param context}
-	* @return {${4:type}}: ${5:return value context}
-	*/
+# functions with docstring
+snippet funcDOC "function with doc string" b
+const ${1:functionName} = ($2): ${3:any} => {
+	/**
+		* ${4:function description}
+		`!p snip.rv=get_params(t[2], t[3])`
+		* @return {$3}: 
+		*/
+}
 endsnippet
 
+# docstring
+snippet DOC "docstring" b
+/**
+	* ${1:doc string}
+	*/
+endsnippet
