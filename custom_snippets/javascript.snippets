@@ -1,0 +1,19 @@
+extends javascriptreact, javascript, typescriptreact
+#### TSX/JSX TAGS ####
+# get tag name for `tag` snippet
+global !p
+import re
+def tag_name(arg1):
+	tag_name = arg1 
+	if tag_name:
+		return re.findall("[a-z]\S*", tag_name)[0]
+	else:
+		return ""
+endglobal
+
+# get tag name function 
+snippet tag "HTML tags"
+<${1}>
+	${2:{/* content */}}
+</`!p snip.rv=tag_name(t[1])`>
+endsnippet

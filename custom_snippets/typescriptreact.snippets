@@ -26,13 +26,6 @@ def file_name():
 	file_name= snip.basename
 	return file_name.capitalize()
 
-# get tag name for `tag` snippet
-def tag_name(arg1):
-	tag_name = arg1 
-	if tag_name:
-		return re.findall("[a-z]\S*", tag_name)[0]
-	else:
-		return ""
 
 # get params for docstring `DOC` snippet 
 def get_params(args: str, return_type: str):
