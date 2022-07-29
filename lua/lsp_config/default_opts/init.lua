@@ -70,11 +70,9 @@ M.default_settings = function()
   })
 end
 
--- provide completion
+-- enable builtin snippet support  
 M.capabilities = function ()
-  local autocompletion = vim.lsp.protocol.make_client_capabilities()
-  autocompletion.textDocument.completion.completionItem.snippetSupport = true
-  return autocompletion
+  return vim.lsp.protocol.make_client_capabilities()
 end
 
 return M
