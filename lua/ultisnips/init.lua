@@ -1,7 +1,7 @@
 local options = {
   UltiSnipsExpandTrigger = "<tab>",
-  UltiSnipsJumpForwardTrigger = "<tab>",
-  UltiSnipsJumpBackwardTrigger = "<c-z>",
+  UltiSnipsJumpForwardTrigger = "<a-j>",
+  UltiSnipsJumpBackwardTrigger = "<a-k>",
   UltiSnipsSnippetDirectories = {"UltiSnips", "custom_snippets"},
 }
 

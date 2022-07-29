@@ -57,5 +57,5 @@ tree.setup({
   context_commentstring = {
     enable = true, -- enable ts_context_commentstring
     config = context_commentstring_config, -- config
-  }
+  },
 })

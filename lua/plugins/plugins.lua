@@ -83,9 +83,13 @@ return packer.startup(function(use)
     use "ryanoasis/vim-devicons"
 
     -- LANGUAGE SYNTAX SPECIFIC --
+    -- javacsriptreact and typescriptreact
     use "yuezk/vim-js" -- syntax for JavaScript
     use "maxmellon/vim-jsx-pretty" -- syntax for JavaScript React
     use "JoosepAlviste/nvim-ts-context-commentstring" -- comment string for react
+    use "windwp/nvim-ts-autotag" -- auto close tsx and jsx tags
+
+    -- css
     use "ap/vim-css-color" -- color highlighting for css
 
     -- SNIPPETS --
