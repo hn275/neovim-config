@@ -14,4 +14,4 @@ require("lsp_config")
 require("tree_sitter")
 require("themes")
 require("ultisnips")
-
+require("alpha_nvim")

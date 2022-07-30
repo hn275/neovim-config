@@ -62,6 +62,8 @@ return packer.startup(function(use)
     use { "akinsho/bufferline.nvim", tag = "v2.*" } -- bufferline
     use { "nvim-lualine/lualine.nvim", requires = { opt = true } } -- lua line
     use "neovim/nvim-lspconfig" -- LSP server
+    use { 'goolord/alpha-nvim' } -- dash board greeter 
+    use { 'jose-elias-alvarez/null-ls.nvim' } -- null ls
 
     -- CMP COMPLETION --
     use "hrsh7th/nvim-cmp"
