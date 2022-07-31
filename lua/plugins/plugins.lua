@@ -95,11 +95,8 @@ return packer.startup(function(use)
     use "ap/vim-css-color" -- color highlighting for css
 
     -- SNIPPETS --
-    -- use "L3MON4D3/LuaSnip" -- snippet engine
     use "SirVer/UltiSnips"
     use "honza/vim-snippets"
-    -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-    -- use "avneesh0612/react-nextjs-snippets" -- react.js and next.js snippets NOTE: for usage: https://github.com/buidler-hub/react-nextjs-snippets/blob/main/src/extension/README.md
 
     -- THEME PLUGINS --
     use "sainnhe/gruvbox-material"
@@ -115,6 +112,7 @@ return packer.startup(function(use)
     use "bluz71/vim-nightfly-guicolors"
     use "sainnhe/everforest"
     use 'Mofiqul/dracula.nvim'
+    use { 'catppuccin/nvim', as = "catppuccin" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     if PACKER_BOOTSTRAP then

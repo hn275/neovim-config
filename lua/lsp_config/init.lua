@@ -8,3 +8,4 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
 -- server setting
 require("lsp_config.server_settings")
+require('lsp_config.null_ls.null_ls')
