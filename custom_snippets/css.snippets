@@ -1,4 +1,4 @@
-extends css, scss
+extends css 
 # reset css
 snippet reset "reset.css" b
 html, body, div, span, applet, object, iframe,
@@ -61,3 +61,20 @@ snippet media "@media query" b
 @media only screen and (${1:/* query */}) {
 	${2:/* body */}
 }
+endsnippet
+
+# CSSTransition
+snippet csst "CSSTransition class" b
+$1-enter {
+	${2:/* body */}
+}
+`!p snip.rv=t[1]`-enter-active {
+
+}
+`!p snip.rv=t[1]`-exit {
+
+}
+`!p snip.rv=t[1]`-exit-active {
+
+}
+endsnippet

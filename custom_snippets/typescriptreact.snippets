@@ -18,6 +18,18 @@ useEffect(() => {
 }, [${3:/* dependencies */}])
 endsnippet
 
+#### CSSTransition ####
+snippet csst "CSSTransition" b
+<CSSTransition
+	in={${1:/* truthy condition */}}
+	timeout={${2:/* duration */}}
+	classNames="${3:class name}"
+	unmountOnExit
+>
+	${0: {/* JSX */}}
+</CSSTransition>
+endsnippet
+
 #### Functions for string interpolation ####
 global !p
 import re
@@ -94,3 +106,4 @@ snippet DOC "docstring" b
 	* ${1:doc string}
 	*/
 endsnippet
+

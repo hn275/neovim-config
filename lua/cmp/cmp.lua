@@ -3,10 +3,10 @@ if not cmp_status_ok then
   return
 end
 
--- local check_backspace = function()
---   local col = vim.fn.col "." - 1
---   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
--- end
+local check_backspace = function()
+  local col = vim.fn.col "." - 1
+  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
@@ -49,6 +49,7 @@ cmp.setup {
     documentation = cmp.config.window.bordered()
   },
   mapping = {
+    -- ctrl k will be overloaded with UltiSnips jumppin backwards below
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
@@ -61,7 +62,22 @@ cmp.setup {
     },
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
-    ["<tab>"] = cmp.mapping.confirm { select = true },
+    ["<Tab>"] = cmp.mapping(function(fallback)
+      if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then -- expand snippets if matched
+        vim.fn["UltiSnips#ExpandSnippet"]()
+      elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then -- jump forward if possible
+        vim.fn["UltiSnips#JumpForwards"]()
+      elseif vim.fn["UltiSnips#CanJumpForwards"]() == 0 and cmp.visible() then -- confirm selection otherwise
+        cmp.confirm()
+      elseif check_backspace() then
+        fallback()
+      else
+        fallback()
+      end
+    end, {
+      "i",
+      "s",
+    }),
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
