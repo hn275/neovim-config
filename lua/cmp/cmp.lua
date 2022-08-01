@@ -3,10 +3,10 @@ if not cmp_status_ok then
   return
 end
 
-local check_backspace = function()
-  local col = vim.fn.col "." - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-end
+-- local check_backspace = function()
+--   local col = vim.fn.col "." - 1
+--   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+-- end
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
@@ -69,8 +69,8 @@ cmp.setup {
       -- Kind icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       vim_item.menu = ({
-        ultisnips = "[Snippet]",
-        buffer = "[Buffer]",
+        ultisnips = "[UltiSnips]",
+        buffer = "[Buf]",
         path = "[Path]",
       })[entry.source.name]
       return vim_item
@@ -87,7 +87,7 @@ cmp.setup {
     select = false,
   },
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
     native_menu = false,
   },
 }

@@ -9,7 +9,7 @@ set background=dark
 ]]
 
 
-require("themes.catppuccin")
+-- require("themes.catppuccin")
 -- require("themes.deepspace")
 -- require("themes.dracula")
 -- require("themes.everforest")
@@ -18,5 +18,5 @@ require("themes.catppuccin")
 -- require("themes.nightfox")
 -- require("themes.nord")
 -- require("themes.oceanicnext")
--- require("themes.onedark")
+require("themes.onedark")
 -- require("themes.tokyonight")

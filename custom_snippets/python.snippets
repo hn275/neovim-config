@@ -3,3 +3,21 @@ snippet ! "Python3 executable path" b
 #!/usr/bin/python3
 ${0:# code}
 endsnippet
+
+# if/else
+snippet if "if .. else .." b
+if ($1):
+	${2:# body}
+else:
+	${3:# body}
+endsnippet
+
+# if/elif
+snippet ife "if ... elif ... else" b
+if ($1):
+	${2:# body}
+elif ($3):
+	${3:# body}
+else:
+	${5:# body}
+endsnippet

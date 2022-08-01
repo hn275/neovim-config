@@ -13,7 +13,7 @@ endsnippet
 # useEffect
 snippet tuseE "Typescript React.useEffect" b
 useEffect(() => {
-	${1:// code}
+	${1:// body}
 	return ${2:// cleanup}
 }, [${3:/* dependencies */}])
 endsnippet
@@ -61,7 +61,7 @@ snippet tfce "TypeScript functional component with export default" b
 import React from 'react';
 
 interface `!p snip.rv=file_name()`PropTypes {
-	${1:prop}: ${2:any};
+	${1:// prop}: ${2:any};
 }
 
 const `!p snip.rv=file_name()`: React.FC<`!p snip.rv=file_name()`PropTypes> = ({ ${3:/* props */} }): JSX.Element => {
@@ -77,13 +77,14 @@ endsnippet
 
 #### DOC STRING ####
 # functions with docstring
-snippet funcDOC "function with doc string" b
+snippet fDOC "function with doc string" b
 const ${1:functionName} = ($2): ${3:any} => {
 	/**
 		* ${4:function description}
 		`!p snip.rv=get_params(t[2], t[3])`
 		* @return {$3}: 
 		*/
+	${0:// body}
 }
 endsnippet
 

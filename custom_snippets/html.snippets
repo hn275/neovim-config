@@ -5,11 +5,16 @@ snippet ! "HTML5 boiler plate" b
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>${1:title}</title>
+    <meta 
+      name="description"
+      content="${1:description}"
+    />
+    <title>${2:title}</title>
     <link rel="stylesheet" href="style.css">
-		<script defer src="index.js"></script>
+    <script defer src="index.js"></script>
   </head>
   <body>
+    ${0:body}
   </body>
 </html>
 endsnippet
