@@ -1,13 +1,13 @@
 require("gitsigns").setup( {
     signs = {
         add = {
-            hl = 'GitSignsAdd', 
+            hl = 'GitSignsAdd',
             text = '+',
             numhl='GitSignsAddNr',
             linehl='GitSignsAddLn'
         },
         change = {
-            hl = 'GitSignsChange', 
+            hl = 'GitSignsChange',
             text = '│',
             numhl='GitSignsChangeNr',
             linehl='GitSignsChangeLn'
@@ -31,5 +31,5 @@ require("gitsigns").setup( {
             linehl='GitSignsChangeLn'
         },
     },
-    update_debounce = 1000, -- delay in milliseconds
+    update_debounce = 100, -- delay in milliseconds
 })
