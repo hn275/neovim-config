@@ -69,17 +69,24 @@ cmp.setup {
       c = cmp.mapping.close(),
     },
     ["<CR>"] = cmp.mapping.confirm({ select = false }), -- only select the hovering autocomplete
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then -- expand snippets if matched
-        vim.fn["UltiSnips#ExpandSnippet"]()
-      elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then -- jump forward if possible
+    ["<tab>"] = cmp.mapping(function(fallback)
+      if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then -- jump forward if possible
         vim.fn["UltiSnips#JumpForwards"]()
+      elseif cmp.visible() then
+        cmp.confirm({ select = true })
       elseif check_backspace() then
-        fallback()
-      else
         fallback()
       end
     end, { "i", "s" }),
+    ['<S-tab>'] = cmp.mapping(function(fallback)
+      if vim.fn['UltiSnips#CanJumpBackwards']() == 1 then
+        vim.fn['UltiSnips#JumpBackwards']()
+      elseif cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end),
   },
   matching = {
     disallow_fuzzy_matching = false, -- allow fuzzy matching 
