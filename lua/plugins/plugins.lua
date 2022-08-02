@@ -54,7 +54,6 @@ return packer.startup(function(use)
     use "akinsho/toggleterm.nvim" -- toggle term
     use "tpope/vim-commentary" -- comment toggler
     use "nvim-telescope/telescope.nvim" -- telescope
-    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- nvim treesitter
     use "folke/todo-comments.nvim" -- todo-comments
     use "folke/trouble.nvim" -- trouble
     use "folke/lsp-colors.nvim" -- lsp color correction
@@ -64,13 +63,17 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig" -- LSP server
     use { 'goolord/alpha-nvim' } -- dash board greeter 
     use { 'jose-elias-alvarez/null-ls.nvim' } -- null ls
+    use { 'seblj/nvim-tabline' } -- tab line 
+    use { 'lewis6991/gitsigns.nvim' } -- git signs
 
     -- CMP COMPLETION --
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
+    use 'hrsh7th/cmp-nvim-lsp'
     use "hrsh7th/cmp-path"
     use "hrsh7th/cmp-cmdline"
     use "quangnguyen30192/cmp-nvim-ultisnips"
+    -- use 'David-Kunz/cmp-npm' -- maybe one day ill start configuring my own package.json
 
     -- MARKDOWN PREVIEW --
     use({
@@ -79,6 +82,7 @@ return packer.startup(function(use)
     })
 
     -- NVIM TREE SITTER --
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" } -- nvim treesitter
     use "sheerun/vim-polyglot"
     use "itchyny/vim-gitbranch"
     use "kyazdani42/nvim-tree.lua"

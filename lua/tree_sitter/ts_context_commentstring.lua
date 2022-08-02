@@ -5,7 +5,11 @@ local M = {
     jsx_fragment = "{/* %s */}",
     jsx_attribute = "// %s",
     comment = "// %s",
-  }
+  },
+  css = "/* %s */",
+  scss = {
+    __default = "/* %s */",
+  },
 }
 
 

@@ -36,74 +36,83 @@ local kind_icons = {
   Operator = "",
   TypeParameter = "",
 }
--- find more here: https://www.nerdfonts.com/cheat-sheet
+-- nerd font icon: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup {
+  enabled = function(fallback) -- disable cmp in when commenting
+    local context = require("cmp.config.context")
+    if vim.api.nvim_get_mode().mode == "c" then
+      return true
+    else
+      return not context.in_treesitter_capture( "comment" )
+        and not context.in_syntax_group("Comment")
+    end
+  end,
   snippet = {
     expand = function(args)
-      -- luasnip.lsp_expand(args.body)
-      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      vim.fn["UltiSnips#Anon"](args.body)
     end,
   },
   window = {
-    documentation = cmp.config.window.bordered()
+    completion = cmp.config.window.bordered(), -- completion border
+    documentation = cmp.config.window.bordered(), -- documentation border
   },
   mapping = {
-    -- ctrl k will be overloaded with UltiSnips jumppin backwards below
-    ["<C-k>"] = cmp.mapping.select_prev_item(),
-    ["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-k>"] = cmp.mapping.select_prev_item(), -- next item
+    ["<C-j>"] = cmp.mapping.select_next_item(), -- previous item
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-    ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<C-e>"] = cmp.mapping {
+    ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` to remove the default `<C-y>` mapping.
+    ["<C-z>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     },
-    -- Accept currently selected item. If none selected, `select` first item.
-    -- Set `select` to `false` to only confirm explicitly selected items.
+    ["<CR>"] = cmp.mapping.confirm({ select = false }), -- only select the hovering autocomplete
     ["<Tab>"] = cmp.mapping(function(fallback)
       if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then -- expand snippets if matched
         vim.fn["UltiSnips#ExpandSnippet"]()
       elseif vim.fn["UltiSnips#CanJumpForwards"]() == 1 then -- jump forward if possible
         vim.fn["UltiSnips#JumpForwards"]()
-      elseif vim.fn["UltiSnips#CanJumpForwards"]() == 0 and cmp.visible() then -- confirm selection otherwise
-        cmp.confirm()
       elseif check_backspace() then
         fallback()
       else
         fallback()
       end
-    end, {
-      "i",
-      "s",
-    }),
+    end, { "i", "s" }),
+  },
+  matching = {
+    disallow_fuzzy_matching = false, -- allow fuzzy matching 
+    disallow_partial_matching = false,-- allow partial matching
+
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
-      -- Kind icons
+      -- icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      -- autocompletion source
       vim_item.menu = ({
-        ultisnips = "[UltiSnips]",
-        buffer = "[Buf]",
-        path = "[Path]",
+        nvim_lsp = "[LSP]",
+        buffer = "[BUF]",
+        path = "[PATH]",
+        ultisnips = "[SNIPS]",
       })[entry.source.name]
       return vim_item
     end,
   },
-  sources = cmp.config.sources{
+  sources = {
     { name = "nvim_lsp" },
-    { name = "ultisnips" },
     { name = "buffer" },
     { name = "path" },
+    { name = "npm" }, -- maybe one day i'll start using this
+    { name = "ultisnips" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
   experimental = {
-    ghost_text = false,
-    native_menu = false,
+    ghost_text = true,
   },
 }

@@ -4,7 +4,7 @@ local options = {
 	cmdheight = 1, -- adding height to the command line
 	conceallevel = 0, -- making `` visible in markdown files
 	fileencoding = "utf-8",
-	hlsearch = true, -- highlight all matched search
+	hlsearch = false, -- highlight all matched search
 	ignorecase = true, -- ignore case in search pattern
 	pumheight = 10, -- pop up menu height
 	showmode = false, -- mode is displayed in the status line already
@@ -30,7 +30,7 @@ local options = {
 	numberwidth = 3, -- set number column width
 	signcolumn = "yes:1", -- show sign column when there is a sign
 	wrap = false, -- no wrapping,
-	foldmethod = "syntax", -- setting fold method
+	foldmethod = "manual", -- setting fold method
 	foldcolumn = "1", -- dedicated column for fold symbols
 	foldlevelstart = 999, -- always open all folds when entering a file
 }
@@ -44,4 +44,8 @@ end
 -- vim.cmd [[Tmuxline airline_insert]] -- setting tmux color to be the same as airline bar in insert mode
 vim.cmd [[set iskeyword+=-]] -- turn key-word into 1 word for `dw` instead of 2 (by default neovim reads words-like-this 3 words)
 
+-- for tsx - jsx files
 vim.cmd [[ autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */} ]]
+
+-- for scss files
+vim.cmd([[ autocmd FileType scss setlocal commentstring="/* \ %s\ */" ]])
