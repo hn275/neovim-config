@@ -41,7 +41,6 @@ for key, val in pairs(options) do
 	vim.opt[key] = val
 end
 
--- vim.cmd [[Tmuxline airline_insert]] -- setting tmux color to be the same as airline bar in insert mode
 vim.cmd [[set iskeyword+=-]] -- turn key-word into 1 word for `dw` instead of 2 (by default neovim reads words-like-this 3 words)
 
 -- for tsx - jsx files
@@ -49,3 +48,17 @@ vim.cmd [[ autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */} ]
 
 -- for scss files
 vim.cmd([[ autocmd FileType scss setlocal commentstring="/* \ %s\ */" ]])
+
+-- Auto format on save
+local filetypes = {
+	"*.js", "*.ts", "*.py",
+	"*.json", "*.md", "*.css",
+	"*.scss",
+}
+vim.api.nvim_create_autocmd( { "BufWrite" }, {
+	pattern = filetypes,
+	callback = function()
+		vim.cmd[[:Autoformat]]
+	end
+	}
+)

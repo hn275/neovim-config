@@ -88,10 +88,7 @@ return packer.startup(function(use)
     use "kyazdani42/nvim-tree.lua"
     use "ryanoasis/vim-devicons"
 
-    -- LANGUAGE SYNTAX SPECIFIC --
-    -- javacsriptreact and typescriptreact
-    -- use "yuezk/vim-js" -- syntax for JavaScript
-    -- use "maxmellon/vim-jsx-pretty" -- syntax for JavaScript React
+    -- LANGUAGE SYNTAX --
     use "JoosepAlviste/nvim-ts-context-commentstring" -- comment string for react
     use "windwp/nvim-ts-autotag" -- auto close tsx and jsx tags
 
