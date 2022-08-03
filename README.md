@@ -1,6 +1,6 @@
 # NeoVim configuration
 
-All configuration are (finally) written in lua.
+All configuration is (finally) written in lua.
 
 This NeoVim environment is configured in an Arch Linux machine.
 
