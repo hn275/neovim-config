@@ -58,7 +58,7 @@ return packer.startup(function(use)
     use "folke/trouble.nvim" -- trouble
     use "folke/lsp-colors.nvim" -- lsp color correction
     use "lukas-reineke/indent-blankline.nvim" -- blank indentation
-    use { "akinsho/bufferline.nvim", tag = "v2.*" } -- bufferline
+    use { "akinsho/bufferline.nvim", tag = "v2.0.0" } -- bufferline
     use { "nvim-lualine/lualine.nvim", requires = { opt = true } } -- lua line
     use "neovim/nvim-lspconfig" -- LSP server
     use { 'goolord/alpha-nvim' } -- dash board greeter 
@@ -90,8 +90,8 @@ return packer.startup(function(use)
 
     -- LANGUAGE SYNTAX SPECIFIC --
     -- javacsriptreact and typescriptreact
-    use "yuezk/vim-js" -- syntax for JavaScript
-    use "maxmellon/vim-jsx-pretty" -- syntax for JavaScript React
+    -- use "yuezk/vim-js" -- syntax for JavaScript
+    -- use "maxmellon/vim-jsx-pretty" -- syntax for JavaScript React
     use "JoosepAlviste/nvim-ts-context-commentstring" -- comment string for react
     use "windwp/nvim-ts-autotag" -- auto close tsx and jsx tags
 
