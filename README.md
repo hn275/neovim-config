@@ -55,6 +55,7 @@ Available Themes:
 - [x] Ghost text for autocompletion
 - [x] Migrate to lua, VimScript sucks :/
 - [x] Super tab function for UltiSnip
+- [ ] cheatsheet for keybindings.
 - Snippets
   - [ ] Make a cheatsheet
   - [ ] Custom snippets for React | in progress
