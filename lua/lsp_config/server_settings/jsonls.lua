@@ -4,8 +4,9 @@ local opts = require("lsp_config.default_opts")
 local capabilities = opts.capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require('lspconfig')['jsonls'].setup{
-    on_attach = opts.on_attach,
-    flags = opts.lsp_flags,
-    capabilities = capabilities,
-}
+require("lspconfig")["jsonls"].setup({
+	opts.default_settings(),
+	on_attach = opts.on_attach,
+	flags = opts.lsp_flags,
+	capabilities = capabilities,
+})

@@ -35,30 +35,35 @@ local options = {
 	foldlevelstart = 999, -- always open all folds when entering a file
 }
 
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append("c")
 
 for key, val in pairs(options) do
 	vim.opt[key] = val
 end
 
-vim.cmd [[set iskeyword+=-]] -- turn key-word into 1 word for `dw` instead of 2 (by default neovim reads words-like-this 3 words)
+vim.cmd([[set iskeyword+=-]]) -- turn key-word into 1 word for `dw` instead of 2 (by default neovim reads words-like-this 3 words)
 
 -- for tsx - jsx files
-vim.cmd [[ autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */} ]]
+vim.cmd([[ autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */} ]])
 
 -- for scss files
 vim.cmd([[ autocmd FileType scss setlocal commentstring="/* \ %s\ */" ]])
 
 -- Auto format on save
 local filetypes = {
-	"*.js", "*.ts", "*.py",
-	"*.json", "*.md", "*.css",
+	"*.js",
+	"*.jsx",
+	"*.ts",
+	"*.tsx",
+	"*.css",
 	"*.scss",
+	"*.py",
+	"*.json",
+	"*.md",
 }
-vim.api.nvim_create_autocmd( { "BufWrite" }, {
-	pattern = filetypes,
+vim.api.nvim_create_autocmd({ "BufWrite" }, {
+	-- pattern = filetypes,
 	callback = function()
-		vim.cmd[[:Autoformat]]
-	end
-	}
-)
+		vim.lsp.buf.formatting_sync()
+	end,
+})

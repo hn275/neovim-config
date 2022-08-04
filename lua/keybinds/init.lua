@@ -1,4 +1,4 @@
--- Key map function 
+-- Key map function
 local k = vim.api.nvim_set_keymap
 
 -- Key map options
@@ -19,7 +19,6 @@ k("n", "<C-l>", "<C-w>l", opts)
 k("n", "<leader>bd", ":bd<CR>", opts) -- close buffers
 k("n", "<leader>vs", ":vsplit<CR>", opts) -- vertical split
 
-
 -- BufferLine go to buffer
 k("n", "<leader>1", ":lua require('bufferline').go_to_buffer(1, true)<CR>", opts)
 k("n", "<leader>2", ":lua require('bufferline').go_to_buffer(2, true)<CR>", opts)
@@ -38,18 +37,17 @@ k("n", "<leader>ft", ":TodoTelescope<CR>", opts) -- mapping for TodoTelescope
 k("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 k("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 
-
--- Nvim treesitter 
+-- Nvim treesitter
 k("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
 
--- Navigating Tabs 
+-- Navigating Tabs
 k("n", "<leader>l", ":bn<CR>", opts)
 k("n", "<leader>h", ":bp<CR>", opts)
 
 -- Visual Mode --
--- stay in indent mode 
+-- stay in indent mode
 k("v", "<", "<gv", opts)
 k("v", ">", ">gv", opts)
 
--- Insert mode 
-k("i", "<C-f>", "<Esc>:Autoformat<CR>", opts)
+-- Insert mode
+-- k("i", "<C-f>", "<Esc>:Autoformat<CR>", opts)

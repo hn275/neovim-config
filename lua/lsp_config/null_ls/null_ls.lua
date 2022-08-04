@@ -1,13 +1,28 @@
-local null_ls_status, null_ls = pcall(require, "null0ls")
+local null_ls_status, null_ls = pcall(require, "null-ls")
 
-if not null_ls_status then return end
+if not null_ls_status then
+	print("!failed null-ls")
+	return
+end
+
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+local codeAction = null_ls.builtins.code_actions
 null_ls.setup({
-    sources = {
-        -- Code actions
-        null_ls.builtins.code_actions.eslint_d, -- js, jsx, ts, tsx
-        -- Diagnostics
-        null_ls.builtins.diagnostics.eslint_d, -- js, jsx, ts, tsx
-        null_ls.builtins.diagnostics.stylint, -- css, scss, sass, less
-        null_ls.builtins.diagnostics.tsc, -- tsc compiler linter
-    }
+	debouce = 500,
+	diagnostics_format = "[#{c}] #{m} (#{s})",
+	sources = {
+		-- Code actions
+		codeAction.eslint_d, -- js, jsx, ts, tsx
+		-- Diagnostics
+		diagnostics.eslint_d, -- js, jsx, ts, tsx
+		diagnostics.markdownlint, -- markdown
+		diagnostics.stylint, -- css, scss, sass, less
+		diagnostics.tsc, -- tsc compiler linter
+		-- Formatting
+		formatting.black, -- python
+		formatting.markdownlint, -- markdown
+		formatting.prettierd, -- js, jsx, ts, tsx, html, yaml
+		formatting.stylua, -- lua
+	},
 })
