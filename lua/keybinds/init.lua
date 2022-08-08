@@ -10,6 +10,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Normal Mode --
+-- Symbols outline
+k("n", "<leader>s", ":SymbolsOutline<CR>", opts)
 -- Navigating between windows
 k("n", "<C-h>", "<C-w>h", opts)
 k("n", "<C-j>", "<C-w>j", opts)

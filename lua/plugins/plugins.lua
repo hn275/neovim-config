@@ -63,6 +63,7 @@ return packer.startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("seblj/nvim-tabline") -- tab line
 	use("lewis6991/gitsigns.nvim") -- git signs
+	use("simrat39/symbols-outline.nvim") -- tag line for variables
 
 	-- CMP COMPLETION --
 	use("hrsh7th/nvim-cmp")
@@ -101,7 +102,7 @@ return packer.startup(function(use)
 
 	-- THEME PLUGINS --
 	use("sainnhe/gruvbox-material")
-	use("joshdick/onedark.vim")
+	use("navarasu/onedark.nvim")
 	use("edkolev/tmuxline.vim")
 	use("rakr/vim-one")
 	use("liuchengxu/space-vim-dark")
