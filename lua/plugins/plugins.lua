@@ -64,6 +64,7 @@ return packer.startup(function(use)
 	use("seblj/nvim-tabline") -- tab line
 	use("lewis6991/gitsigns.nvim") -- git signs
 	use("simrat39/symbols-outline.nvim") -- tag line for variables
+	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- lsp saga
 
 	-- CMP COMPLETION --
 	use("hrsh7th/nvim-cmp")

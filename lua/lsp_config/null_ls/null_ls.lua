@@ -15,7 +15,7 @@ null_ls.setup({
 		-- Code actions
 		codeAction.eslint_d, -- js, jsx, ts, tsx
 		-- Diagnostics
-		diagnostics.eslint_d, -- js, jsx, ts, tsx
+		-- diagnostics.eslint_d, -- js, jsx, ts, tsx
 		diagnostics.markdownlint, -- markdown
 		diagnostics.stylint, -- css, scss, sass, less
 		diagnostics.tsc, -- tsc compiler linter
