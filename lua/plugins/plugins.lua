@@ -40,38 +40,39 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
 	-- SO MANY PLUGINS REQUIRE THESE, JUST HAVE THEM UP HERE --
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("kyazdani42/nvim-web-devicons") -- So many plugins require this
+	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
+	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 
 	-- PLUGINS --
-	use("wbthomason/packer.nvim") -- have packer manages itself
-	use("mattn/emmet-vim") -- emmet-vim for html tags
-	use("jiangmiao/auto-pairs") -- auto pairs
 	use("RRethy/vim-illuminate") -- variables highlighting
 	use("akinsho/toggleterm.nvim") -- toggle term
-	use("tpope/vim-commentary") -- comment toggler
-	use("nvim-telescope/telescope.nvim") -- telescope
 	use("folke/todo-comments.nvim") -- todo-comments
 	use("folke/trouble.nvim") -- trouble
-	use("folke/lsp-colors.nvim") -- lsp color correction
+	use("goolord/alpha-nvim") -- dash board greeter
+	use("jiangmiao/auto-pairs") -- auto pairs
+	use("lewis6991/gitsigns.nvim") -- git signs
 	use("lukas-reineke/indent-blankline.nvim") -- blank indentation
+	use("mattn/emmet-vim") -- emmet-vim for html tags
+	use("nvim-telescope/telescope.nvim") -- telescope
+	use("seblj/nvim-tabline") -- tab line
+	use("tpope/vim-commentary") -- comment toggler
+	use("wbthomason/packer.nvim") -- have packer manages itself
 	use({ "akinsho/bufferline.nvim", tag = "v2.0.0" }) -- bufferline
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
-	use("neovim/nvim-lspconfig") -- LSP server
-	use("goolord/alpha-nvim") -- dash board greeter
+
+	-- LSP --
+	use("folke/lsp-colors.nvim") -- lsp color correction
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
-	use("seblj/nvim-tabline") -- tab line
-	use("lewis6991/gitsigns.nvim") -- git signs
-	use("simrat39/symbols-outline.nvim") -- tag line for variables
-	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- lsp saga
+	use("neovim/nvim-lspconfig") -- LSP server
+	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- LSP UI
 
 	-- CMP COMPLETION --
-	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
+	use("hrsh7th/nvim-cmp")
 	use("quangnguyen30192/cmp-nvim-ultisnips")
 	-- use 'David-Kunz/cmp-npm' -- maybe one day ill start configuring my own package.json
 
@@ -84,11 +85,11 @@ return packer.startup(function(use)
 	})
 
 	-- NVIM TREE SITTER --
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
-	use("sheerun/vim-polyglot")
 	use("itchyny/vim-gitbranch")
 	use("kyazdani42/nvim-tree.lua")
 	use("ryanoasis/vim-devicons")
+	use("sheerun/vim-polyglot")
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
 
 	-- LANGUAGE SYNTAX --
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- comment string for react
@@ -99,22 +100,21 @@ return packer.startup(function(use)
 
 	-- SNIPPETS --
 	use("SirVer/UltiSnips")
-	use("honza/vim-snippets")
 
 	-- THEME PLUGINS --
-	use("sainnhe/gruvbox-material")
-	use("navarasu/onedark.nvim")
-	use("edkolev/tmuxline.vim")
-	use("rakr/vim-one")
-	use("liuchengxu/space-vim-dark")
-	use("tyrannicaltoucan/vim-deep-space")
-	use("folke/tokyonight.nvim")
-	use("mhartington/oceanic-next")
 	use("EdenEast/nightfox.nvim")
-	use("shaunsingh/nord.nvim")
-	use("bluz71/vim-nightfly-guicolors")
-	use("sainnhe/everforest")
 	use("Mofiqul/dracula.nvim")
+	use("bluz71/vim-nightfly-guicolors")
+	use("edkolev/tmuxline.vim")
+	use("folke/tokyonight.nvim")
+	use("liuchengxu/space-vim-dark")
+	use("mhartington/oceanic-next")
+	use("navarasu/onedark.nvim")
+	use("rakr/vim-one")
+	use("sainnhe/everforest")
+	use("sainnhe/gruvbox-material")
+	use("shaunsingh/nord.nvim")
+	use("tyrannicaltoucan/vim-deep-space")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 
 	-- Automatically set up your configuration after cloning packer.nvim

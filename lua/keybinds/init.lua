@@ -53,7 +53,6 @@ k("v", ">", ">gv", opts)
 ---@diagnostic disable-next-line: unused-local
 local lspsaga_status, lspsaga = pcall(require, "lspsaga")
 if lspsaga_status then
-	local action = require("lspsaga.action")
 	local diagnostics = require("lspsaga.diagnostic")
 	-- lsp finder
 	k("n", "<leader>FF", "<cmd>Lspsaga lsp_finder<CR>", opts)
@@ -64,12 +63,6 @@ if lspsaga_status then
 
 	-- hover doc
 	k("n", "K", ":Lspsaga hover_doc<CR>", opts)
-	k("n", "<C-j>", function()
-		action.smart_scroll_with_saga(1)
-	end, opts)
-	k("n", "<C-k", function()
-		action.smart_scroll_with_saga(-1)
-	end, opts)
 
 	-- signature help
 	k("n", "<leader>S", "<Cmd>Lspsaga signature_help<CR>", opts)
@@ -94,4 +87,13 @@ if lspsaga_status then
 	k("n", "<leader>s", "<Cmd>LSoutlineToggle<CR>", opts)
 else
 	print("!failed to load LspSaga key binding")
+end
+
+-- Indent Blankline --
+---@diagnostic disable-next-line: unused-local
+local indentblankline_status, indentblankline = pcall(require, "indent_blankline")
+if indentblankline_status then
+	k("n", "<A-i>", "<CMD>IndentBlanklineToggle<CR>")
+else
+	print("!failed to load key map for indent blankline")
 end

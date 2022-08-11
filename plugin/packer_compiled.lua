@@ -254,11 +254,6 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/space-vim-dark",
     url = "https://github.com/liuchengxu/space-vim-dark"
   },
-  ["symbols-outline.nvim"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
-    url = "https://github.com/simrat39/symbols-outline.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -333,11 +328,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
-  },
-  ["vim-snippets"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/vim-snippets",
-    url = "https://github.com/honza/vim-snippets"
   }
 }
 
