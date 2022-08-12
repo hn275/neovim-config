@@ -55,10 +55,10 @@ return packer.startup(function(use)
 	use("lukas-reineke/indent-blankline.nvim") -- blank indentation
 	use("mattn/emmet-vim") -- emmet-vim for html tags
 	use("nvim-telescope/telescope.nvim") -- telescope
-	use("seblj/nvim-tabline") -- tab line
+	-- use("seblj/nvim-tabline") -- tab line
 	use("tpope/vim-commentary") -- comment toggler
 	use("wbthomason/packer.nvim") -- have packer manages itself
-	use({ "akinsho/bufferline.nvim", tag = "v2.0.0" }) -- bufferline
+	-- use({ "akinsho/bufferline.nvim", tag = "v2.0.0" }) -- bufferline
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
 
 	-- LSP --

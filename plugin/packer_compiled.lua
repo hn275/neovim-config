@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
-  ["bufferline.nvim"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
-    url = "https://github.com/akinsho/bufferline.nvim"
-  },
   catppuccin = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -193,11 +188,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-tabline"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/nvim-tabline",
-    url = "https://github.com/seblj/nvim-tabline"
   },
   ["nvim-tree.lua"] = {
     loaded = true,

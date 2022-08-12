@@ -16,19 +16,8 @@ k("n", "<C-j>", "<C-w>j", opts)
 k("n", "<C-k>", "<C-w>k", opts)
 k("n", "<C-l>", "<C-w>l", opts)
 
-k("n", "<leader>bd", ":bd<CR>", opts) -- close buffers
-k("n", "<leader>vs", ":vsplit<CR>", opts) -- vertical split
-
--- BufferLine go to buffer
-k("n", "<a-1>", ":lua require('bufferline').go_to_buffer(1, true)<CR>", opts)
-k("n", "<a-2>", ":lua require('bufferline').go_to_buffer(2, true)<CR>", opts)
-k("n", "<a-3>", ":lua require('bufferline').go_to_buffer(3, true)<CR>", opts)
-k("n", "<a-4>", ":lua require('bufferline').go_to_buffer(4, true)<CR>", opts)
-k("n", "<a-5>", ":lua require('bufferline').go_to_buffer(5, true)<CR>", opts)
-k("n", "<a-6>", ":lua require('bufferline').go_to_buffer(6, true)<CR>", opts)
-k("n", "<a-7>", ":lua require('bufferline').go_to_buffer(7, true)<CR>", opts)
-k("n", "<a-8>", ":lua require('bufferline').go_to_buffer(8, true)<CR>", opts)
-k("n", "<a-9>", ":lua require('bufferline').go_to_buffer(9, true)<CR>", opts)
+k("n", "<C-w>", ":bd<CR>", opts) -- close buffers
+k("n", "<C-|>", ":vsplit<CR>", opts) -- vertical split
 
 -- TodoComment
 -- The options are TodoQuickFix, TodoLocList, and TodoTelescope
@@ -39,10 +28,6 @@ k("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 
 -- Nvim treesitter
 k("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
-
--- Navigating Tabs
-k("n", "<a-l>", ":bn<CR>", opts)
-k("n", "<a-h>", ":bp<CR>", opts)
 
 -- Visual Mode --
 -- stay in indent mode
