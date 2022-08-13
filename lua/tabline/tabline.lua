@@ -1,9 +1,9 @@
 local status, tabline = pcall(require, "tabline")
 
--- if not status then
--- 	print("!tabline failed to load")
--- 	return
--- end
+if not status then
+	print("!tabline failed to load")
+	return
+end
 
 tabline.setup({
 	enable = true,
