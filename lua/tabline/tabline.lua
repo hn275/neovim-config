@@ -1,9 +1,9 @@
 local status, tabline = pcall(require, "tabline")
 
-if not status then
-	print("!tabline failed to load")
-	return
-end
+-- if not status then
+-- 	print("!tabline failed to load")
+-- 	return
+-- end
 
 tabline.setup({
 	enable = true,
@@ -21,4 +21,15 @@ tabline.setup({
 		modified_italic = false, -- set to true by default; this determines whether the filename turns italic if modified
 		show_tabs_only = false, -- this shows only tabs instead of tabs + buffers
 	},
+})
+
+-- auto bind on buf enter
+local file_patterns = {
+	"*.*",
+}
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = file_patterns,
+	callback = function()
+		vim.cmd([[TablineBuffersBind bufname("%")]])
+	end,
 })

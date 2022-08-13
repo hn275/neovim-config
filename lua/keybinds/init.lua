@@ -16,21 +16,25 @@ k("n", "<C-j>", "<C-w>j", opts)
 k("n", "<C-k>", "<C-w>k", opts)
 k("n", "<C-l>", "<C-w>l", opts)
 
--- Navigating between buffer
-k("n", "<C-]>", "<Cmd>bn<CR>", opts) -- next buffer
-k("n", "<C-[>", "<Cmd>bp<CR>", opts) -- previous buffer BUG: not working
-k("n", "<C-w>", ":bd<CR>", opts) -- close buffers
-k("n", "<C-|>", ":vsplit<CR>", opts) -- vertical split
+-- split buffers
+k("n", "<leader>|", "<CMD>vsplit<CR>", opts) -- vertical split
+k("n", "<leader>-", "<CMD>split<CR>", opts)
+
+-- tabs
+k("n", "<A-]>", "<CMD>tabnext<CR>", opts) -- next tab
+k("n", "<A-[>", "<CMD>tabprevious<CR>", opts) -- next tab
+k("n", "<A-t>", "<CMD>tabnew<CR>", opts) -- tab new
+k("n", "<A-r>", ":TablineTabRename ", { noremap = true }) -- tab rename
 
 -- TodoComment
 -- The options are TodoQuickFix, TodoLocList, and TodoTelescope
-k("n", "<leader>ft", ":TodoTelescope<CR>", opts) -- mapping for TodoTelescope
+k("n", "<leader>ft", "<CMD>TodoTelescope<CR>", opts) -- mapping for TodoTelescope
 -- Telescope
-k("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-k("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+k("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
+k("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", opts)
 
 -- Nvim treesitter
-k("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
+k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>", opts)
 
 -- Visual Mode --
 -- stay in indent mode
@@ -43,24 +47,24 @@ local lspsaga_status, lspsaga = pcall(require, "lspsaga")
 if lspsaga_status then
 	local diagnostics = require("lspsaga.diagnostic")
 	-- lsp finder
-	k("n", "<leader>FF", "<cmd>Lspsaga lsp_finder<CR>", opts)
+	k("n", "<leader>FF", "<CMD>Lspsaga lsp_finder<CR>", opts)
 
 	-- lsp code action
-	k("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-	k("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
+	k("n", "<leader>ca", "<CMD>Lspsaga code_action<CR>", opts)
+	k("v", "<leader>ca", "<CMD><C-U>Lspsaga range_code_action<CR>", opts)
 
 	-- hover doc
 	k("n", "K", ":Lspsaga hover_doc<CR>", opts)
 
 	-- signature help
-	k("n", "<leader>S", "<Cmd>Lspsaga signature_help<CR>", opts)
+	k("n", "<leader>S", "<CMD>Lspsaga signature_help<CR>", opts)
 
 	-- rename
-	k("n", "<leader>rn", "<Cmd>Lspsaga rename<CR>", opts)
+	k("n", "<leader>rn", "<CMD>Lspsaga rename<CR>", opts)
 
 	-- diagnostics
-	k("n", "<leader>e", "<Cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show diagnostic
-	k("n", "<leader>e", "<Cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostic
+	k("n", "<leader>e", "<CMD>Lspsaga show_line_diagnostics<CR>", opts) -- show diagnostic
+	k("n", "<leader>e", "<CMD>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostic
 	k("n", "ge", function() -- jump to the next diagnostic
 		diagnostics.goto_next({ severity = vim.diagnostic.severity.ERROR })
 	end, opts)
@@ -69,10 +73,10 @@ if lspsaga_status then
 	end, opts)
 
 	-- definition
-	k("n", "<leader>d", "<Cmd>Lspsaga preview_definition<CR>", opts)
+	k("n", "<leader>d", "<CMD>Lspsaga preview_definition<CR>", opts)
 
 	-- outline
-	k("n", "<leader>s", "<Cmd>LSoutlineToggle<CR>", opts)
+	k("n", "<leader>s", "<CMD>LSoutlineToggle<CR>", opts)
 else
 	print("!failed to load LspSaga key binding")
 end

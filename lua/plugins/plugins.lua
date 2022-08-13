@@ -60,9 +60,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- have packer manages itself
 	-- use({ "akinsho/bufferline.nvim", tag = "v2.0.0" }) -- bufferline
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
-	use({ "kdheepak/tabline.nvim", requires = {
-		{ "hoob3rt/lualine.nvim", opt = true },
-	} })
+	use("kdheepak/tabline.nvim")
 	-- LSP --
 	use("folke/lsp-colors.nvim") -- lsp color correction
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
