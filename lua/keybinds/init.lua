@@ -4,6 +4,10 @@ local k = vim.keymap.set
 -- Key map options
 local opts = { noremap = true, silent = true }
 
+-- Unbinding key
+k("n", "gt", "<NOP>", opts)
+k("n", "gT", "<NOP>", opts)
+
 -- Remapping leader key
 k("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -16,11 +20,12 @@ k("n", "<C-j>", "<C-w>j", opts)
 k("n", "<C-k>", "<C-w>k", opts)
 k("n", "<C-l>", "<C-w>l", opts)
 
--- split buffers
+-- Buffers
 k("n", "<leader>|", "<CMD>vsplit<CR>", opts) -- vertical split
-k("n", "<leader>-", "<CMD>split<CR>", opts)
+k("n", "<leader>-", "<CMD>split<CR>", opts) -- horizontal split
+k("n", "<A-w>", "<CMD>bd<CR>", opts) -- close buffer
 
--- tabs
+-- Tabs
 k("n", "<A-]>", "<CMD>tabnext<CR>", opts) -- next tab
 k("n", "<A-[>", "<CMD>tabprevious<CR>", opts) -- next tab
 k("n", "<A-t>", "<CMD>tabnew<CR>", opts) -- tab new
