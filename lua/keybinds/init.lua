@@ -16,6 +16,9 @@ k("n", "<C-j>", "<C-w>j", opts)
 k("n", "<C-k>", "<C-w>k", opts)
 k("n", "<C-l>", "<C-w>l", opts)
 
+-- Navigating between buffer
+k("n", "<C-]>", "<Cmd>bn<CR>", opts) -- next buffer
+k("n", "<C-[>", "<Cmd>bp<CR>", opts) -- previous buffer BUG: not working
 k("n", "<C-w>", ":bd<CR>", opts) -- close buffers
 k("n", "<C-|>", ":vsplit<CR>", opts) -- vertical split
 

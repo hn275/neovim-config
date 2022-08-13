@@ -244,6 +244,11 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/space-vim-dark",
     url = "https://github.com/liuchengxu/space-vim-dark"
   },
+  ["tabline.nvim"] = {
+    loaded = true,
+    path = "/home/haln/.local/share/nvim/site/pack/packer/start/tabline.nvim",
+    url = "https://github.com/kdheepak/tabline.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/telescope.nvim",

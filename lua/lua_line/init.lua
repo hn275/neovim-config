@@ -11,9 +11,33 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff" },
-		lualine_c = { "filename", "diagnostics" },
-		lualine_x = { "encoding", "filetype" },
-		lualine_y = { "progress" },
+		lualine_c = {},
+		lualine_x = {
+			{
+				"diagnostics",
+				sources = { "nvim_lsp" },
+				symbols = {
+					error = " ",
+					warn = " ",
+					info = " ",
+					hint = " ",
+				},
+				update_in_insert = true,
+			},
+		},
+		lualine_y = {
+			{
+				"filename",
+				path = 1,
+				shorting_target = 60,
+				symbols = {
+					modified = " [+]",
+					readonly = " [-]",
+					unnamed = "[Blank]",
+					newfile = "[New]",
+				},
+			},
+		},
 		lualine_z = { "location" },
 	},
 	inactive_sections = {
@@ -24,6 +48,14 @@ require("lualine").setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = {},
+	tabline = {
+		lualine_a = {
+			"buffers",
+		},
+		lualine_z = { {
+			"tabs",
+			mode = 0,
+		} },
+	},
 	extensions = {},
 })
