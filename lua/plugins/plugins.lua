@@ -46,7 +46,7 @@ return packer.startup(function(use)
 
 	-- PLUGINS --
 	use("RRethy/vim-illuminate") -- variables highlighting
-	-- use("akinsho/toggleterm.nvim") -- toggle term
+	use("akinsho/toggleterm.nvim") -- toggle term
 	use("folke/todo-comments.nvim") -- todo-comments
 	use("folke/trouble.nvim") -- trouble
 	use("goolord/alpha-nvim") -- dash board greeter

@@ -51,6 +51,7 @@ k("v", ">", ">gv", opts)
 local lspsaga_status, lspsaga = pcall(require, "lspsaga")
 if lspsaga_status then
 	local diagnostics = require("lspsaga.diagnostic")
+	local floatterm = require("lspsaga.floaterm")
 	-- lsp finder
 	k("n", "<leader>FF", "<CMD>Lspsaga lsp_finder<CR>", opts)
 
