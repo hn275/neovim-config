@@ -23,13 +23,23 @@ tabline.setup({
 	},
 })
 
--- auto bind on buf enter
 local file_patterns = {
 	"*.*",
 }
+-- auto bind on buf enter
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	pattern = file_patterns,
 	callback = function()
 		vim.cmd([[TablineBuffersBind bufname("%")]])
+	end,
+})
+-- ask for a tab name when a new tab is created
+vim.api.nvim_create_autocmd({ "TabNew" }, {
+	callback = function()
+		local file_name = vim.api.nvim_eval([[input("Tab name: ")]])
+		if file_name == nil or file_name == "" then
+			return
+		end
+		vim.cmd("TablineTabRename " .. file_name)
 	end,
 })
