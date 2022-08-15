@@ -23,16 +23,6 @@ tabline.setup({
 	},
 })
 
-local file_patterns = {
-	"*.*",
-}
--- auto bind on buf enter
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	pattern = file_patterns,
-	callback = function()
-		vim.cmd([[TablineBuffersBind bufname("%")]])
-	end,
-})
 -- ask for a tab name when a new tab is created
 vim.api.nvim_create_autocmd({ "TabNew" }, {
 	callback = function()

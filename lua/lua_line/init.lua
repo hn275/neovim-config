@@ -25,19 +25,7 @@ require("lualine").setup({
 				update_in_insert = true,
 			},
 		},
-		lualine_y = {
-			{
-				"filename",
-				path = 1,
-				shorting_target = 60,
-				symbols = {
-					modified = " [+]",
-					readonly = " [-]",
-					unnamed = "[Blank]",
-					newfile = "[New]",
-				},
-			},
-		},
+		lualine_y = { "filetype" },
 		lualine_z = { "location" },
 	},
 	inactive_sections = {
@@ -48,14 +36,20 @@ require("lualine").setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	-- tabline = {
-	-- 	lualine_a = {
-	-- 		"buffers",
-	-- 	},
-	-- 	lualine_z = { {
-	-- 		"tabs",
-	-- 		mode = 0,
-	-- 	} },
-	-- },
+	tabline = {
+		lualine_a = {},
+		lualine_b = {
+			{
+				"buffers",
+				show_filename_only = true,
+				show_modified_status = true,
+				mode = 0,
+			},
+		},
+		lualine_z = { {
+			"tabs",
+			mode = 0,
+		} },
+	},
 	extensions = {},
 })

@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-local
 -- Key map function
 local k = vim.keymap.set
 
@@ -24,12 +25,13 @@ k("n", "<C-l>", "<C-w>l", opts)
 k("n", "<leader>|", "<CMD>vsplit<CR>", opts) -- vertical split
 k("n", "<leader>-", "<CMD>split<CR>", opts) -- horizontal split
 k("n", "<A-w>", "<CMD>bd<CR>", opts) -- close buffer
+k("n", "<A-]>", "<CMD>bn<CR>", opts) -- next buffer
+k("n", "<A-[>", "<CMD>bp<CR>", opts) -- prev buffer
 
 -- Tabs
-k("n", "<A-]>", "<CMD>tabnext<CR>", opts) -- next tab
-k("n", "<A-[>", "<CMD>tabprevious<CR>", opts) -- next tab
+k("n", "<A-}>", "<CMD>tabnext<CR>", opts) -- next tab
+k("n", "<A-{>", "<CMD>tabprevious<CR>", opts) -- next tab
 k("n", "<A-t>", "<CMD>tabnew<CR>", opts) -- tab new
-k("n", "<A-r>", ":TablineTabRename ", { noremap = true }) -- tab rename
 
 -- TodoComment
 -- The options are TodoQuickFix, TodoLocList, and TodoTelescope
@@ -47,11 +49,9 @@ k("v", "<", "<gv", opts)
 k("v", ">", ">gv", opts)
 
 -- lsp related stuff
----@diagnostic disable-next-line: unused-local
 local lspsaga_status, lspsaga = pcall(require, "lspsaga")
 if lspsaga_status then
 	local diagnostics = require("lspsaga.diagnostic")
-	local floatterm = require("lspsaga.floaterm")
 	-- lsp finder
 	k("n", "<leader>FF", "<CMD>Lspsaga lsp_finder<CR>", opts)
 
@@ -88,10 +88,18 @@ else
 end
 
 -- Indent Blankline --
----@diagnostic disable-next-line: unused-local
 local indentblankline_status, indentblankline = pcall(require, "indent_blankline")
 if indentblankline_status then
 	k("n", "<A-i>", "<CMD>IndentBlanklineToggle<CR>")
 else
 	print("!failed to load key map for indent blankline")
+end
+
+-- Tabline Keybind --
+local tabline_status, tabline = pcall(require, "tabline")
+if tabline_status then
+	k("n", "<A-b>", '<CMD>TablineBuffersBind bufname("%")<CR>', opts)
+	k("n", "<A-r>", ":TablineTabRename ", { noremap = true }) -- tab rename
+else
+	print("!failed to load key map for Tabline Buffer")
 end
