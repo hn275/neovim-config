@@ -1,0 +1,7 @@
+require("lsp-config.server.pyright")
+require("lsp-config.server.tsserver")
+require("lsp-config.server.sumneko_lua")
+require("lsp-config.server.marksman")
+require("lsp-config.server.html")
+require("lsp-config.server.cssls")
+require("lsp-config.server.jsonls")

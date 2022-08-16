@@ -1,4 +1,4 @@
-local opts = require("lsp_config.default_opts")
+local opts = require("lsp-config.default")
 
 -- enable builtin snippet support
 local capabilities = opts.capabilities()

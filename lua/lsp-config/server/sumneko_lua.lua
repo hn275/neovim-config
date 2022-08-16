@@ -1,4 +1,4 @@
-local opts = require("lsp_config.default_opts")
+local opts = require("lsp-config.default")
 require("lspconfig")["sumneko_lua"].setup({
 	opts.default_settings,
 	on_attach = opts.on_attach,

@@ -36,7 +36,7 @@ local autotag_filetypes = { -- enabled file types
 }
 
 -- context-commentstring configuration
-local context_commentstring_config = require("tree_sitter.ts_context_commentstring")
+local context_commentstring_config = require("tree-sitter.ts-context-commentstring")
 
 tree.setup({
 	ensure_installed = highlight_parsers, -- install all parsers name
