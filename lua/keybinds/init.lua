@@ -24,14 +24,12 @@ k("n", "<C-l>", "<C-w>l", opts)
 -- Buffers
 k("n", "<leader>|", "<CMD>vsplit<CR>", opts) -- vertical split
 k("n", "<leader>-", "<CMD>split<CR>", opts) -- horizontal split
-k("n", "<A-w>", "<CMD>bd<CR>", opts) -- close buffer
-k("n", "<A-]>", "<CMD>bn<CR>", opts) -- next buffer
-k("n", "<A-[>", "<CMD>bp<CR>", opts) -- prev buffer
 
 -- Tabs
-k("n", "<A-}>", "<CMD>tabnext<CR>", opts) -- next tab
-k("n", "<A-{>", "<CMD>tabprevious<CR>", opts) -- next tab
-k("n", "<A-t>", "<CMD>tabnew<CR>", opts) -- tab new
+k("n", "<A-]>", "<CMD>tabnext<CR>", opts) -- next tab
+k("n", "<A-[>", "<CMD>tabprevious<CR>", opts) -- next tab
+k("n", "<A-t>", ":tabnew ", { noremap = true }) -- tab new
+k("n", "<A-w>", "<CMD>tabclose<CR>", opts) -- close tab
 
 -- TodoComment
 -- The options are TodoQuickFix, TodoLocList, and TodoTelescope
@@ -98,7 +96,6 @@ end
 -- Tabline Keybind --
 local tabline_status, tabline = pcall(require, "tabline")
 if tabline_status then
-	k("n", "<A-b>", '<CMD>TablineBuffersBind bufname("%")<CR>', opts)
 	k("n", "<A-r>", ":TablineTabRename ", { noremap = true }) -- tab rename
 else
 	print("!failed to load key map for Tabline Buffer")

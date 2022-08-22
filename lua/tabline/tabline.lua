@@ -16,20 +16,20 @@ tabline.setup({
 		show_tabs_always = true, -- this shows tabs only when there are more than one tab or if the first tab is named
 		show_devicons = true, -- this shows devicons in buffer section
 		show_bufnr = false, -- this appends [bufnr] to buffer section,
-		show_filename_only = false, -- shows base filename only instead of relative path in filename
+		show_filename_only = true, -- shows base filename only instead of relative path in filename
 		modified_icon = "[+]", -- change the default modified icon
 		modified_italic = false, -- set to true by default; this determines whether the filename turns italic if modified
-		show_tabs_only = false, -- this shows only tabs instead of tabs + buffers
+		show_tabs_only = true, -- this shows only tabs instead of tabs + buffers
 	},
 })
 
 -- ask for a tab name when a new tab is created
-vim.api.nvim_create_autocmd({ "TabNew" }, {
-	callback = function()
-		local file_name = vim.api.nvim_eval([[input("Tab name: ")]])
-		if file_name == nil or file_name == "" then
-			return
-		end
-		vim.cmd("TablineTabRename " .. file_name)
-	end,
-})
+-- vim.api.nvim_create_autocmd({ "TabNew" }, {
+-- 	callback = function()
+-- 		local file_name = vim.api.nvim_eval([[input("Tab name: ")]])
+-- 		if file_name == nil or file_name == "" then
+-- 			return
+-- 		end
+-- 		vim.cmd("TablineTabRename " .. file_name)
+-- 	end,
+-- })

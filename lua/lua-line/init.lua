@@ -36,20 +36,20 @@ require("lualine").setup({
 		lualine_y = {},
 		lualine_z = {},
 	},
-	tabline = {
-		lualine_a = {},
-		lualine_b = {
-			{
-				"buffers",
-				show_filename_only = true,
-				show_modified_status = true,
-				mode = 0,
-			},
-		},
-		lualine_z = { {
-			"tabs",
-			mode = 0,
-		} },
-	},
+	-- tabline = {
+	-- 	lualine_a = {},
+	-- 	lualine_b = {
+	-- 		{
+	-- 			"buffers",
+	-- 			show_filename_only = true,
+	-- 			show_modified_status = true,
+	-- 			mode = 0,
+	-- 		},
+	-- 	},
+	-- 	lualine_z = { {
+	-- 		"tabs",
+	-- 		mode = 0,
+	-- 	} },
+	-- },
 	extensions = {},
 })
