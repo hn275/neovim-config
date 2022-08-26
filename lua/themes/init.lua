@@ -8,7 +8,7 @@ endif
 set background=dark
 ]])
 
--- require("themes.catppuccin")
+require("themes.catppuccin")
 -- require("themes.deepspace")
 -- require("themes.dracula")
 -- require("themes.everforest")
@@ -18,4 +18,4 @@ set background=dark
 -- require("themes.nord")
 -- require("themes.oceanicnext")
 -- require("themes.onedark")
-require("themes.tokyonight")
+-- require("themes.tokyonight")
