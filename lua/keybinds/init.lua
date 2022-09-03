@@ -24,12 +24,14 @@ k("n", "<C-l>", "<C-w>l", opts)
 -- Buffers
 k("n", "<leader>|", "<CMD>vsplit<CR>", opts) -- vertical split
 k("n", "<leader>-", "<CMD>split<CR>", opts) -- horizontal split
+k("n", "<A-]>", "<CMD>bd<CR>", opts) -- next buf
+k("n", "<A-[>", "<CMD>bp<CR>", opts) -- prev buf
 
 -- Tabs
-k("n", "<A-]>", "<CMD>tabnext<CR>", opts) -- next tab
-k("n", "<A-[>", "<CMD>tabprevious<CR>", opts) -- next tab
 k("n", "<A-t>", ":tabnew ", { noremap = true }) -- tab new
 k("n", "<A-w>", "<CMD>tabclose<CR>", opts) -- close tab
+k("n", "<A-h>", "<CMD>tabprev<CR>", opts) -- prev tab
+k("n", "<A-l>", "<CMD>tabnext<CR>", opts) -- next tab
 
 -- TodoComment
 -- The options are TodoQuickFix, TodoLocList, and TodoTelescope
