@@ -44,7 +44,7 @@ k("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
 k("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", opts)
 
 -- Nvim treesitter
-k("n", "<C-t>", "<CMD>NvimTreeToggle<CR>", opts)
+k("n", "<C-t>", "<CMD>Neotree<CR>", opts)
 
 -- Visual Mode --
 -- stay in indent mode

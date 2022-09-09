@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 
 	-- PLUGINS --
-	use("RRethy/vim-illuminate") -- variables highlighting
+	-- use("RRethy/vim-illuminate") -- variables highlighting
 	use("akinsho/toggleterm.nvim") -- toggle term
 	use("folke/todo-comments.nvim") -- todo-comments
 	use("folke/trouble.nvim") -- trouble
@@ -59,6 +59,13 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- have packer manages itself
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
 	use("ThePrimeagen/harpoon") -- harpoon
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		requires = {
+			"MunifTanjim/nui.nvim",
+		},
+	}) -- neo-tree
 
 	-- LSP --
 	use("folke/lsp-colors.nvim") -- lsp color correction
@@ -85,7 +92,7 @@ return packer.startup(function(use)
 
 	-- NVIM TREE SITTER --
 	use("itchyny/vim-gitbranch")
-	use("kyazdani42/nvim-tree.lua")
+	-- use("kyazdani42/nvim-tree.lua")
 	use("ryanoasis/vim-devicons")
 	use("sheerun/vim-polyglot")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
