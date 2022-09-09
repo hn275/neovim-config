@@ -58,7 +58,7 @@ return packer.startup(function(use)
 	use("tpope/vim-commentary") -- comment toggler
 	use("wbthomason/packer.nvim") -- have packer manages itself
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
-	use("kdheepak/tabline.nvim")
+	use("ThePrimeagen/harpoon") -- harpoon
 
 	-- LSP --
 	use("folke/lsp-colors.nvim") -- lsp color correction

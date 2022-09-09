@@ -8,6 +8,7 @@ local opts = { noremap = true, silent = true }
 -- Unbinding key
 k("n", "gt", "<NOP>", opts)
 k("n", "gT", "<NOP>", opts)
+k("n", "<C-t>", "<NOP>", opts)
 
 -- Remapping leader key
 k("", "<Space>", "<Nop>", opts)
@@ -24,14 +25,16 @@ k("n", "<C-l>", "<C-w>l", opts)
 -- Buffers
 k("n", "<leader>|", "<CMD>vsplit<CR>", opts) -- vertical split
 k("n", "<leader>-", "<CMD>split<CR>", opts) -- horizontal split
-k("n", "<A-]>", "<CMD>bd<CR>", opts) -- next buf
-k("n", "<A-[>", "<CMD>bp<CR>", opts) -- prev buf
+
+-- Harpoon --
+k("n", "<A-m>", "<CMD>lua require('harpoon.mark').add_file()<CR>", { noremap = true })
+k("n", "<A-t>", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+k("n", "<A-j>", "<CMD>lua require('harpoon.ui').nav_next()<CR>", { noremap = true })
+k("n", "<A-k>", "<CMD>lua require('harpoon.ui').nav_prev()<CR>", { noremap = true })
 
 -- Tabs
-k("n", "<A-t>", ":tabnew ", { noremap = true }) -- tab new
-k("n", "<A-w>", "<CMD>tabclose<CR>", opts) -- close tab
-k("n", "<A-h>", "<CMD>tabprev<CR>", opts) -- prev tab
-k("n", "<A-l>", "<CMD>tabnext<CR>", opts) -- next tab
+k("n", "<A-]>", "<CMD>tabprev<CR>", opts) -- prev tab
+k("n", "<A-[>", "<CMD>tabnext<CR>", opts) -- next tab
 
 -- TodoComment
 -- The options are TodoQuickFix, TodoLocList, and TodoTelescope
@@ -41,7 +44,7 @@ k("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
 k("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", opts)
 
 -- Nvim treesitter
-k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>", opts)
+k("n", "<C-t>", "<CMD>NvimTreeToggle<CR>", opts)
 
 -- Visual Mode --
 -- stay in indent mode
@@ -93,12 +96,4 @@ if indentblankline_status then
 	k("n", "<A-i>", "<CMD>IndentBlanklineToggle<CR>")
 else
 	print("!failed to load key map for indent blankline")
-end
-
--- Tabline Keybind --
-local tabline_status, tabline = pcall(require, "tabline")
-if tabline_status then
-	k("n", "<A-r>", ":TablineTabRename ", { noremap = true }) -- tab rename
-else
-	print("!failed to load key map for Tabline Buffer")
 end
