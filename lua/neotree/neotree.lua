@@ -27,6 +27,7 @@ neo_tree.setup({
 			["?"] = "show_help",
 			["<"] = "prev_source",
 			[">"] = "next_source",
+			["<ESC>"] = "close_window",
 		},
 	},
 	filesystem = {
@@ -41,7 +42,7 @@ neo_tree.setup({
 		window = {
 			mappings = {
 				["d"] = "buffer_delete",
-				["<C-u"] = "navigate_up",
+				["<C-u>"] = "navigate_up",
 			},
 		},
 	},

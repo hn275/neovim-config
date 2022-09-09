@@ -39,12 +39,15 @@ k("n", "<A-[>", "<CMD>tabnext<CR>", opts) -- next tab
 -- TodoComment
 -- The options are TodoQuickFix, TodoLocList, and TodoTelescope
 k("n", "<leader>ft", "<CMD>TodoTelescope<CR>", opts) -- mapping for TodoTelescope
+
 -- Telescope
 k("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
 k("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", opts)
 
--- Nvim treesitter
-k("n", "<C-t>", "<CMD>Neotree<CR>", opts)
+-- Neotree
+k("n", "<leader>nt", "<CMD>Neotree filesystem reveal=true<CR>", opts)
+k("n", "<leader>ng", "<CMD>Neotree git_status<CR>", opts)
+k("n", "<leader>nb", "<CMD>Neotree buffers<CR>", opts)
 
 -- Visual Mode --
 -- stay in indent mode
