@@ -11,7 +11,16 @@ require("lualine").setup({
 	sections = {
 		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff" },
-		lualine_c = {},
+		lualine_c = {
+			{
+				"filename",
+				path = 0,
+				symbols = {
+					unnamed = "blank",
+					newfile = "new",
+				},
+			},
+		},
 		lualine_x = {
 			{
 				"diagnostics",
@@ -40,25 +49,9 @@ require("lualine").setup({
 		lualine_z = { "location" },
 	},
 	tabline = {
-		lualine_a = {
-			{
-				"filename",
-				path = 0,
-				symbols = {
-					unnamed = " ",
-					newfile = " ",
-				},
-			},
-		},
-		lualine_b = { { "tabs" } },
-		lualine_z = {
-			{
-				"buffers",
-				show_filename_only = true,
-				show_modified_status = true,
-				mode = 0,
-			},
-		},
+		lualine_a = { "tabs" },
+		lualine_b = {},
+		lualine_z = {},
 	},
 	extensions = {},
 })
