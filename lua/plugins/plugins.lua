@@ -68,7 +68,7 @@ return packer.startup(function(use)
 	}) -- neo-tree
 
 	-- LSP --
-	use("folke/lsp-colors.nvim") -- lsp color correction
+	-- use("folke/lsp-colors.nvim") -- lsp color correction
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- LSP UI
@@ -92,7 +92,6 @@ return packer.startup(function(use)
 
 	-- NVIM TREE SITTER --
 	use("itchyny/vim-gitbranch")
-	-- use("kyazdani42/nvim-tree.lua")
 	use("ryanoasis/vim-devicons")
 	use("sheerun/vim-polyglot")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
