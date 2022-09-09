@@ -55,3 +55,9 @@ vim.api.nvim_create_autocmd({ "BufWrite" }, {
 		vim.lsp.buf.formatting_sync()
 	end,
 })
+
+vim.cmd([[
+if exists("g:neovide")
+	set guifont=Source\ Code\ Pro:h9
+endif
+]])
