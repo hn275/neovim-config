@@ -58,6 +58,9 @@ vim.api.nvim_create_autocmd({ "BufWrite" }, {
 
 vim.cmd([[
 if exists("g:neovide")
-	set guifont=Source\ Code\ Pro:h9
+	set guifont=Jetbrains\ Mono:h10
+	let g:neovide_input_use_logo=v:false
+	let g:neovide_input_macos_alt_is_meta=v:false
+	let g:neovide_transparency=0.95
 endif
 ]])
