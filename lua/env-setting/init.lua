@@ -33,6 +33,7 @@ local options = {
 	foldmethod = "manual", -- setting fold method
 	foldcolumn = "1", -- dedicated column for fold symbols
 	foldlevelstart = 999, -- always open all folds when entering a file
+	guifont = "JetBrainsMono Nerd Font:h10",
 }
 
 vim.opt.shortmess:append("c")
@@ -58,6 +59,6 @@ vim.api.nvim_create_autocmd({ "BufWrite" }, {
 
 vim.cmd([[
 if exists("g:neovide")
-	set guifont=Source\ Code\ Pro:h9
+	set guifont=JetBrainsMono\ Nerd\ Font:h9
 endif
 ]])
