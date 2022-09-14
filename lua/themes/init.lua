@@ -19,3 +19,4 @@ set background=dark
 -- require("themes.oceanicnext")
 require("themes.onedark")
 -- require("themes.tokyonight")
+require("themes.sobrio")

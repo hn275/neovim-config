@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/UltiSnips",
     url = "https://github.com/SirVer/UltiSnips"
   },
-  ["alpha-nvim"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/alpha-nvim",
-    url = "https://github.com/goolord/alpha-nvim"
-  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/auto-pairs",
@@ -243,6 +238,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  sobrio = {
+    loaded = true,
+    path = "/home/haln/.local/share/nvim/site/pack/packer/start/sobrio",
+    url = "https://github.com/elvessousa/sobrio"
   },
   ["space-vim-dark"] = {
     loaded = true,

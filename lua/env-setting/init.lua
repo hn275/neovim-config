@@ -1,6 +1,6 @@
 local options = {
 	backup = false, -- creates backup
-	-- clipboard = "unnamedplus", -- allow accessing the clipboard for neovim
+	clipboard = "unnamedplus", -- allow accessing the clipboard for neovim
 	cmdheight = 1, -- adding height to the command line
 	conceallevel = 0, -- making `` visible in markdown files
 	fileencoding = "utf-8",
@@ -33,7 +33,8 @@ local options = {
 	foldmethod = "manual", -- setting fold method
 	foldcolumn = "1", -- dedicated column for fold symbols
 	foldlevelstart = 999, -- always open all folds when entering a file
-	guifont = "JetBrainsMono Nerd Font:h10",
+	guifont = "JetBrainsMono Nerd Font:h11",
+	-- guicursor = "a:blinkon250",
 }
 
 vim.opt.shortmess:append("c")

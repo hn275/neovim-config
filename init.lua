@@ -1,4 +1,3 @@
-require("alpha-nvim")
 require("cmp.cmp")
 require("env-setting")
 require("gitsigns.gitsigns")

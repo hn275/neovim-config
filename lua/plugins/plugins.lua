@@ -47,7 +47,7 @@ return packer.startup(function(use)
 	-- PLUGINS --
 	use("akinsho/toggleterm.nvim") -- toggle term
 	use("folke/todo-comments.nvim") -- todo-comments
-	use("goolord/alpha-nvim") -- dash board greeter
+	-- use("goolord/alpha-nvim") -- dash board greeter
 	use("jiangmiao/auto-pairs") -- auto pairs
 	use("lewis6991/gitsigns.nvim") -- git signs
 	use("lukas-reineke/indent-blankline.nvim") -- blank indentation
@@ -114,6 +114,7 @@ return packer.startup(function(use)
 	use("shaunsingh/nord.nvim")
 	use("tyrannicaltoucan/vim-deep-space")
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use("elvessousa/sobrio")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

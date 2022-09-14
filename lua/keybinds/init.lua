@@ -24,10 +24,8 @@ k("n", "<C-l>", "<C-w>l", opts)
 local harpoon_status, harpoon = pcall(require, "harpoon")
 if harpoon_status then
 	local harpoon_functions = require("harpoon.harpoon")
-	k("n", "<A-m>", harpoon_functions.add, { noremap = true })
-	k("n", "<A-t>", harpoon_functions.toggle, opts)
-	k("n", "<A-j>", harpoon_functions.next, opts)
-	k("n", "<A-k>", harpoon_functions.prev, opts)
+	k("n", "<leader>hm", harpoon_functions.add, { noremap = true })
+	k("n", "<leader>ht", harpoon_functions.toggle, opts)
 end
 
 -- TodoComment
@@ -85,12 +83,4 @@ if lspsaga_status then
 	k("n", "<leader>s", "<CMD>LSoutlineToggle<CR>", opts)
 else
 	print("!failed to load LspSaga key binding")
-end
-
--- Indent Blankline --
-local indentblankline_status, indentblankline = pcall(require, "indent_blankline")
-if indentblankline_status then
-	k("n", "<A-i>", "<CMD>IndentBlanklineToggle<CR>")
-else
-	print("!failed to load key map for indent blankline")
 end
