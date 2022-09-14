@@ -57,9 +57,3 @@ vim.api.nvim_create_autocmd({ "BufWrite" }, {
 		vim.lsp.buf.formatting_sync()
 	end,
 })
-
-vim.cmd([[
-if exists("g:neovide")
-	set guifont=JetBrainsMono\ Nerd\ Font:h9
-endif
-]])

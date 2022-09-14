@@ -16,11 +16,11 @@ toggleterm.setup({
 	shade_terminals = false,
 	-- shade_factor = 1, -- only for shade_terminals = true
 	start_in_insert = true,
-	direction = "horizontal", -- "horizontal" | "veritcal" | "float"
+	direction = "float", -- "horizontal" | "veritcal" | "float"
 	hide_numbers = true,
 	close_on_exit = true,
 	float_opts = { -- only for floating terminal
-		border = "single",
+		border = "rounded",
 	},
 })
 
