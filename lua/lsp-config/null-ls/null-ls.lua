@@ -9,7 +9,7 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 local codeAction = null_ls.builtins.code_actions
 null_ls.setup({
-	debouce = 500,
+	debounce = 500,
 	diagnostics_format = "[#{c}] #{m} (#{s})",
 	sources = {
 		-- Code actions

@@ -6,8 +6,6 @@ local k = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- Unbinding key
-k("n", "gt", "<NOP>", opts)
-k("n", "gT", "<NOP>", opts)
 k("n", "<C-t>", "<NOP>", opts)
 
 -- Remapping leader key
@@ -22,19 +20,15 @@ k("n", "<C-j>", "<C-w>j", opts)
 k("n", "<C-k>", "<C-w>k", opts)
 k("n", "<C-l>", "<C-w>l", opts)
 
--- Buffers
-k("n", "<leader>|", "<CMD>vsplit<CR>", opts) -- vertical split
-k("n", "<leader>-", "<CMD>split<CR>", opts) -- horizontal split
-
 -- Harpoon --
-k("n", "<A-m>", "<CMD>lua require('harpoon.mark').add_file()<CR>", { noremap = true })
-k("n", "<A-t>", "<CMD>lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
-k("n", "<A-j>", "<CMD>lua require('harpoon.ui').nav_next()<CR>", { noremap = true })
-k("n", "<A-k>", "<CMD>lua require('harpoon.ui').nav_prev()<CR>", { noremap = true })
-
--- Tabs
-k("n", "<A-]>", "<CMD>tabprev<CR>", opts) -- prev tab
-k("n", "<A-[>", "<CMD>tabnext<CR>", opts) -- next tab
+local harpoon_status, harpoon = pcall(require, "harpoon")
+if harpoon_status then
+	local harpoon_functions = require("harpoon.harpoon")
+	k("n", "<A-m>", harpoon_functions.add, { noremap = true })
+	k("n", "<A-t>", harpoon_functions.toggle, opts)
+	k("n", "<A-j>", harpoon_functions.next, opts)
+	k("n", "<A-k>", harpoon_functions.prev, opts)
+end
 
 -- TodoComment
 -- The options are TodoQuickFix, TodoLocList, and TodoTelescope
@@ -45,9 +39,9 @@ k("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
 k("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", opts)
 
 -- Neotree
-k("n", "<leader>nt", "<CMD>Neotree filesystem reveal=true<CR>", opts)
-k("n", "<leader>ng", "<CMD>Neotree git_status<CR>", opts)
-k("n", "<leader>nb", "<CMD>Neotree buffers<CR>", opts)
+k("n", "<leader>t", "<CMD>Neotree filesystem reveal=true<CR>", opts)
+k("n", "<leader>g", "<CMD>Neotree git_status<CR>", opts)
+k("n", "<leader>b", "<CMD>Neotree buffers<CR>", opts)
 
 -- Visual Mode --
 -- stay in indent mode
@@ -85,7 +79,7 @@ if lspsaga_status then
 	end, opts)
 
 	-- definition
-	k("n", "<leader>d", "<CMD>Lspsaga preview_definition<CR>", opts)
+	k("n", "gd", "<CMD>Lspsaga preview_definition<CR>", opts)
 
 	-- outline
 	k("n", "<leader>s", "<CMD>LSoutlineToggle<CR>", opts)

@@ -45,10 +45,8 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 
 	-- PLUGINS --
-	-- use("RRethy/vim-illuminate") -- variables highlighting
 	use("akinsho/toggleterm.nvim") -- toggle term
 	use("folke/todo-comments.nvim") -- todo-comments
-	use("folke/trouble.nvim") -- trouble
 	use("goolord/alpha-nvim") -- dash board greeter
 	use("jiangmiao/auto-pairs") -- auto pairs
 	use("lewis6991/gitsigns.nvim") -- git signs
@@ -79,8 +77,6 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
-	use("quangnguyen30192/cmp-nvim-ultisnips")
-	-- use 'David-Kunz/cmp-npm' -- maybe one day ill start configuring my own package.json
 
 	-- MARKDOWN PREVIEW --
 	use({
@@ -99,9 +95,6 @@ return packer.startup(function(use)
 	-- LANGUAGE SYNTAX --
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- comment string for react
 	use("windwp/nvim-ts-autotag") -- auto close tsx and jsx tags
-
-	-- css
-	use("ap/vim-css-color") -- color highlighting for css
 
 	-- SNIPPETS --
 	use("SirVer/UltiSnips")
