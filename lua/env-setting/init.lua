@@ -57,3 +57,12 @@ vim.api.nvim_create_autocmd({ "BufWrite" }, {
 		vim.lsp.buf.formatting_sync()
 	end,
 })
+
+vim.cmd([[
+if exists("g:neovide")
+	let g:neovide_transparency = 0.95 "Transparency
+	let g:neovide_confirm_quit = v:true "Confirm before quitting so I don't accidentally close it with :wq
+	let g:neovide_remember_window_size = v:true "So it does not randomly resize it
+	let g:neovide_hide_mouse_when_typing = v:true
+endif
+]])

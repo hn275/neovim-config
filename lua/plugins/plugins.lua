@@ -57,6 +57,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- have packer manages itself
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
 	use("ThePrimeagen/harpoon") -- harpoon
+	use("MunifTanjim/nui.nvim") -- popup gui
 	use({
 		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v2.x",
