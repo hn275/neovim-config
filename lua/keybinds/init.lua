@@ -7,6 +7,7 @@ local opts = { noremap = true, silent = true }
 
 -- Unbinding key
 k("n", "<C-t>", "<NOP>", opts)
+-- k("n", ":", "<NOP>", opts)
 
 -- Remapping leader key
 k("", "<Space>", "<Nop>", opts)
@@ -83,4 +84,14 @@ if lspsaga_status then
 	k("n", "<leader>s", "<CMD>LSoutlineToggle<CR>", opts)
 else
 	print("!failed to load LspSaga key binding")
+end
+
+-- CMD GUI --
+local cmd_gui_status, cmd_gui = pcall(require, "cmd_ui")
+if cmd_gui_status then
+	vim.keymap.set("n", "<leader>:", ":", { noremap = true })
+	vim.keymap.set("n", ":", "<NOP>", opts)
+	vim.keymap.set("n", ":", cmd_gui.cmd, opts)
+else
+	print("cmd_ui failed")
 end
