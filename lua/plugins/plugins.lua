@@ -59,13 +59,9 @@ return packer.startup(function(use)
 	use("ThePrimeagen/harpoon") -- harpoon
 	use("MunifTanjim/nui.nvim") -- popup gui
 	use({
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		requires = {
-			"MunifTanjim/nui.nvim",
-		},
-	}) -- neo-tree
-
+		"kyazdani42/nvim-tree.lua",
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+	})
 	-- LSP --
 	-- use("folke/lsp-colors.nvim") -- lsp color correction
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls

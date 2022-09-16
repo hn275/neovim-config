@@ -37,10 +37,8 @@ k("n", "<leader>ft", "<CMD>TodoTelescope<CR>", opts) -- mapping for TodoTelescop
 k("n", "<leader>ff", "<CMD>Telescope find_files<CR>", opts)
 k("n", "<leader>fg", "<CMD>Telescope live_grep<CR>", opts)
 
--- Neotree
-k("n", "<leader>t", "<CMD>Neotree filesystem reveal=true<CR>", opts)
-k("n", "<leader>g", "<CMD>Neotree git_status<CR>", opts)
-k("n", "<leader>b", "<CMD>Neotree buffers<CR>", opts)
+-- NvimTree
+k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>", opts)
 
 -- Visual Mode --
 -- stay in indent mode
@@ -87,11 +85,11 @@ else
 end
 
 -- CMD GUI --
-local cmd_gui_status, cmd_gui = pcall(require, "cmd_ui")
-if cmd_gui_status then
-	vim.keymap.set("n", "<leader>:", ":", { noremap = true })
-	vim.keymap.set("n", ":", "<NOP>", opts)
-	vim.keymap.set("n", ":", cmd_gui.cmd, opts)
-else
-	print("cmd_ui failed")
-end
+-- local cmd_gui_status, cmd_gui = pcall(require, "cmd_ui")
+-- if cmd_gui_status then
+-- 	vim.keymap.set("n", "<leader>:", ":", { noremap = true })
+-- 	vim.keymap.set("n", ":", "<NOP>", opts)
+-- 	vim.keymap.set("n", ":", cmd_gui.cmd, opts)
+-- else
+-- 	print("cmd_ui failed")
+-- end
