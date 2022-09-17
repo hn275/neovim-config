@@ -1,6 +1,6 @@
 # NeoVim configuration
 
-All configuration is (finally) written in lua.
+Written in lua.
 
 This NeoVim environment is configured in an Arch Linux machine.
 
@@ -53,14 +53,14 @@ Available Themes:
 
 ### TODO
 
-- [x] Clean up cmp, it is a hot mess
+- [x] Clean up cmp
 - [x] Ghost text for autocompletion
-- [x] Migrate to lua, VimScript sucks :/
+- [x] Migrate to lua
 - [x] Super tab function for UltiSnip
 - [ ] cheatsheet for keybindings.
 - Snippets
   - [ ] Make a cheatsheet
-  - [ ] Custom snippets for React | in progress
+  - [x] Custom snippets for React
   - Boilerplate:
     - [x] html5
     - [x] reset.css
@@ -77,5 +77,3 @@ cd $HOME/.config
 git clone https://github.com/hn275/neovim-config.git
 nvim +PackerSync
 ```
-
-Happy hacking.
