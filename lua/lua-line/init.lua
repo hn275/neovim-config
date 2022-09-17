@@ -48,10 +48,10 @@ require("lualine").setup({
 		lualine_y = {},
 		lualine_z = { "location" },
 	},
-	tabline = {
-		lualine_a = { "tabs" },
-		lualine_b = {},
-		lualine_z = {},
-	},
+	-- tabline = {
+	-- 	lualine_a = {},
+	-- 	lualine_b = {},
+	-- 	lualine_z = {},
+	-- },
 	extensions = {},
 })
