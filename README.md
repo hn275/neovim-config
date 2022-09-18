@@ -9,11 +9,10 @@ This NeoVim environment is configured in an Arch Linux machine.
 - NvimTree file explorer
 - Builtin toggle terminals
 - Git signs support
-- Blank line indentation indicator
-- `TODO:` comment
+- TodoComment
 - Telecope fuzzy finder
-- Custom comment string for `JSX` tags
-- Autoformat on BufWrite, current `null-ls` is receiving support for:
+- Custom comment string for react jsx tags
+- Bufwrite autocmd, current `null-ls` is receiving support for:
   - CSS/SCSS, JavaScript,
     JavaScript React,
     TypeScript,
@@ -23,7 +22,7 @@ This NeoVim environment is configured in an Arch Linux machine.
   - Lua: `stylua`
   - Markdown: `markdownlint`
   - Python: `black`
-- Super Tab behavior for `cmp` and `UltiSnip`
+- Super Tab behavior for `cmp`
 - LSP server:
   - CSS/SCSS (cssls)
   - Cpp (cppls)
@@ -35,7 +34,7 @@ This NeoVim environment is configured in an Arch Linux machine.
 
 ## Themes
 
-To change themes, simply comment/uncomment file `./lua/themes/init.lua`
+To change themes, comment/uncomment file `./lua/themes/init.lua`
 
 Available Themes:
 
@@ -56,7 +55,7 @@ Available Themes:
 - [x] Clean up cmp
 - [x] Ghost text for autocompletion
 - [x] Migrate to lua
-- [x] Super tab function for UltiSnip
+- ~~[x] Super tab function for UltiSnip~~
 - [ ] cheatsheet for keybindings.
 - Snippets
   - [ ] Make a cheatsheet
