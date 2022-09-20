@@ -12,8 +12,8 @@ local options = {
 	smartcase = true, -- smart case
 	autoindent = true, -- automatically apply indentation from the last line to the next line
 	smartindent = true, -- enabling smart indent
-	splitbelow = true, -- new vsplit is forced to opened up below
-	splitright = true, -- new hsplit is forced to opened up to the right
+	-- splitbelow = true, -- new vsplit is forced to opened up below
+	-- splitright = true, -- new hsplit is forced to opened up to the right
 	swapfile = false, -- prevent creating swap files
 	termguicolors = true, -- set term gui colors
 	timeoutlen = 1000, -- time to wait for a mapped sequence to reset
@@ -66,3 +66,8 @@ if exists("g:neovide")
 	let g:neovide_hide_mouse_when_typing = v:true
 endif
 ]])
+
+-- Transparent background
+vim.cmd[[highlight Normal guibg=none]]
+vim.cmd[[highlight NoneText guibg=none]]
+vim.cmd[[au ColorScheme * hi Normal ctermbg=none guibg=none]]
