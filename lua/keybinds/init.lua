@@ -9,6 +9,8 @@ local opts = { noremap = true, silent = true }
 k("n", "<C-t>", "<NOP>", opts)
 -- k("n", ":", "<NOP>", opts)
 
+-- Do not yank when deleteing with x
+k("n", "x", '"_x"', opts)
 -- Remapping leader key
 k("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
