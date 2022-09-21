@@ -113,6 +113,9 @@ return packer.startup(function(use)
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use("elvessousa/sobrio")
 
+	-- NEOORG --
+	-- use('nvim-neorg/neorg')
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
