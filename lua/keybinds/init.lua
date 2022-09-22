@@ -10,13 +10,16 @@ k("n", "<C-t>", "<NOP>", opts)
 -- k("n", ":", "<NOP>", opts)
 
 -- Do not yank when deleteing with x
-k("n", "x", '"_x"', opts)
+k("n", "x", '"_x', opts)
 -- Remapping leader key
 k("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Normal Mode --
+-- Tabs --
+k("n", "tt", "<CMD>tabe<CR>", opts)
+k("n", "tr", "<CMD>tabclose<CR>", opts)
+
 -- Navigating between windows
 k("n", "<C-h>", "<C-w>h", opts)
 k("n", "<C-j>", "<C-w>j", opts)
