@@ -7,12 +7,11 @@ local opts = { noremap = true, silent = true }
 
 -- Unbinding key
 k("n", "<C-t>", "<NOP>", opts)
--- k("n", ":", "<NOP>", opts)
 
 -- Do not yank when deleteing with x
 k("n", "x", '"_x', opts)
 -- `dw` should delete the word
-k("n", "dw", "bdw", opts)
+k("n", "dw", "ciw<ESC>", opts)
 -- Remapping leader key
 k("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
