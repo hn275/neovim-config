@@ -47,7 +47,6 @@ return packer.startup(function(use)
 	-- PLUGINS --
 	use("akinsho/toggleterm.nvim") -- toggle term
 	use("folke/todo-comments.nvim") -- todo-comments
-	-- use("goolord/alpha-nvim") -- dash board greeter
 	use("jiangmiao/auto-pairs") -- auto pairs
 	use("lewis6991/gitsigns.nvim") -- git signs
 	use("lukas-reineke/indent-blankline.nvim") -- blank indentation
@@ -62,6 +61,10 @@ return packer.startup(function(use)
 		"kyazdani42/nvim-tree.lua",
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
 	})
+
+	-- Mark
+	use("chentoast/marks.nvim")
+	use("toppair/reach.nvim")
 	-- LSP --
 	-- use("folke/lsp-colors.nvim") -- lsp color correction
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls

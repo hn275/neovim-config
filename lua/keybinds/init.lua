@@ -88,6 +88,12 @@ else
 	print("!failed to load LspSaga key binding")
 end
 
+-- Marks ---
+k("n", "<leader>mm", "<CMD>ReachOpen marks<CR>", opts)
+k("n", "<leader>mb", "<CMD>ReachOpen buffers<CR>", opts)
+k("n", "<leader>mt", "<CMD>ReachOpen tabpages<CR>", opts)
+k("n", "<leader>mc", "<CMD>ReachOpen colorschemes<CR>", opts)
+
 -- CMD GUI --
 -- local cmd_gui_status, cmd_gui = pcall(require, "cmd_ui")
 -- if cmd_gui_status then
