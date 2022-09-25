@@ -24,3 +24,14 @@ nightfox.setup({
 })
 
 vim.cmd("colorscheme nordfox")
+
+local lualine_status, lualine = pcall(require, "lualine")
+if lualine_status then
+	lualine.setup({
+		options = {
+			theme = "nord",
+		},
+	})
+else
+	return
+end

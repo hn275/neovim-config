@@ -68,6 +68,16 @@ endif
 ]])
 
 -- Transparent background
-vim.cmd[[highlight Normal guibg=none]]
-vim.cmd[[highlight NoneText guibg=none]]
-vim.cmd[[au ColorScheme * hi Normal ctermbg=none guibg=none]]
+vim.cmd([[highlight Normal guibg=none]])
+vim.cmd([[highlight NoneText guibg=none]])
+vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
+
+-- Save fold
+vim.cmd([[
+set viewoptions-=options
+augroup remember_folds
+    autocmd!
+    autocmd BufWinLeave *.* if &ft !=# 'help' | mkview | endif
+    autocmd BufWinEnter *.* if &ft !=# 'help' | silent! loadview | endif
+augroup END
+]])
