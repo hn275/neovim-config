@@ -5,3 +5,7 @@ if not status_ok then
 end
 
 todo_comments.setup({})
+
+-- Map key
+local k = require("util.keymap").keymap
+k("n", "<leader>ft", "<CMD>TodoQuickFix<CR>")

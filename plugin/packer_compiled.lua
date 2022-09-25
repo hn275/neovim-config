@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
   },
+  ["fzf-lua"] = {
+    loaded = true,
+    path = "/home/haln/.local/share/nvim/site/pack/packer/start/fzf-lua",
+    url = "https://github.com/ibhagwan/fzf-lua"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",

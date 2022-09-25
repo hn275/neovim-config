@@ -1,6 +1,6 @@
 require("cmp.cmp")
 require("env-setting")
-require("gitsigns.gitsigns")
+-- require("gitsigns.gitsigns")
 require("indent-blankline.indent")
 require("keybinds")
 require("lsp-saga")

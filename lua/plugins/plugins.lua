@@ -57,6 +57,7 @@ return packer.startup(function(use)
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
 	use("ThePrimeagen/harpoon") -- harpoon
 	use("MunifTanjim/nui.nvim") -- popup gui
+	use("ibhagwan/fzf-lua")
 	use({
 		"kyazdani42/nvim-tree.lua",
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
