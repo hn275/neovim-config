@@ -15,13 +15,4 @@ end
 vim.cmd([[ colorscheme everforest ]]) -- set colorscheme
 
 -- enable lualine color theme
-local lualine_status, lualine = pcall(require, "lualine")
-if lualine_status then
-	lualine.setup({
-		options = {
-			theme = "everforest",
-		},
-	})
-else
-	return
-end
+require("themes.util.setlualine")("everforest")

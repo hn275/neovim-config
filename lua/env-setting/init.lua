@@ -67,10 +67,10 @@ if exists("g:neovide")
 endif
 ]])
 
--- Transparent background
-vim.cmd([[highlight Normal guibg=none]])
-vim.cmd([[highlight NoneText guibg=none]])
-vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
+-- -- Transparent background
+-- vim.cmd([[highlight Normal guibg=none]])
+-- vim.cmd([[highlight NoneText guibg=none]])
+-- vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
 
 -- Save fold
 vim.cmd([[

@@ -8,15 +8,4 @@ for key, value in pairs(opts) do
 end
 
 vim.cmd([[colorscheme OceanicNext]])
-
--- set lualine color
-local lualine_status, lualine = pcall(require, "lualine")
-if lualine_status then
-	lualine.setup({
-		options = {
-			theme = "OceanicNext",
-		},
-	})
-else
-	return
-end
+require("themes.util.setlualine")("OceanicNext")

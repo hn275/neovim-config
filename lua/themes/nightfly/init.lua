@@ -50,15 +50,4 @@ else
 end
 
 vim.cmd([[ colorscheme nightfly ]]) -- set color
-
--- setting lualine color to nightfly as well
-local lualine_status, lualine = pcall(require, "lualine")
-if lualine_status then
-	lualine.setup({
-		options = {
-			theme = "nightfly",
-		},
-	})
-else
-	return
-end
+require("themes.util.setlualine")("nightfly") -- set lualine color

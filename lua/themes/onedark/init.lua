@@ -9,14 +9,4 @@ onedark.setup({
 })
 onedark.load() -- set theme
 
--- setting lua line color
-local lualine_status, lualine = pcall(require, "lualine")
-if lualine_status then
-	lualine.setup({
-		options = {
-			theme = "onedark",
-		},
-	})
-else
-	return
-end
+require("themes.util.setlualine")("onedark")

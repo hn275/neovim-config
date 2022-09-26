@@ -37,14 +37,5 @@ end
 
 vim.cmd([[ colorscheme dracula ]])
 
--- set lualine color
-local lualine_status, lualine = pcall(require, "lualine")
-if lualine_status then
-	lualine.setup({
-		options = {
-			theme = "dracula",
-		},
-	})
-else
-	return
-end
+local setLualine = require("themes.util.setlualine")
+setLualine("dracula")

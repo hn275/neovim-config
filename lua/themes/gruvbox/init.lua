@@ -10,13 +10,4 @@ end
 vim.cmd([[colorscheme gruvbox-material]])
 
 -- set lualine colorscheme
-local status, lualine = pcall(require, "lualine")
-if status then
-	lualine.setup({
-		options = {
-			theme = "gruvbox-material",
-		},
-	})
-else
-	return
-end
+require("themes.util.setlualine")("gruvbox")

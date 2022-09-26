@@ -48,15 +48,11 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim") -- toggle term
 	use("folke/todo-comments.nvim") -- todo-comments
 	use("jiangmiao/auto-pairs") -- auto pairs
-	use("lewis6991/gitsigns.nvim") -- git signs
-	use("lukas-reineke/indent-blankline.nvim") -- blank indentation
 	use("mattn/emmet-vim") -- emmet-vim for html tags
-	use("nvim-telescope/telescope.nvim") -- telescope
 	use("tpope/vim-commentary") -- comment toggler
 	use("wbthomason/packer.nvim") -- have packer manages itself
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
 	use("ThePrimeagen/harpoon") -- harpoon
-	use("MunifTanjim/nui.nvim") -- popup gui
 	use("ibhagwan/fzf-lua")
 	use({
 		"kyazdani42/nvim-tree.lua",
@@ -66,8 +62,8 @@ return packer.startup(function(use)
 	-- Mark
 	use("chentoast/marks.nvim")
 	use("toppair/reach.nvim")
+
 	-- LSP --
-	-- use("folke/lsp-colors.nvim") -- lsp color correction
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
 	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- LSP UI
@@ -104,21 +100,15 @@ return packer.startup(function(use)
 	use("EdenEast/nightfox.nvim")
 	use("Mofiqul/dracula.nvim")
 	use("bluz71/vim-nightfly-guicolors")
-	use("edkolev/tmuxline.vim")
 	use("folke/tokyonight.nvim")
 	use("liuchengxu/space-vim-dark")
 	use("mhartington/oceanic-next")
 	use("navarasu/onedark.nvim")
-	use("rakr/vim-one")
 	use("sainnhe/everforest")
 	use("sainnhe/gruvbox-material")
 	use("shaunsingh/nord.nvim")
 	use("tyrannicaltoucan/vim-deep-space")
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("elvessousa/sobrio")
-
-	-- NEOORG --
-	-- use('nvim-neorg/neorg')
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
