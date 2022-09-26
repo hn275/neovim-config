@@ -53,7 +53,9 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- have packer manages itself
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
 	use("ThePrimeagen/harpoon") -- harpoon
-	use("ibhagwan/fzf-lua")
+	use("ibhagwan/fzf-lua") -- fuzzy finder
+	use("lewis6991/impatient.nvim") -- faster boot up time
+	use({ "nvim-neorg/neorg", tag = "0.0.12" })
 	use({
 		"kyazdani42/nvim-tree.lua",
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
