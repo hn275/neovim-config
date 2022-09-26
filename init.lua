@@ -1,18 +1,17 @@
 require("cmp.cmp")
 require("env-setting")
-require("indent-blankline.indent")
 require("keybinds")
 require("lsp-saga")
 require("lsp-config")
 require("lua-line")
 require("markdown-preview")
 require("plugins.plugins")
-require("telescope.telescope")
 require("themes")
 require("todo-comments.todo-comments")
-require("toggle-term")
-require("tree-sitter")
+require("toggle-term") -- toggle term
+require("tree-sitter") -- syntax highlighting
 require("nvimTree")
 require("ultisnips")
-require("harpoon.harpoon")
+require("harpoon.harpoon") -- toggle term
 require("marks.marks")
+require("impatient")
