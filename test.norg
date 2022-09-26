@@ -1,0 +1,20 @@
+@document.meta
+  title: hello wiorld
+@end
+
+= TOC
+
+* Basic markup
+** The `.norg` file
+
+
+@code cpp
+  std::cout << "hello world" << std::endl;
+@end
+
+- Here is list item 1
+-- this is item 2
+-- nested 3
+
+1. This is an ordered list
+2. this is a second item

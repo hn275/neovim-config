@@ -15,3 +15,4 @@ require("ultisnips")
 require("harpoon.harpoon") -- toggle term
 require("marks.marks")
 require("impatient")
+require("neorg.neorg")
