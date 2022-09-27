@@ -1,4 +1,5 @@
 local M = {}
+local nui = require("lsp-config.utils.rename").cmd
 
 M.on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -6,6 +7,13 @@ M.on_attach = function(client, bufnr)
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+	vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, bufopts)
+	vim.keymap.set("n", "<leader>de", vim.lsp.buf.definition, bufopts)
+	vim.keymap.set("n", "ge", vim.diagnostic.open_float, bufopts)
+	vim.keymap.set("n", "gj", vim.diagnostic.goto_next, bufopts)
+	vim.keymap.set("n", "gk", vim.diagnostic.goto_prev, bufopts)
+	vim.keymap.set("n", "<leader>rn", nui, bufopts)
 	client.resolved_capabilities.document_formatting = false
 end
 
@@ -35,7 +43,7 @@ M.default_settings = function()
 		float = {
 			focusable = false,
 			style = "minimal",
-			border = "rounded",
+			border = "single",
 			source = "always",
 			header = "",
 			prefix = "",
@@ -45,11 +53,11 @@ M.default_settings = function()
 	vim.diagnostic.config(config)
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
+		border = "single",
 	})
 
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
+		border = "single",
 	})
 end
 

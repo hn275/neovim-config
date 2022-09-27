@@ -33,7 +33,7 @@ end
 packer.init({
 	display = {
 		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
+			return require("packer.util").float({ border = "single" })
 		end,
 	},
 })
@@ -60,10 +60,10 @@ return packer.startup(function(use)
 	use("chentoast/marks.nvim") -- visuals marks
 	use("toppair/reach.nvim") -- gui for marks
 	use("jalvesaq/nvim-r") -- R extensions for neovim
+	use("MunifTanjim/nui.nvim")
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
-	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- LSP UI
 	-- CMP COMPLETION --
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-cmdline")

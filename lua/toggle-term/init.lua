@@ -20,7 +20,7 @@ toggleterm.setup({
 	hide_numbers = true,
 	close_on_exit = true,
 	float_opts = { -- only for floating terminal
-		border = "rounded",
+		border = "single",
 	},
 })
 
