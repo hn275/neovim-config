@@ -7,14 +7,14 @@ local mapping = require("cmp.mapping") -- mapping
 local formatting = require("cmp.formatting") -- formatting
 
 cmp.setup({
-	enabled = function() -- disable cmp in when commenting
-		local context = require("cmp.config.context")
-		if vim.api.nvim_get_mode().mode == "c" then
-			return true
-		else -- return false if cursor is in a comment group
-			return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
-		end
-	end,
+	-- enabled = function() -- disable cmp in when commenting
+	-- 	local context = require("cmp.config.context")
+	-- 	if vim.api.nvim_get_mode().mode == "c" then
+	-- 		return true
+	-- 	else -- return false if cursor is in a comment group
+	-- 		return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+	-- 	end
+	-- end,
 	snippet = {
 		expand = function(args)
 			vim.fn["UltiSnips#Anon"](args.body)
@@ -30,13 +30,12 @@ cmp.setup({
 		disallow_partial_matching = false, -- allow partial matching
 	},
 	formatting = formatting,
-	sources = {
+	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
+		{ name = "ultisnips" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "npm" }, -- maybe one day i'll start using this
-		{ name = "ultisnips" },
-	},
+	}),
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
@@ -45,3 +44,6 @@ cmp.setup({
 		ghost_text = true,
 	},
 })
+
+-- Enabling UltiSnips
+vim.api.nvim_set_var("UltiSnipsSnippetDirectories", "custom_snippets")

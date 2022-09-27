@@ -28,9 +28,10 @@ local M = {
 	["<CR>"] = cmp.mapping.confirm({ select = false }), -- only select the hovering autocomplete
 
 	["<tab>"] = cmp.mapping(function(fallback)
-		if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then -- jump forward if possible
-			vim.fn["UltiSnips#JumpForwards"]()
-		elseif cmp.visible() then
+		-- if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then -- jump forward if possible
+		-- 	print("Has snippets")
+		-- 	vim.fn["UltiSnips#ExpandSnippet"]()
+		if cmp.visible() then
 			cmp.confirm({ select = true })
 		elseif check_backspace() then
 			fallback()

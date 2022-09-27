@@ -21,6 +21,8 @@ local highlight_parsers = { -- enabled languages parsers
 	"regex",
 	"vim",
 	"norg",
+	"r",
+	"go",
 }
 
 -- Autotag configs
