@@ -21,8 +21,8 @@ local options = {
 	updatetime = 500, -- faster completion (4000ms by default)
 	writebackup = false, -- if a file is being edited by another program, or was written by another program, wont be allowed to write
 	expandtab = true, -- expanding tab to spaces
-	shiftwidth = 2, -- number of spaces indented
-	tabstop = 2, -- number of spaces tab key inserts
+	shiftwidth = 4, -- number of spaces indented
+	tabstop = 4, -- number of spaces tab key inserts
 	cursorline = true, -- highlighting current cursor lines
 	cursorcolumn = false, -- highlight current cursor column
 	number = true, -- line number
@@ -80,4 +80,11 @@ augroup remember_folds
     autocmd BufWinLeave *.* if &ft !=# 'help' | mkview | endif
     autocmd BufWinEnter *.* if &ft !=# 'help' | silent! loadview | endif
 augroup END
+
+
+if &filetype == "javascript" || &filetype == "typescript"
+	setlocal shiftwidth=2
+	setlocal tabstop=2
+endif
+
 ]])
