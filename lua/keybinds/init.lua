@@ -19,7 +19,7 @@ k("n", "tt", "<CMD>tabe<CR>")
 k("n", "tr", "<CMD>tabclose<CR>")
 
 -- quit
-k("n", "qq", "<CMD>q<CR>")
+k("n", "qq", "<CMD>q!<CR>")
 
 -- Navigating between windows
 k("n", "<C-h>", "<C-w>h")
@@ -38,3 +38,8 @@ k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")
 -- stay in indent mode
 k("v", "<", "<gv")
 k("v", ">", ">gv")
+
+-- Visual text
+local virtualtext_lsp = require("lsp-config.utils.virtualtext")
+virtualtext_lsp.init()
+k("n", "<leader>v", virtualtext_lsp.toggle, { noremap = true })
