@@ -1,5 +1,5 @@
 local M = {}
-local nui = require("lsp-config.utils.rename").cmd
+local rename = require("lsp-config.utils.rename")
 
 M.on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -13,7 +13,7 @@ M.on_attach = function(client, bufnr)
 	vim.keymap.set("n", "ge", vim.diagnostic.open_float, bufopts)
 	vim.keymap.set("n", "gj", vim.diagnostic.goto_next, bufopts)
 	vim.keymap.set("n", "gk", vim.diagnostic.goto_prev, bufopts)
-	vim.keymap.set("n", "<leader>rn", nui, bufopts)
+	vim.keymap.set("n", "<leader>rn", rename, bufopts)
 	client.resolved_capabilities.document_formatting = false
 end
 

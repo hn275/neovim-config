@@ -27,8 +27,7 @@ local input_config = {
 	},
 }
 
-local M = {}
-M.cmd = function()
+return function()
 	-- Initializing input popup
 	local input = Input(input_config, {
 		on_submit = function(val)
@@ -41,5 +40,3 @@ M.cmd = function()
 	end, { noremap = true, silent = true })
 	input:mount()
 end
-
-return M
