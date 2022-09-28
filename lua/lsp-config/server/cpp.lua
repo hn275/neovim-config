@@ -4,7 +4,7 @@ local opts = require("lsp-config.default")
 local capabilities = opts.capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require("lspconfig")["cssls"].setup({
+require("lspconfig")["clangd"].setup({
 	opts.default_settings(),
 	on_attach = opts.on_attach,
 	flags = opts.lsp_flags,
