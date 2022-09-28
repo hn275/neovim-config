@@ -14,7 +14,7 @@ M.on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gj", vim.diagnostic.goto_next, bufopts)
 	vim.keymap.set("n", "gk", vim.diagnostic.goto_prev, bufopts)
 	vim.keymap.set("n", "<leader>rn", nui, bufopts)
-	client.resolved_capabilities.document_formatting = false
+	client.server_capabilities.document_formatting = false
 end
 
 -- Flags

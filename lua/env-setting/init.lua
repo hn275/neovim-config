@@ -54,7 +54,7 @@ vim.cmd([[ autocmd FileType scss setlocal commentstring="/* \ %s\ */" ]])
 vim.api.nvim_create_autocmd({ "BufWrite" }, {
 	-- pattern = filetypes,
 	callback = function()
-		vim.lsp.buf.formatting_sync()
+		vim.lsp.buf.format()
 	end,
 })
 
