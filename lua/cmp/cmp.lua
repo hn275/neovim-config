@@ -7,17 +7,17 @@ local mapping = require("cmp.mapping") -- mapping
 local formatting = require("cmp.formatting") -- formatting
 
 cmp.setup({
-	-- enabled = function() -- disable cmp in when commenting
-	-- 	local context = require("cmp.config.context")
-	-- 	if vim.api.nvim_get_mode().mode == "c" then
-	-- 		return true
-	-- 	else -- return false if cursor is in a comment group
-	-- 		return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
-	-- 	end
-	-- end,
+	enabled = function() -- disable cmp in when commenting
+		local context = require("cmp.config.context")
+		if vim.api.nvim_get_mode().mode == "c" then
+			return true
+		else -- return false if cursor is in a comment group
+			return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+		end
+	end,
 	snippet = {
 		expand = function(args)
-			vim.fn["UltiSnips#Anon"](args.body)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
 	window = {
@@ -32,7 +32,7 @@ cmp.setup({
 	formatting = formatting,
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "ultisnips" },
+		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
 	}),
@@ -45,5 +45,7 @@ cmp.setup({
 	},
 })
 
--- Enabling UltiSnips
-vim.api.nvim_set_var("UltiSnipsSnippetDirectories", "custom_snippets")
+-- Custom luasnips
+require("luasnip.loaders.from_vscode").lazy_load({
+	paths = { "./snippets" },
+})

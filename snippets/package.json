@@ -1,0 +1,38 @@
+{
+  "name": "Custom snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "javascript",
+          "typescript"
+        ],
+        "path": "./custom/javascript.json"
+      },
+      {
+        "language": [
+          "typescript"
+        ],
+        "path": "./custom/typescript.json"
+      },
+      {
+        "language": [
+          "cpp"
+        ],
+        "path": "./custom/cpp.json"
+      },
+      {
+        "language": [
+          "norg"
+        ],
+        "path": "./custom/norg.json"
+      },
+      {
+        "language": [
+          "go"
+        ],
+        "path": "./custom/go.json"
+      }
+    ]
+  }
+}
