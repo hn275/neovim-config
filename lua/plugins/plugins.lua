@@ -33,7 +33,7 @@ end
 packer.init({
 	display = {
 		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
+			return require("packer.util").float({ border = "single" })
 		end,
 	},
 })
@@ -55,7 +55,6 @@ return packer.startup(function(use)
 	use("ThePrimeagen/harpoon") -- harpoon
 	use("ibhagwan/fzf-lua") -- fuzzy finder
 	use("lewis6991/impatient.nvim") -- faster boot up time
-	use({ "nvim-neorg/neorg" })
 	use({
 		"kyazdani42/nvim-tree.lua",
 		tag = "nightly", -- optional, updated every week. (see issue #1193)
@@ -64,40 +63,34 @@ return packer.startup(function(use)
 	-- Mark
 	use("chentoast/marks.nvim")
 	use("toppair/reach.nvim")
-
+	use({ "nvim-neorg/neorg", tag = "0.0.12" })
+	use("kyazdani42/nvim-tree.lua")
+	use("chentoast/marks.nvim") -- visuals marks
+	use("toppair/reach.nvim") -- gui for marks
+	use("jalvesaq/nvim-r") -- R extensions for neovim
+	use("MunifTanjim/nui.nvim")
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
-	use({ "glepnir/lspsaga.nvim", branch = "main" }) -- LSP UI
-
 	-- CMP COMPLETION --
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-cmdline")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
-
 	-- MARKDOWN PREVIEW --
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
-
+	use("iamcco/markdown-preview.nvim")
 	-- NVIM TREE SITTER --
 	use("itchyny/vim-gitbranch")
 	use("ryanoasis/vim-devicons")
 	use("sheerun/vim-polyglot")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
-
 	-- LANGUAGE SYNTAX --
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- comment string for react
 	use("windwp/nvim-ts-autotag") -- auto close tsx and jsx tags
-
 	-- SNIPPETS --
 	use("SirVer/UltiSnips")
-
+	use("quangnguyen30192/cmp-nvim-ultisnips")
 	-- THEME PLUGINS --
 	use("EdenEast/nightfox.nvim")
 	use("Mofiqul/dracula.nvim")
