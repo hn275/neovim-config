@@ -1,5 +1,5 @@
 {
-  "name": "Custom snippets",
+  "name": "snippets",
   "contributes": {
     "snippets": [
       {
@@ -35,7 +35,8 @@
       },
       {
         "language": [
-          "tex"
+          "tex",
+          "norg"
         ],
         "path": "./custom/tex.json"
       }
