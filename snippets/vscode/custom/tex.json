@@ -17,17 +17,17 @@
   },
   "Section": {
     "prefix": "section",
-    "body": ["\\section{$1}", "$0"],
+    "body": ["\\section*{$1}", "$0"],
     "description": "Section tag"
   },
-  "Subsection": {
+  "Sub-section": {
     "prefix": "subsection",
-    "body": ["\\subsection{$1}", "$0"],
+    "body": ["\\subsection*{$1}", "$0"],
     "description": "Sub-section tag"
   },
   "Sub-subsection": {
     "prefix": "subsubsection",
-    "body": ["\\subsubsection{$1}", "$0"],
+    "body": ["\\subsubsection*{$1}", "$0"],
     "description": "Sub-sub-section tag"
   },
   "Paragraph": {
@@ -37,17 +37,17 @@
   },
   "Bold": {
     "prefix": "bf",
-    "body": ["\\textbf{$1} $0"],
+    "body": ["\\textbf{$1}$0"],
     "description": "Bold text"
   },
   "Italicize": {
     "prefix": "it",
-    "body": ["\\textit{$1} $0"],
+    "body": ["\\textit{$1}$0"],
     "description": "Italicize text"
   },
   "Underline": {
     "prefix": "underline",
-    "body": ["\\underline{$1} $0"],
+    "body": ["\\underline{$1}$0"],
     "description": "Underline text"
   },
   "Begin": {
@@ -62,12 +62,12 @@
   },
   "Math": {
     "prefix": "math",
-    "body": ["\\$$1\\$"],
+    "body": ["\\$$1\\$$0"],
     "description": "Inline math"
   },
   "Fraction": {
     "prefix": "fr",
-    "body": ["\\frac{$1}{$2} $0"],
+    "body": ["\\frac{$1}{$2}$0"],
     "description": "Fraction tag"
   }
 }

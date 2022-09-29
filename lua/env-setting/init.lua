@@ -36,6 +36,7 @@ local options = {
 	guifont = "JetBrainsMono Nerd Font:h11",
 	-- guicursor = "a:blinkon250",
 	mouse = "",
+	-- cmdheight = 0,
 }
 
 vim.opt.shortmess:append("c")
