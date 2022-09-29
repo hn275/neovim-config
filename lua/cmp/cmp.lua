@@ -47,5 +47,8 @@ cmp.setup({
 
 -- Custom luasnips
 require("luasnip.loaders.from_vscode").lazy_load({
-	paths = { "./snippets" },
+	paths = { "./snippets/vscode" },
+})
+require("luasnip.loaders.from_lua").lazy_load({
+	paths = { "./snippets/lua" },
 })

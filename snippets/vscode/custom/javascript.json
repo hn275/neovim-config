@@ -1,7 +1,7 @@
 {
   "Doc String": {
     "prefix": "DOC",
-    "body": ["/**", "* @params {$1} $2", "* $0", "*/"]
+    "body": ["/** #${whoami}", "* @params {$1} $2", "* $0", "*/"]
   },
   "useState": {
     "prefix": "us",
