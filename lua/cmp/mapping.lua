@@ -37,12 +37,20 @@ local M = {
 	end, { "i", "s" }),
 
 	["jk"] = cmp.mapping(function(fallback)
-		if luasnip.jumpable() then
+		if luasnip.jumpable(1) then
 			luasnip.jump(1)
 		else
 			fallback()
 		end
-	end),
+	end, { "i" }),
+
+	["jj"] = cmp.mapping(function(fallback)
+		if luasnip.jumpable(-1) then
+			luasnip.jump(-1)
+		else
+			fallback()
+		end
+	end, { "i" }),
 }
 
 return M

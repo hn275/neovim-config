@@ -32,6 +32,12 @@
           "go"
         ],
         "path": "./custom/go.json"
+      },
+      {
+        "language": [
+          "tex"
+        ],
+        "path": "./custom/tex.json"
       }
     ]
   }
