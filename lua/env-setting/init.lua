@@ -35,6 +35,7 @@ local options = {
 	foldlevelstart = 999, -- always open all folds when entering a file
 	guifont = "JetBrainsMono Nerd Font:h11",
 	-- guicursor = "a:blinkon250",
+	mouse = "",
 }
 
 vim.opt.shortmess:append("c")
@@ -59,6 +60,7 @@ vim.api.nvim_create_autocmd({ "BufWrite" }, {
 })
 
 vim.cmd([[
+
 if exists("g:neovide")
 	let g:neovide_transparency = 0.95 "Transparency
 	let g:neovide_confirm_quit = v:true "Confirm before quitting so I don't accidentally close it with :wq
@@ -67,13 +69,8 @@ if exists("g:neovide")
 endif
 ]])
 
--- -- Transparent background
--- vim.cmd([[highlight Normal guibg=none]])
--- vim.cmd([[highlight NoneText guibg=none]])
--- vim.cmd([[au ColorScheme * hi Normal ctermbg=none guibg=none]])
-
--- Save fold
 vim.cmd([[
+" Save fold
 set viewoptions-=options
 augroup remember_folds
     autocmd!
@@ -81,7 +78,7 @@ augroup remember_folds
     autocmd BufWinEnter *.* if &ft !=# 'help' | silent! loadview | endif
 augroup END
 
-
+" 2 space tabs
 if &filetype == "javascript" || &filetype == "typescript"
 	setlocal shiftwidth=2
 	setlocal tabstop=2
