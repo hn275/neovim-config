@@ -46,9 +46,10 @@ cmp.setup({
 })
 
 -- Custom luasnips
-require("luasnip.loaders.from_vscode").lazy_load({
-	paths = { "./snippets/vscode" },
-})
-require("luasnip.loaders.from_lua").lazy_load({
-	paths = { "./snippets/lua" },
-})
+-- require("luasnip.loaders.from_vscode").lazy_load({
+-- 	paths = { "./snippets/vscode" },
+-- })
+-- require("luasnip.loaders.from_lua").lazy_load({
+-- 	paths = { "~/.config/nvim/snippets/luasnippets" },
+-- })
+require("luasnip.entry") -- loading all custom snippets
