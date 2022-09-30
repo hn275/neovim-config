@@ -4,13 +4,6 @@
     "snippets": [
       {
         "language": [
-          "javascript",
-          "typescript"
-        ],
-        "path": "./custom/javascript.json"
-      },
-      {
-        "language": [
           "typescript"
         ],
         "path": "./custom/typescript.json"

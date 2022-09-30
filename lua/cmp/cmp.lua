@@ -7,14 +7,14 @@ local mapping = require("cmp.mapping") -- mapping
 local formatting = require("cmp.formatting") -- formatting
 
 cmp.setup({
-	enabled = function() -- disable cmp in when commenting
-		local context = require("cmp.config.context")
-		if vim.api.nvim_get_mode().mode == "c" then
-			return true
-		else -- return false if cursor is in a comment group
-			return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
-		end
-	end,
+	-- enabled = function() -- disable cmp in when commenting
+	-- 	local context = require("cmp.config.context")
+	-- 	if vim.api.nvim_get_mode().mode == "c" then
+	-- 		return true
+	-- 	else -- return false if cursor is in a comment group
+	-- 		return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+	-- 	end
+	-- end,
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body)
@@ -41,15 +41,12 @@ cmp.setup({
 		select = false,
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = false,
 	},
 })
 
 -- Custom luasnips
--- require("luasnip.loaders.from_vscode").lazy_load({
--- 	paths = { "./snippets/vscode" },
--- })
--- require("luasnip.loaders.from_lua").lazy_load({
--- 	paths = { "~/.config/nvim/snippets/luasnippets" },
--- })
+require("luasnip.loaders.from_vscode").lazy_load({
+	paths = { "./snippets/vscode" },
+})
 require("luasnip.entry") -- loading all custom snippets
