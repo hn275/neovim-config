@@ -1,0 +1,26 @@
+{
+  "Boilerplate": {
+    "prefix": "!",
+    "body": ["#include <iostream>", "int main() {", "\t$0", "\treturn 0;", "}"]
+  },
+  "C Out": {
+    "prefix": "cout",
+    "body": ["std::cout << $1"],
+    "description": "Print output to terminal"
+  },
+  "End line": {
+    "prefix": "endl",
+    "body": ["std::endl"],
+    "description": "Print a new line character"
+  },
+  "String": {
+    "prefix": "string",
+    "body": ["std::string $1"],
+    "description": "Initializing a string type variable"
+  },
+  "Vector": {
+    "prefix": "vector",
+    "body": ["std::vector<$1> $2"],
+    "description": "Initializing a vector type variable"
+  }
+}

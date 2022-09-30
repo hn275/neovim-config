@@ -43,7 +43,6 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons") -- So many plugins require this
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
-
 	-- PLUGINS --
 	use("akinsho/toggleterm.nvim") -- toggle term
 	use("folke/todo-comments.nvim") -- todo-comments
@@ -55,12 +54,13 @@ return packer.startup(function(use)
 	use("ThePrimeagen/harpoon") -- harpoon
 	use("ibhagwan/fzf-lua") -- fuzzy finder
 	use("lewis6991/impatient.nvim") -- faster boot up time
-	use({ "nvim-neorg/neorg", tag = "0.0.12" })
-	use("kyazdani42/nvim-tree.lua")
+	use("kyazdani42/nvim-tree.lua") -- file explorer
+	use("lervag/vimtex") -- latex plugin
+	use("nvim-neorg/neorg") -- neorg
+	use("toppair/reach.nvim") -- mark ui
 	use("chentoast/marks.nvim") -- visuals marks
-	use("toppair/reach.nvim") -- gui for marks
 	use("jalvesaq/nvim-r") -- R extensions for neovim
-	use("MunifTanjim/nui.nvim")
+	use("MunifTanjim/nui.nvim") -- ui plugin
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
@@ -81,8 +81,8 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring") -- comment string for react
 	use("windwp/nvim-ts-autotag") -- auto close tsx and jsx tags
 	-- SNIPPETS --
-	use("SirVer/UltiSnips")
-	use("quangnguyen30192/cmp-nvim-ultisnips")
+	use("L3MON4D3/LuaSnip") -- snippet engine
+	use("saadparwaiz1/cmp_luasnip")
 	-- THEME PLUGINS --
 	use("EdenEast/nightfox.nvim")
 	use("Mofiqul/dracula.nvim")
@@ -90,7 +90,7 @@ return packer.startup(function(use)
 	use("folke/tokyonight.nvim")
 	use("liuchengxu/space-vim-dark")
 	use("mhartington/oceanic-next")
-	use("navarasu/onedark.nvim")
+	use("joshdick/onedark.vim")
 	use("sainnhe/everforest")
 	use("sainnhe/gruvbox-material")
 	use("shaunsingh/nord.nvim")

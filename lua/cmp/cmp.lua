@@ -17,7 +17,7 @@ cmp.setup({
 	-- end,
 	snippet = {
 		expand = function(args)
-			vim.fn["UltiSnips#Anon"](args.body)
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
 	window = {
@@ -32,7 +32,7 @@ cmp.setup({
 	formatting = formatting,
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "ultisnips" },
+		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
 	}),
@@ -41,9 +41,12 @@ cmp.setup({
 		select = false,
 	},
 	experimental = {
-		ghost_text = true,
+		ghost_text = false,
 	},
 })
 
--- Enabling UltiSnips
-vim.api.nvim_set_var("UltiSnipsSnippetDirectories", "custom_snippets")
+-- Custom luasnips
+require("luasnip.loaders.from_vscode").lazy_load({
+	paths = { "./snippets/vscode" },
+})
+require("luasnip.entry") -- loading all custom snippets

@@ -1,0 +1,16 @@
+{
+  "Doc String": {
+    "prefix": "DOC",
+    "body": ["/** #${whoami}", "* @params {$1} $2", "* $0", "*/"]
+  },
+  "useState": {
+    "prefix": "us",
+    "body": ["const [$1] = useState($2);"],
+    "description": "React `useState` hook"
+  },
+  "useEffect": {
+    "prefix": "ue",
+    "body": ["useEffect(() => {", "\t$0", "}, [])"],
+    "description": "React `useEffect` hook"
+  }
+}

@@ -27,6 +27,7 @@ local input_config = {
 	},
 }
 
+<<<<<<< HEAD
 return function()
 	-- Initializing input popup
 	local input = Input(input_config, {

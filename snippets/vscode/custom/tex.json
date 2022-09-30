@@ -1,0 +1,73 @@
+{
+  "Boilerplate for main file": {
+    "prefix": "!",
+    "body": [
+      "\\documentclass{article}",
+      "\\usepackage{}",
+      "\\begin{document}",
+      "\t$0",
+      "\\end{document}"
+    ],
+    "description": "Initialize a main package for Go code"
+  },
+  "Meta data": {
+    "prefix": "title",
+    "body": ["\\title{$1}", "\\author{$2}", "\\date{\\today}", "\\maketitle"],
+    "description": "Initialize title, author, and date of the document"
+  },
+  "Section": {
+    "prefix": "section",
+    "body": ["\\section*{$1}", "$0"],
+    "description": "Section tag"
+  },
+  "Sub-section": {
+    "prefix": "subsection",
+    "body": ["\\subsection*{$1}", "$0"],
+    "description": "Sub-section tag"
+  },
+  "Sub-subsection": {
+    "prefix": "subsubsection",
+    "body": ["\\subsubsection*{$1}", "$0"],
+    "description": "Sub-sub-section tag"
+  },
+  "Paragraph": {
+    "prefix": "p",
+    "body": ["\\paragraph{$1}", "\t$0"],
+    "description": "Paragraph"
+  },
+  "Bold": {
+    "prefix": "bf",
+    "body": ["\\textbf{$1}$0"],
+    "description": "Bold text"
+  },
+  "Italicize": {
+    "prefix": "it",
+    "body": ["\\textit{$1}$0"],
+    "description": "Italicize text"
+  },
+  "Underline": {
+    "prefix": "underline",
+    "body": ["\\underline{$1}$0"],
+    "description": "Underline text"
+  },
+  "Begin": {
+    "prefix": "begin",
+    "body": ["\\begin{$1}", "\t$0", "\\end{$1}"],
+    "description": "Begin-end section"
+  },
+  "Label": {
+    "prefix": "label",
+    "body": ["\\label{$1}"],
+    "description": "Label tag"
+  },
+  "Math": {
+    "prefix": "math",
+    "body": ["\\$$1\\$$0"],
+    "description": "Inline math"
+  },
+  "Fraction": {
+    "prefix": "fr",
+    "body": ["\\frac{$1}{$2}$0"],
+    "description": "Fraction tag"
+  }
+}

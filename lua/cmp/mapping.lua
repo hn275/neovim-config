@@ -1,6 +1,7 @@
 -- no need to do protected call here since
 -- cmp.lua is already quitting on failure
 local cmp = require("cmp")
+local _, luasnip = pcall(require, "luasnip")
 
 -- check back space
 local check_backspace = function()
@@ -28,9 +29,6 @@ local M = {
 	["<CR>"] = cmp.mapping.confirm({ select = false }), -- only select the hovering autocomplete
 
 	["<tab>"] = cmp.mapping(function(fallback)
-		-- if vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then -- jump forward if possible
-		-- 	print("Has snippets")
-		-- 	vim.fn["UltiSnips#ExpandSnippet"]()
 		if cmp.visible() then
 			cmp.confirm({ select = true })
 		elseif check_backspace() then
@@ -39,12 +37,20 @@ local M = {
 	end, { "i", "s" }),
 
 	["jk"] = cmp.mapping(function(fallback)
-		if vim.fn["UltiSnips#CanJumpForwards"]() == 1 then -- jump forward if possible
-			vim.fn["UltiSnips#JumpForwards"]()
-		elseif check_backspace() then
+		if luasnip.jumpable(1) then
+			luasnip.jump(1)
+		else
 			fallback()
 		end
-	end, { "i", "s" }),
+	end, { "i" }),
+
+	["jj"] = cmp.mapping(function(fallback)
+		if luasnip.jumpable(-1) then
+			luasnip.jump(-1)
+		else
+			fallback()
+		end
+	end, { "i" }),
 }
 
 return M

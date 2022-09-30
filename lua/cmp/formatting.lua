@@ -33,10 +33,10 @@ local M = {
 		vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 		-- autocompletion source
 		vim_item.menu = ({
+			luasnip = "[SNIP]",
 			nvim_lsp = "[LSP]",
 			buffer = "[BUF]",
 			path = "[PATH]",
-			ultisnips = "[SNIPS]",
 		})[entry.source.name]
 		return vim_item
 	end,

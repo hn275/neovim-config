@@ -1,0 +1,7 @@
+{
+  "useState": {
+    "prefix": "tus",
+    "body": ["const [$1] = useState<$2>($3);"],
+    "description": "React Typescript `useState` hook"
+  }
+}

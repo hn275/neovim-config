@@ -74,10 +74,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  UltiSnips = {
+  LuaSnip = {
     loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/UltiSnips",
-    url = "https://github.com/SirVer/UltiSnips"
+    path = "/home/haln/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["auto-pairs"] = {
     loaded = true,
@@ -104,15 +104,15 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["cmp-nvim-ultisnips"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips",
-    url = "https://github.com/quangnguyen30192/cmp-nvim-ultisnips"
-  },
   ["cmp-path"] = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/haln/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
   ["dracula.nvim"] = {
     loaded = true,
@@ -234,10 +234,10 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/oceanic-next",
     url = "https://github.com/mhartington/oceanic-next"
   },
-  ["onedark.nvim"] = {
+  ["onedark.vim"] = {
     loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
+    path = "/home/haln/.local/share/nvim/site/pack/packer/start/onedark.vim",
+    url = "https://github.com/joshdick/onedark.vim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -308,6 +308,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/vim-polyglot",
     url = "https://github.com/sheerun/vim-polyglot"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/haln/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 
