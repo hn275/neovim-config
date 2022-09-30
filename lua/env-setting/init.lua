@@ -34,9 +34,7 @@ local options = {
 	foldcolumn = "1", -- dedicated column for fold symbols
 	foldlevelstart = 999, -- always open all folds when entering a file
 	guifont = "JetBrainsMono Nerd Font:h11",
-	-- guicursor = "a:blinkon250",
 	mouse = "",
-	-- cmdheight = 0,
 }
 
 vim.opt.shortmess:append("c")

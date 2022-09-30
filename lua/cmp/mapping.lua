@@ -28,7 +28,7 @@ local M = {
 
 	["<CR>"] = cmp.mapping.confirm({ select = false }), -- only select the hovering autocomplete
 
-	["<tab>"] = cmp.mapping(function(fallback)
+	["<TAB>"] = cmp.mapping(function(fallback)
 		if cmp.visible() then
 			cmp.confirm({ select = true })
 		elseif check_backspace() then
