@@ -52,7 +52,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- have packer manages itself
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
 	use("ThePrimeagen/harpoon") -- harpoon
-	use("ibhagwan/fzf-lua") -- fuzzy finder
+	use("nvim-telescope/telescope.nvim")
 	use("lewis6991/impatient.nvim") -- faster boot up time
 	use("kyazdani42/nvim-tree.lua") -- file explorer
 	use("lervag/vimtex") -- latex plugin
@@ -61,6 +61,7 @@ return packer.startup(function(use)
 	use("chentoast/marks.nvim") -- visuals marks
 	use("jalvesaq/nvim-r") -- R extensions for neovim
 	use("MunifTanjim/nui.nvim") -- ui plugin
+	use("williamboman/mason.nvim") -- lsp server installer
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server

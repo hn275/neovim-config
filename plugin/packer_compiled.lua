@@ -129,11 +129,6 @@ _G.packer_plugins = {
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/everforest",
     url = "https://github.com/sainnhe/everforest"
   },
-  ["fzf-lua"] = {
-    loaded = true,
-    path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/fzf-lua",
-    url = "https://github.com/ibhagwan/fzf-lua"
-  },
   ["gruvbox-material"] = {
     loaded = true,
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/gruvbox-material",
@@ -163,6 +158,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/marks.nvim",
     url = "https://github.com/chentoast/marks.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
   },
   neorg = {
     loaded = true,
@@ -263,6 +263,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/space-vim-dark",
     url = "https://github.com/liuchengxu/space-vim-dark"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["todo-comments.nvim"] = {
     loaded = true,

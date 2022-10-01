@@ -28,8 +28,9 @@ k("n", "<C-k>", "<C-w>k")
 k("n", "<C-l>", "<C-w>l")
 
 -- Fuzzy finder
-k("n", "<leader>ff", "<CMD>FzfLua files<CR>")
-k("n", "<leader>fg", "<CMD>FzfLua live_grep<CR>")
+k("n", "<leader>ff", "<CMD>Telescope find_files<CR>")
+k("n", "<leader>fg", "<CMD>Telescope live_grep<CR>")
+k("n", "<leader>fb", "<CMD>Telescope buffers<CR>")
 
 -- NvimTree
 k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")

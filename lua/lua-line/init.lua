@@ -55,8 +55,6 @@ require("lualine").setup({
 			"tabs",
 			mode = 3,
 		} },
-		lualine_b = {},
-		lualine_z = {},
 	},
 	extensions = {},
 })

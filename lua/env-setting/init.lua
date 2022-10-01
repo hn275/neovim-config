@@ -23,7 +23,7 @@ local options = {
 	expandtab = true, -- expanding tab to spaces
 	shiftwidth = 4, -- number of spaces indented
 	tabstop = 4, -- number of spaces tab key inserts
-	cursorline = true, -- highlighting current cursor lines
+	cursorline = false, -- highlighting current cursor lines
 	cursorcolumn = false, -- highlight current cursor column
 	number = true, -- line number
 	relativenumber = true, -- enable relative number
@@ -83,4 +83,6 @@ if &filetype == "javascript" || &filetype == "typescript"
 	setlocal tabstop=2
 endif
 
+" Transparent background
+au ColorScheme * hi Normal ctermbg=none guibg=none
 ]])

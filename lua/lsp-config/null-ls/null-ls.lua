@@ -19,10 +19,13 @@ null_ls.setup({
 		diagnostics.markdownlint, -- markdown
 		diagnostics.stylint, -- css, scss, sass, less
 		diagnostics.tsc, -- tsc compiler linter
+		diagnostics.golangci_lint, -- go
+		diagnostics.cpplint, -- cpp
 		-- Formatting
 		formatting.black, -- python
 		formatting.markdownlint, -- markdown
 		formatting.prettierd, -- js, jsx, ts, tsx, html, yaml
 		formatting.stylua, -- lua
+		formatting.clang_format, -- lua
 	},
 })
