@@ -1,8 +1,8 @@
 local ls = require("luasnip")
 local s = ls.snippet
-local useState = require("luasnip.javascript.utils.useState")
-local useEffect = require("luasnip.javascript.utils.useEffect")
-local docstring = require("luasnip.javascript.utils.docstring")
+local useState = require("snips.javascript.utils.useState")
+local useEffect = require("snips.javascript.utils.useEffect")
+local docstring = require("snips.javascript.utils.docstring")
 
 return {
 	s({
