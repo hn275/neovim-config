@@ -5,7 +5,7 @@ require("lualine").setup({
 		-- section_separators = { left = "", right = "" },
 		component_separators = { left = "|", right = "|" },
 		section_separators = { left = "", right = "" },
-		disabled_filetypes = {},
+		disabled_filetypes = { "NvimTree" },
 		always_divide_middle = true,
 		globalstatus = false,
 		theme = "codedark", -- default theme
@@ -45,9 +45,6 @@ require("lualine").setup({
 			path = 1,
 		} },
 		lualine_b = { "diagnostics" },
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
 		lualine_z = { "location" },
 	},
 	tabline = {
@@ -56,5 +53,4 @@ require("lualine").setup({
 			mode = 3,
 		} },
 	},
-	extensions = {},
 })
