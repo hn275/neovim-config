@@ -33,7 +33,6 @@ local options = {
 	foldmethod = "manual", -- setting fold method
 	foldcolumn = "1", -- dedicated column for fold symbols
 	foldlevelstart = 999, -- always open all folds when entering a file
-	guifont = "JetBrainsMono Nerd Font:h11",
 	mouse = "",
 }
 
@@ -52,20 +51,25 @@ vim.cmd([[ autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */} ]
 vim.cmd([[ autocmd FileType scss setlocal commentstring="/* \ %s\ */" ]])
 
 vim.api.nvim_create_autocmd({ "BufWrite" }, {
-	-- pattern = filetypes,
+	pattern = { "*.*" },
 	callback = function()
 		vim.lsp.buf.format()
 	end,
 })
 
+-- Neovide configuration
 vim.cmd([[
 
 if exists("g:neovide")
-	let g:neovide_transparency = 0.95 "Transparency
-	let g:neovide_confirm_quit = v:true "Confirm before quitting so I don't accidentally close it with :wq
-	let g:neovide_remember_window_size = v:true "So it does not randomly resize it
-	let g:neovide_hide_mouse_when_typing = v:true
+
+let g:neovide_transparency=0.85 "Transparency
+let g:neovide_confirm_quit=v:true "Confirm before quitting so I don't accidentally close it with :wq
+let g:neovide_remember_window_size=v:true "So it does not randomly resize it
+let g:neovide_hide_mouse_when_typing=v:true
+set guifont=JetBrainsMono_Nerd_Font:h15
+
 endif
+
 ]])
 
 vim.cmd([[

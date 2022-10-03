@@ -1,7 +1,6 @@
 local opts = {
 	nord_contrast = true,
 	nord_borders = true,
-	nord_disable_background = true,
 	nord_cursorline_transparent = false,
 	nord_enable_sidebar_background = true,
 	nord_italic = true,
@@ -11,6 +10,14 @@ local opts = {
 for key, val in pairs(opts) do
 	vim.api.nvim_set_var(key, val)
 end
+
+vim.cmd([[
+if has('neovide')
+	let g:nord_disable_background = v:true
+else
+	let g:nord_disable_background = v:false
+endif
+]])
 
 require("nord").set()
 -- setting lualine color theme
