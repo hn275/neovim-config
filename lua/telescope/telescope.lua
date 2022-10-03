@@ -15,6 +15,6 @@ telescope.setup({
 	},
 })
 
-k("n", "<leader>ff", "<CMD>Telescope find_files theme=dropdown<CR>")
+k("n", "<leader>ff", "<CMD>Telescope find_files theme=cursor<CR>")
 k("n", "<leader>fg", "<CMD>Telescope live_grep theme=cursor<CR>")
 k("n", "<leader>fb", "<CMD>Telescope buffers theme=cursor<CR>")

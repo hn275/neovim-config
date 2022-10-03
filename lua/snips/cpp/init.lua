@@ -3,11 +3,17 @@ local s = ls.snippet
 local t = ls.text_node
 local i = ls.insert_node
 
+local file_name = vim.fn.expand("%")
+local today = os.date("%x")
+
 return {
 	s({
 		trig = "!",
 		name = "cpp main function boiler plate",
 	}, {
+		t({ "/* " .. file_name, "\t" }),
+		i(1),
+		t({ "", "\tHal N - " .. today, "*/", "", "" }),
 		t({ "int main() {", "\t" }),
 		i(0),
 		t({ "", "\treturn 0;", "}" }),

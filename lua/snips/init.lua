@@ -4,8 +4,11 @@ if not luasnip_ok then
 end
 
 local js_snips = require("snips.javascript")
+local ts_snips = require("snips.typescript")
 local cpp_snips = require("snips.cpp")
 local norg_snips = require("snips.norg")
+local go_snips = require("snips.go")
+local tex_snips = require("snips.tex")
 
 local map_snippets_ft = {
 	{
@@ -19,6 +22,18 @@ local map_snippets_ft = {
 	{
 		filetype = "norg",
 		snippets = norg_snips,
+	},
+	{
+		filetype = "go",
+		snippets = go_snips,
+	},
+	{
+		filetype = "tex",
+		snippets = tex_snips,
+	},
+	{
+		filetype = "typescript",
+		snippets = ts_snips,
 	},
 }
 

@@ -1,7 +1,7 @@
 -- no need to do protected call here since
 -- cmp.lua is already quitting on failure
 local cmp = require("cmp")
-local _, luasnip = pcall(require, "luasnip")
+local luasnip = require("luasnip")
 
 -- check back space
 local check_backspace = function()
@@ -10,13 +10,13 @@ local check_backspace = function()
 end
 
 local M = {
-	["<C-k>"] = cmp.mapping.select_prev_item(), -- next item
+	["<C-p>"] = cmp.mapping.select_prev_item(), -- next item
 
-	["<C-j>"] = cmp.mapping.select_next_item(), -- previous item
+	["<C-n>"] = cmp.mapping.select_next_item(), -- previous item
 
-	["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+	["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 
-	["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+	["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 
 	["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 	["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` to remove the default `<C-y>` mapping.
