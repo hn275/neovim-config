@@ -5,6 +5,15 @@ local i = ls.insert_node
 
 return {
 	s({
+		trig = "!",
+		name = "cpp main function boiler plate",
+	}, {
+		t({ "int main() {", "\t" }),
+		i(0),
+		t({ "", "\treturn 0;", "}" }),
+	}),
+
+	s({
 		trig = "include",
 		name = "Include statement",
 	}, {
