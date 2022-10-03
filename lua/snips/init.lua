@@ -5,6 +5,7 @@ end
 
 local js_snips = require("snips.javascript")
 local cpp_snips = require("snips.cpp")
+local norg_snips = require("snips.norg")
 
 local map_snippets_ft = {
 	{
@@ -14,6 +15,10 @@ local map_snippets_ft = {
 	{
 		filetype = "cpp",
 		snippets = cpp_snips,
+	},
+	{
+		filetype = "norg",
+		snippets = norg_snips,
 	},
 }
 

@@ -1,7 +1,0 @@
-{
-  "@code .. @end": {
-    "prefix": "code",
-    "body": ["@code $1", "\t$2", "@end"],
-    "description": "Adding a block of code"
-  }
-}
