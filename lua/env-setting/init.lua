@@ -29,7 +29,6 @@ local env_opts = {
 	relativenumber = true, -- enable relative number
 	numberwidth = 3, -- set number column width
 	signcolumn = "yes:1", -- show sign column when there is a sign
-	wrap = false, -- no wrapping,
 	foldmethod = "manual", -- setting fold method
 	foldcolumn = "1", -- dedicated column for fold symbols
 	foldlevelstart = 999, -- always open all folds when entering a file
@@ -49,6 +48,9 @@ vim.opt.guifont = font_name
 for key, val in ipairs(env_opts) do
 	vim.api.nvim_set_var(key, val)
 end
+
+-- For some reason, this needs to be set with vim.cmd
+vim.cmd([[set nowrap]])
 --
 
 -- Neovide config
