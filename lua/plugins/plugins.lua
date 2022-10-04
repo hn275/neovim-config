@@ -58,7 +58,6 @@ return packer.startup(function(use)
 	use("lervag/vimtex") -- latex plugin
 	use("nvim-neorg/neorg") -- neorg
 	use("toppair/reach.nvim") -- mark ui
-	use("chentoast/marks.nvim") -- visuals marks
 	use("jalvesaq/nvim-r") -- R extensions for neovim
 	use("MunifTanjim/nui.nvim") -- ui plugin
 	use("williamboman/mason.nvim") -- lsp server installer
