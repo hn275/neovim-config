@@ -23,15 +23,7 @@ catppuccin.setup({
 	},
 })
 
-vim.cmd([[ colorscheme catppuccin ]])
+vim.cmd.colorscheme("catppuccin")
 
-local has_lualine, lualine = pcall(require, "lualine")
-if not has_lualine then
-	return
-end
-
-lualine.setup({
-	options = {
-		theme = "palenight", -- default theme
-	},
-})
+local setlualine = require("themes.util.setlualine")
+setlualine("palenight")

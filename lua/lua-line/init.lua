@@ -8,7 +8,7 @@ require("lualine").setup({
 		disabled_filetypes = { "NvimTree" },
 		always_divide_middle = true,
 		globalstatus = false,
-		theme = "codedark", -- default theme
+		theme = "auto", -- default theme
 	},
 	sections = {
 		lualine_a = { "mode" },

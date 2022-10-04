@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/emmet-vim",
     url = "https://github.com/mattn/emmet-vim"
   },
-  everforest = {
-    loaded = true,
-    path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/everforest",
-    url = "https://github.com/sainnhe/everforest"
-  },
   ["gruvbox-material"] = {
     loaded = true,
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/gruvbox-material",
@@ -224,11 +219,6 @@ _G.packer_plugins = {
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["oceanic-next"] = {
-    loaded = true,
-    path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/oceanic-next",
-    url = "https://github.com/mhartington/oceanic-next"
-  },
   ["onedark.vim"] = {
     loaded = true,
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/onedark.vim",
@@ -264,11 +254,6 @@ _G.packer_plugins = {
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/reach.nvim",
     url = "https://github.com/toppair/reach.nvim"
   },
-  ["space-vim-dark"] = {
-    loaded = true,
-    path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/space-vim-dark",
-    url = "https://github.com/liuchengxu/space-vim-dark"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -283,11 +268,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["tokyonight.nvim"] = {
-    loaded = true,
-    path = "/Users/halnguyen/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
-    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["vim-commentary"] = {
     loaded = true,
