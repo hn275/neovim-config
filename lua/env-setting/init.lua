@@ -26,6 +26,7 @@ local env_opts = {
 	cursorline = false, -- highlighting current cursor lines
 	cursorcolumn = false, -- highlight current cursor column
 	number = true, -- line number
+	wrap = false, -- no wrap
 	relativenumber = true, -- enable relative number
 	numberwidth = 3, -- set number column width
 	signcolumn = "yes:1", -- show sign column when there is a sign
@@ -34,6 +35,10 @@ local env_opts = {
 	foldlevelstart = 999, -- always open all folds when entering a file
 	mouse = "",
 }
+
+for key, val in pairs(env_opts) do
+	vim.opt[key] = val
+end
 
 -- Font size for Mac
 local has_mac = vim.fn.has("macunix")
@@ -44,14 +49,6 @@ else
 	font_name = font_name .. ":h10.5"
 end
 vim.opt.guifont = font_name
-
-for key, val in ipairs(env_opts) do
-	vim.api.nvim_set_var(key, val)
-end
-
--- For some reason, this needs to be set with vim.cmd
-vim.cmd([[set nowrap]])
---
 
 -- Neovide config
 local has_neovide = vim.fn.exists("neovide")
@@ -103,5 +100,5 @@ if &filetype == "javascript" || &filetype == "typescript"
 endif
 
 " Transparent background
-au ColorScheme * hi Normal ctermbg=none guibg=none
+" au ColorScheme * hi Normal ctermbg=none guibg=none
 ]])
