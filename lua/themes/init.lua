@@ -16,6 +16,7 @@ set background=dark
 -- require("themes.nightfly")
 -- require("themes.nightfox")
 require("themes.nord")
+require("themes.onenord")
 -- require("themes.oceanicnext")
 -- require("themes.onedark")
 -- require("themes.tokyonight")

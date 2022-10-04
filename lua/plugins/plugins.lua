@@ -71,7 +71,12 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
 	-- MARKDOWN PREVIEW --
-	use("iamcco/markdown-preview.nvim")
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 	-- NVIM TREE SITTER --
 	use("itchyny/vim-gitbranch")
 	use("ryanoasis/vim-devicons")
@@ -96,6 +101,7 @@ return packer.startup(function(use)
 	use("shaunsingh/nord.nvim")
 	use("tyrannicaltoucan/vim-deep-space")
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "rmehri01/onenord.nvim" })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
