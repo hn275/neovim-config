@@ -1,4 +1,4 @@
-local luasnip_ok, luasnip = pcall(require, "luasnip")
+local luasnip_ok, ls = pcall(require, "luasnip")
 if not luasnip_ok then
 	return
 end
@@ -38,5 +38,5 @@ local map_snippets_ft = {
 }
 
 for _, v in ipairs(map_snippets_ft) do
-	luasnip.add_snippets(v.filetype, v.snippets)
+	ls.add_snippets(v.filetype, v.snippets)
 end

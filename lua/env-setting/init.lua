@@ -41,46 +41,27 @@ for key, val in pairs(env_opts) do
 end
 
 -- Font size for Mac
-local has_mac = vim.fn.has("macunix")
-local font_name = "JetBrainsMono Nerd Font"
-if has_mac == 1 then
-	font_name = font_name .. ":h15"
-else
-	font_name = font_name .. ":h10.5"
-end
-vim.opt.guifont = font_name
+require("env-setting.mac")
 
 -- Neovide config
-local has_neovide = vim.fn.exists("neovide")
-if has_neovide == 1 then
-	local neovide_opt = {
-		neovide_transparency = 0.9,
-		neovide_confirm_quit = true,
-		neovide_remember_window_size = true,
-		neovide_hide_mouse_when_typing = true,
-	}
-	for key, val in pairs(neovide_opt) do
-		vim.api.nvim_set_var(key, val)
-	end
-end
---
+require("env-setting.neovide")
 
 vim.opt.shortmess:append("c")
 
 vim.cmd([[set iskeyword+=-]]) -- turn key-word into 1 word for `dw` instead of 2 (by default neovim reads words-like-this 3 words)
 
--- for tsx - jsx files
-vim.cmd([[ autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */} ]])
---
-
--- for scss files
-vim.cmd([[ autocmd FileType scss setlocal commentstring="/* \ %s\ */" ]])
---
-
 vim.api.nvim_create_autocmd({ "BufWrite" }, {
 	pattern = { "*.*" },
 	callback = function()
 		vim.lsp.buf.format()
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = { "*.js", "*.ts" },
+	callback = function()
+		vim.api.nvim_buf_set_option(0, "tabstop", 2)
+		vim.api.nvim_buf_set_option(0, "shiftwidth", 2)
 	end,
 })
 
@@ -93,11 +74,6 @@ augroup remember_folds
     autocmd BufWinEnter *.* if &ft !=# 'help' | silent! loadview | endif
 augroup END
 
-" 2 space tabs
-if &filetype == "javascript" || &filetype == "typescript"
-	setlocal shiftwidth=2
-	setlocal tabstop=2
-endif
-
-" Transparent background
 ]])
+
+require("env-setting.tabline")
