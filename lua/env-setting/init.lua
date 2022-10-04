@@ -75,5 +75,3 @@ augroup remember_folds
 augroup END
 
 ]])
-
-require("env-setting.tabline")

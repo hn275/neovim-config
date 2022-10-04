@@ -47,10 +47,11 @@ require("lualine").setup({
 		lualine_b = { "diagnostics" },
 		lualine_z = { "location" },
 	},
-	-- tabline = {
-	-- 	lualine_a = { {
-	-- 		"tabs",
-	-- 		mode = 3,
-	-- 	} },
-	-- },
+	tabline = {
+		lualine_a = { {
+			"tabs",
+			max_length = vim.o.columns,
+			mode = 3,
+		} },
+	},
 })
