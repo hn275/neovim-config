@@ -1,4 +1,4 @@
-local options = {
+local env_opts = {
 	backup = false, -- creates backup
 	clipboard = "unnamedplus", -- allow accessing the clipboard for neovim
 	cmdheight = 1, -- adding height to the command line
@@ -36,19 +36,47 @@ local options = {
 	mouse = "",
 }
 
-vim.opt.shortmess:append("c")
-
-for key, val in pairs(options) do
-	vim.opt[key] = val
+-- Font size for Mac
+local has_mac = vim.fn.has("macunix")
+local font_name = "JetBrainsMono Nerd Font"
+if has_mac == 1 then
+	font_name = font_name .. ":h15"
+else
+	font_name = font_name .. ":h10.5"
 end
+vim.opt.guifont = font_name
+
+for key, val in ipairs(env_opts) do
+	vim.api.nvim_set_var(key, val)
+end
+--
+
+-- Neovide config
+local has_neovide = vim.fn.exists("neovide")
+if has_neovide == 1 then
+	local neovide_opt = {
+		neovide_transparency = 0.9,
+		neovide_confirm_quit = true,
+		neovide_remember_window_size = true,
+		neovide_hide_mouse_when_typing = true,
+	}
+	for key, val in pairs(neovide_opt) do
+		vim.api.nvim_set_var(key, val)
+	end
+end
+--
+
+vim.opt.shortmess:append("c")
 
 vim.cmd([[set iskeyword+=-]]) -- turn key-word into 1 word for `dw` instead of 2 (by default neovim reads words-like-this 3 words)
 
 -- for tsx - jsx files
 vim.cmd([[ autocmd FileType javascript.jsx setlocal commentstring={/*\ %s\ */} ]])
+--
 
 -- for scss files
 vim.cmd([[ autocmd FileType scss setlocal commentstring="/* \ %s\ */" ]])
+--
 
 vim.api.nvim_create_autocmd({ "BufWrite" }, {
 	pattern = { "*.*" },
@@ -56,21 +84,6 @@ vim.api.nvim_create_autocmd({ "BufWrite" }, {
 		vim.lsp.buf.format()
 	end,
 })
-
--- Neovide configuration
-vim.cmd([[
-
-if exists("g:neovide")
-
-let g:neovide_transparency=0.90 "Transparency
-let g:neovide_confirm_quit=v:true "Confirm before quitting so I don't accidentally close it with :wq
-let g:neovide_remember_window_size=v:true "So it does not randomly resize it
-let g:neovide_hide_mouse_when_typing=v:true
-set guifont=JetBrainsMono_Nerd_Font:h15
-
-endif
-
-]])
 
 vim.cmd([[
 " Save fold
