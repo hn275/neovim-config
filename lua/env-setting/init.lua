@@ -100,5 +100,4 @@ if &filetype == "javascript" || &filetype == "typescript"
 endif
 
 " Transparent background
-" au ColorScheme * hi Normal ctermbg=none guibg=none
 ]])

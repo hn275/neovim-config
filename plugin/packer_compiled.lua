@@ -239,6 +239,11 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/onenord.nvim",
     url = "https://github.com/rmehri01/onenord.nvim"
   },
+  ["oxocarbon-lua.nvim"] = {
+    loaded = true,
+    path = "/home/haln/.local/share/nvim/site/pack/packer/start/oxocarbon-lua.nvim",
+    url = "https://github.com/B4mbus/oxocarbon-lua.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/packer.nvim",

@@ -102,7 +102,7 @@ return packer.startup(function(use)
 	use("tyrannicaltoucan/vim-deep-space")
 	use({ "catppuccin/nvim", as = "catppuccin" })
 	use({ "rmehri01/onenord.nvim" })
-
+	use("B4mbus/oxocarbon-lua.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
