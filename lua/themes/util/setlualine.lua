@@ -1,6 +1,6 @@
 return function(theme)
 	if not theme then
-		theme = "onedark"
+		theme = "auto"
 	end
 
 	local has_lualine, lualine = pcall(require, "lualine")
