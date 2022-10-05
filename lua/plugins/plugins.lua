@@ -89,7 +89,7 @@ return packer.startup(function(use)
 	use("Mofiqul/dracula.nvim")
 	use("joshdick/onedark.vim")
 	use("shaunsingh/nord.nvim")
-	use("marko-cerovac/material.nvim")
+	use("glepnir/oceanic-material")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

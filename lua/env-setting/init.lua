@@ -74,4 +74,7 @@ augroup remember_folds
     autocmd BufWinEnter *.* if &ft !=# 'help' | silent! loadview | endif
 augroup END
 
+" run time path
+set rtp+=./start
+
 ]])
