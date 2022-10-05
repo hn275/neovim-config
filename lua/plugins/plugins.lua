@@ -70,6 +70,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
+	use("saadparwaiz1/cmp_luasnip") -- for luasnip
 	-- MARKDOWN PREVIEW --
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -87,7 +88,6 @@ return packer.startup(function(use)
 	use("windwp/nvim-ts-autotag") -- auto close tsx and jsx tags
 	-- SNIPPETS --
 	use("L3MON4D3/LuaSnip") -- snippet engine
-	use("saadparwaiz1/cmp_luasnip")
 	-- THEME PLUGINS --
 	use("EdenEast/nightfox.nvim")
 	use("Mofiqul/dracula.nvim")
@@ -97,7 +97,7 @@ return packer.startup(function(use)
 	use("shaunsingh/nord.nvim")
 	use("tyrannicaltoucan/vim-deep-space")
 	use({ "catppuccin/nvim", as = "catppuccin" })
-	use({ "rmehri01/onenord.nvim" })
+	use("rmehri01/onenord.nvim")
 	use("B4mbus/oxocarbon-lua.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

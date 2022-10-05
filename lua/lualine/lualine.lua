@@ -51,7 +51,12 @@ require("lualine").setup({
 		lualine_a = { {
 			"tabs",
 			max_length = vim.o.columns,
-			mode = 3,
+			mode = 1,
 		} },
 	},
 })
+
+-- Rename tab
+local keymap = require("util.keymap").keymap
+local tab_name = require("lualine.tab-rename")
+keymap("n", "tn", tab_name)

@@ -16,7 +16,7 @@ vim.g.maplocalleader = " "
 
 -- Tabs --
 k("n", "tt", "<CMD>tabe<CR>")
-k("n", "tr", "<CMD>tabclose<CR>")
+k("n", "tw", "<CMD>tabclose<CR>")
 
 -- quit
 k("n", "qq", "<CMD>q!<CR>")
