@@ -8,14 +8,8 @@ endif
 set background=dark
 ]])
 
--- require("themes.catppuccin")
 -- require("themes.myspace")
 -- require("themes.dracula")
--- require("themes.gruvbox")
--- require("themes.nightfly")
--- require("themes.nightfox")
 -- require("themes.nord")
--- require("themes.onenord")
 -- require("themes.onedark")
--- require("themes.tokyonight")
-require("themes.oxocarbon")
+require("themes.material.material")

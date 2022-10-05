@@ -2,11 +2,18 @@
 local k = require("util.keymap").keymap
 
 -- Unbinding key
-k("n", "<C-t>", "<NOP>")
-k("n", "qq", "<NOP>")
-k("n", "ZQ", "<NOP>")
+local normal_keys = {
+	"<C-t>",
+	"qq",
+	"ZQ",
+	"s",
+	"S",
+}
+for _, key in pairs(normal_keys) do
+	k("n", key, "<NOP>")
+end
 
--- Do not yank when deleteing with x
+-- Do not yank when deleting with x
 k("n", "x", '"_x')
 
 -- Remapping leader key
@@ -16,7 +23,15 @@ vim.g.maplocalleader = " "
 
 -- Tabs --
 k("n", "tt", "<CMD>tabe<CR>")
-k("n", "tw", "<CMD>tabclose<CR>")
+k("n", "tr", "<CMD>tabclose<CR>")
+
+-- Splits --
+k("n", "si", "<CMD>split<CR>")
+k("n", "ss", "<CMD>vsplit<CR>")
+k("n", "sh", "<C-w><S-h>")
+k("n", "sj", "<C-w><S-j>")
+k("n", "sk", "<C-w><S-k>")
+k("n", "sl", "<C-w><S-l>")
 
 -- quit
 k("n", "qq", "<CMD>q!<CR>")
@@ -27,11 +42,6 @@ k("n", "<C-j>", "<C-w>j")
 k("n", "<C-k>", "<C-w>k")
 k("n", "<C-l>", "<C-w>l")
 
--- Fuzzy finder
-k("n", "<leader>ff", "<CMD>Telescope find_files<CR>")
-k("n", "<leader>fg", "<CMD>Telescope live_grep<CR>")
-k("n", "<leader>fb", "<CMD>Telescope buffers<CR>")
-
 -- NvimTree
 k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")
 
@@ -39,8 +49,3 @@ k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")
 -- stay in indent mode
 k("v", "<", "<gv")
 k("v", ">", ">gv")
-
--- Visual text
-local virtualtext_lsp = require("lsp-config.utils.virtualtext")
-virtualtext_lsp.init()
-k("n", "<leader>v", virtualtext_lsp.toggle, { noremap = true })

@@ -3,7 +3,7 @@ local vt_ok, _ = pcall(vim.api.nvim_get_var, "vt") -- vt stands for virtual_text
 
 M.init = function()
 	if not vt_ok then
-		vim.api.nvim_set_var("vt", true) -- enable by default
+		vim.api.nvim_set_var("vt", false) -- enable by default
 	end
 end
 

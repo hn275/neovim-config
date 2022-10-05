@@ -10,11 +10,13 @@ telescope.setup({
 		layout_strategy = "vertical",
 		prompt_prefix = " > ",
 		path_display = { "truncate" },
-		preview = false,
-		scroll_strategy = "limit",
+		scroll_strategy = "cycle",
+		border = true,
 	},
 })
 
-k("n", "<leader>ff", "<CMD>Telescope find_files theme=cursor<CR>")
+k("n", "<leader>ff", "<CMD>Telescope find_files theme=ivy<CR>")
 k("n", "<leader>fg", "<CMD>Telescope live_grep theme=cursor<CR>")
-k("n", "<leader>fb", "<CMD>Telescope buffers theme=cursor<CR>")
+k("n", "<leader>fb", "<CMD>Telescope buffers theme=dropdown<CR>")
+k("n", "<leader>fd", "<CMD>Telescope diagnostics theme=cursor<CR>")
+k("n", "<leader>fm", "<CMD>Telescope marks theme=cursor<CR>")

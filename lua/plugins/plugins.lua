@@ -47,17 +47,14 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim") -- toggle term
 	use("folke/todo-comments.nvim") -- todo-comments
 	use("jiangmiao/auto-pairs") -- auto pairs
-	use("mattn/emmet-vim") -- emmet-vim for html tags
 	use("tpope/vim-commentary") -- comment toggler
 	use("wbthomason/packer.nvim") -- have packer manages itself
 	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
-	use("ThePrimeagen/harpoon") -- harpoon
 	use("nvim-telescope/telescope.nvim")
 	use("lewis6991/impatient.nvim") -- faster boot up time
 	use("kyazdani42/nvim-tree.lua") -- file explorer
 	use("lervag/vimtex") -- latex plugin
 	use("nvim-neorg/neorg") -- neorg
-	use("toppair/reach.nvim") -- mark ui
 	use("jalvesaq/nvim-r") -- R extensions for neovim
 	use("MunifTanjim/nui.nvim") -- ui plugin
 	use("williamboman/mason.nvim") -- lsp server installer
@@ -89,16 +86,10 @@ return packer.startup(function(use)
 	-- SNIPPETS --
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	-- THEME PLUGINS --
-	use("EdenEast/nightfox.nvim")
 	use("Mofiqul/dracula.nvim")
-	use("bluz71/vim-nightfly-guicolors")
 	use("joshdick/onedark.vim")
-	use("sainnhe/gruvbox-material")
 	use("shaunsingh/nord.nvim")
-	use("tyrannicaltoucan/vim-deep-space")
-	use({ "catppuccin/nvim", as = "catppuccin" })
-	use("rmehri01/onenord.nvim")
-	use("B4mbus/oxocarbon-lua.nvim")
+	use("marko-cerovac/material.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

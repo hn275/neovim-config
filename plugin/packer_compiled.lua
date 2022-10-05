@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
-  catppuccin = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/catppuccin",
-    url = "https://github.com/catppuccin/nvim"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -119,21 +114,6 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
   },
-  ["emmet-vim"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/emmet-vim",
-    url = "https://github.com/mattn/emmet-vim"
-  },
-  ["gruvbox-material"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/gruvbox-material",
-    url = "https://github.com/sainnhe/gruvbox-material"
-  },
-  harpoon = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/harpoon",
-    url = "https://github.com/ThePrimeagen/harpoon"
-  },
   ["impatient.nvim"] = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/impatient.nvim",
@@ -154,15 +134,15 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "/home/haln/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
+  },
   neorg = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/neorg",
     url = "https://github.com/nvim-neorg/neorg"
-  },
-  ["nightfox.nvim"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/nightfox.nvim",
-    url = "https://github.com/EdenEast/nightfox.nvim"
   },
   ["nord.nvim"] = {
     loaded = true,
@@ -224,16 +204,6 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/onedark.vim",
     url = "https://github.com/joshdick/onedark.vim"
   },
-  ["onenord.nvim"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/onenord.nvim",
-    url = "https://github.com/rmehri01/onenord.nvim"
-  },
-  ["oxocarbon-lua.nvim"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/oxocarbon-lua.nvim",
-    url = "https://github.com/B4mbus/oxocarbon-lua.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -248,11 +218,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
-  },
-  ["reach.nvim"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/reach.nvim",
-    url = "https://github.com/toppair/reach.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -274,11 +239,6 @@ _G.packer_plugins = {
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/vim-commentary",
     url = "https://github.com/tpope/vim-commentary"
   },
-  ["vim-deep-space"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/vim-deep-space",
-    url = "https://github.com/tyrannicaltoucan/vim-deep-space"
-  },
   ["vim-devicons"] = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/vim-devicons",
@@ -288,11 +248,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/haln/.local/share/nvim/site/pack/packer/start/vim-gitbranch",
     url = "https://github.com/itchyny/vim-gitbranch"
-  },
-  ["vim-nightfly-guicolors"] = {
-    loaded = true,
-    path = "/home/haln/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
-    url = "https://github.com/bluz71/vim-nightfly-guicolors"
   },
   ["vim-polyglot"] = {
     loaded = true,
