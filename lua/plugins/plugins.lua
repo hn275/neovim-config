@@ -90,6 +90,9 @@ return packer.startup(function(use)
 	use("joshdick/onedark.vim")
 	use("shaunsingh/nord.nvim")
 	use("glepnir/oceanic-material")
+
+	-- My plugin
+	use("~/plugins/git.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
