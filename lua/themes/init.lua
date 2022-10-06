@@ -12,4 +12,5 @@ set background=dark
 -- require("themes.dracula")
 -- require("themes.nord")
 -- require("themes.onedark")
-require("themes.oceanic-material")
+-- require("themes.oceanic-material")
+require("themes.ayu")
