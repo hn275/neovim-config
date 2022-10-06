@@ -27,4 +27,13 @@ return {
 		t(": "),
 		i(0),
 	}),
+
+	s({
+		trig = "require",
+		name = "importing a package",
+	}, {
+		t('require("'),
+		i(1),
+		t('")'),
+	}),
 }

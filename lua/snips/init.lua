@@ -9,7 +9,7 @@ local cpp_snips = require("snips.cpp")
 local norg_snips = require("snips.norg")
 local go_snips = require("snips.go")
 local tex_snips = require("snips.tex")
-local lua_snips = require("snips.lua")
+local lua_snips = require("snips.luaa")
 
 local map_snippets_ft = {
 	{
