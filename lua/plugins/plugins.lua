@@ -44,7 +44,6 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	-- PLUGINS --
-	use("akinsho/toggleterm.nvim") -- toggle term
 	use("folke/todo-comments.nvim") -- todo-comments
 	use("jiangmiao/auto-pairs") -- auto pairs
 	use("tpope/vim-commentary") -- comment toggler

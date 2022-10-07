@@ -49,3 +49,10 @@ k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")
 -- stay in indent mode
 k("v", "<", "<gv")
 k("v", ">", ">gv")
+
+-- Terminal mode
+k("n", "<C-t>", function()
+	vim.cmd([[split | terminal]])
+	vim.o.number = false
+	vim.o.relativenumber = false
+end)
