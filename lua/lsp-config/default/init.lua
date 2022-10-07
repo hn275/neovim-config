@@ -36,7 +36,7 @@ M.default_settings = function()
 	end
 
 	local config = {
-		virtual_text = true, -- virtual text on diagnostic
+		virtual_text = false, -- virtual text on diagnostic
 		signs = { active = signs }, -- show signs/icons
 		underline = true,
 		severity_sort = true,

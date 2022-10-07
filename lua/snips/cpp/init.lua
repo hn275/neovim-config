@@ -7,7 +7,6 @@ local file_name = vim.fn.expand("%")
 local today = os.date("%x")
 
 return {
-	--
 	s({
 		trig = "!",
 		name = "cpp main function boiler plate",
@@ -51,5 +50,15 @@ return {
 		t(" {"),
 		i(3),
 		t({ "};", "" }),
+	}),
+
+	s({
+		trig = "//",
+		name = "C++ style comments",
+	}, {
+		t("/* "),
+		i(1),
+		t(" */"),
+		i(0),
 	}),
 }
