@@ -16,11 +16,11 @@ null_ls.setup({
 		codeAction.eslint_d, -- js, jsx, ts, tsx
 		-- Diagnostics
 		-- diagnostics.eslint_d, -- js, jsx, ts, tsx
-		diagnostics.markdownlint, -- markdown
-		diagnostics.stylint, -- css, scss, sass, less
-		diagnostics.tsc, -- tsc compiler linter
-		diagnostics.golangci_lint, -- go
-		diagnostics.cpplint, -- cpp
+		-- diagnostics.markdownlint, -- markdown
+		-- diagnostics.stylint, -- css, scss, sass, less
+		-- diagnostics.tsc, -- tsc compiler linter
+		-- diagnostics.golangci_lint, -- go
+		-- diagnostics.cpplint, -- cpp
 		-- Formatting
 		formatting.black, -- python
 		formatting.markdownlint, -- markdown
