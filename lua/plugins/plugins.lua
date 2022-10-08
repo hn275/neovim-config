@@ -94,6 +94,7 @@ return packer.startup(function(use)
 
 	-- My plugin
 	use("~/plugins/git.nvim")
+	use("~/plugins/chtsh.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

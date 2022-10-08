@@ -56,3 +56,5 @@ k("n", "<C-t>", function()
 	vim.o.number = false
 	vim.o.relativenumber = false
 end)
+
+k("t", "<Esc>", "<C-\\><C-N>")

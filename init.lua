@@ -15,3 +15,7 @@ require("neorg.neorg")
 require("vimtex")
 require("telescope.telescope")
 require("mason").setup()
+require("git").setup()
+-- require('chtsh').setup({
+--     lang = { 'python' }
+-- })
