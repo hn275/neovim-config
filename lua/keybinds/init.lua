@@ -25,22 +25,22 @@ vim.g.maplocalleader = " "
 k("n", "tt", "<CMD>tabe<CR>")
 k("n", "tr", "<CMD>tabclose<CR>")
 
--- Splits --
+-- Buffers --
 k("n", "si", "<CMD>split<CR>")
 k("n", "ss", "<CMD>vsplit<CR>")
-k("n", "sh", "<C-w><S-h>")
-k("n", "sj", "<C-w><S-j>")
-k("n", "sk", "<C-w><S-k>")
-k("n", "sl", "<C-w><S-l>")
+-- relocate
+k("n", "<C-h>", "<C-w><S-h>")
+k("n", "<C-j>", "<C-w><S-j>")
+k("n", "<C-k>", "<C-w><S-k>")
+k("n", "<C-l>", "<C-w><S-l>")
+-- navigate
+k("n", "sh", "<C-w>h")
+k("n", "sj", "<C-w>j")
+k("n", "sk", "<C-w>k")
+k("n", "sl", "<C-w>l")
 
 -- quit
 k("n", "qq", "<CMD>q!<CR>")
-
--- Navigating between windows
-k("n", "<C-h>", "<C-w>h")
-k("n", "<C-j>", "<C-w>j")
-k("n", "<C-k>", "<C-w>k")
-k("n", "<C-l>", "<C-w>l")
 
 -- NvimTree
 k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")
@@ -50,9 +50,16 @@ k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")
 k("v", "<", "<gv")
 k("v", ">", ">gv")
 
--- Terminal mode
+-- Terminal --
+-- Spawn a terminal
 k("n", "<C-t>", function()
-	vim.cmd([[vsplit | terminal]])
+	local cmd = ""
+	if vim.o.columns > 100 then
+		cmd = "vsplit | terminal"
+	else
+		cmd = "split | terminal"
+	end
+	vim.cmd(cmd)
 	vim.o.number = false
 	vim.o.relativenumber = false
 end)
