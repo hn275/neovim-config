@@ -29,14 +29,25 @@ return {
 	}),
 
 	s({
-		trig = "string",
-		name = "std::string uniform initialization",
+		trig = "str",
+		name = "std::string",
 	}, {
-		t("std::string "),
-		i(1),
-		t(' {"'),
-		i(2),
-		t({ '"};', "" }),
+		t("std::string"),
+	}),
+
+	s({
+		trig = "cout",
+		name = "std::cout",
+	}, {
+		t("std::cout << "),
+		i(0),
+	}),
+
+	s({
+		trig = "end",
+		name = "std::endl;",
+	}, {
+		t({ "std::endl;", "" }),
 	}),
 
 	s({
@@ -60,5 +71,27 @@ return {
 		i(1),
 		t(" */"),
 		i(0),
+	}),
+
+	s({
+		trig = "for",
+		name = "C++ for loop",
+	}, {
+		t("for ("),
+		i(1),
+		t({ ") {", "\t" }),
+		i(2),
+		t({ "", "}" }),
+	}),
+
+	s({
+		trig = "if",
+		name = "C++ if statement",
+	}, {
+		t("if ("),
+		i(1),
+		t({ ") {", "\t" }),
+		i(2),
+		t({ "", "}" }),
 	}),
 }
