@@ -46,15 +46,14 @@ k("n", "<C-l>", "<C-w>l")
 k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")
 
 -- Visual Mode --
--- stay in indent mode
+-- stay in visual mode while indenting
 k("v", "<", "<gv")
 k("v", ">", ">gv")
 
 -- Terminal mode
 k("n", "<C-t>", function()
-	vim.cmd([[split | terminal]])
+	vim.cmd([[vsplit | terminal]])
 	vim.o.number = false
 	vim.o.relativenumber = false
 end)
-
-k("t", "<Esc>", "<C-\\><C-N>")
+k("t", "<Esc>", "<C-\\><C-N>") -- to normal mode in term

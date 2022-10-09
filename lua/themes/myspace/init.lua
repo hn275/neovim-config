@@ -7,7 +7,3 @@ for key, value in pairs(opts) do
 end
 
 vim.cmd([[colorscheme myspace]])
-
-local setlualine = require("themes.util.setlualine")
-
-setlualine("material")

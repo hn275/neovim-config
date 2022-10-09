@@ -48,7 +48,6 @@ return packer.startup(function(use)
 	use("jiangmiao/auto-pairs") -- auto pairs
 	use("tpope/vim-commentary") -- comment toggler
 	use("wbthomason/packer.nvim") -- have packer manages itself
-	use({ "nvim-lualine/lualine.nvim", requires = { opt = true } }) -- lua line
 	use("nvim-telescope/telescope.nvim")
 	use("lewis6991/impatient.nvim") -- faster boot up time
 	use("kyazdani42/nvim-tree.lua") -- file explorer
@@ -57,6 +56,7 @@ return packer.startup(function(use)
 	use("jalvesaq/nvim-r") -- R extensions for neovim
 	use("MunifTanjim/nui.nvim") -- ui plugin
 	use("williamboman/mason.nvim") -- lsp server installer
+	use("itchyny/vim-gitbranch")
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
@@ -67,16 +67,8 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
 	use("saadparwaiz1/cmp_luasnip") -- for luasnip
-	-- MARKDOWN PREVIEW --
-	-- use({
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	run = function()
-	-- 		vim.fn["mkdp#util#install"]()
-	-- 	end,
-	-- })
 	use("davidgranstrom/nvim-markdown-preview") -- markdown preview
 	-- NVIM TREE SITTER --
-	use("itchyny/vim-gitbranch")
 	use("ryanoasis/vim-devicons")
 	use("sheerun/vim-polyglot")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
@@ -94,7 +86,9 @@ return packer.startup(function(use)
 
 	-- My plugin
 	use("~/plugins/git.nvim")
-	use("~/plugins/chtsh.nvim")
+	-- use("~/plugins/chtsh.nvim")
+	-- use("~/plugins/simpleline.nvim")
+	use("hn275/simpleline.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

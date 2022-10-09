@@ -13,5 +13,3 @@ for key, val in pairs(opts) do
 end
 
 require("nord").set()
--- setting lualine color theme
-require("themes.util.setlualine")("nord")

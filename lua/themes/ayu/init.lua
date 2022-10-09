@@ -10,5 +10,3 @@ ayu.setup({
 })
 
 ayu.colorscheme()
-
-setlualine("ayu_mirage")

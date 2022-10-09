@@ -36,6 +36,3 @@ for key, val in pairs(opt) do
 end
 
 vim.cmd([[ colorscheme dracula ]])
-
-local setLualine = require("themes.util.setlualine")
-setLualine("dracula")

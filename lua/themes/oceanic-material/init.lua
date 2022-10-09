@@ -6,6 +6,3 @@ vim.g.oceanic_material_allow_underline = 1
 vim.g.oceanic_material_allow_undercurl = 1
 vim.g.oceanic_material_allow_underculr = 1
 vim.cmd.colorscheme("oceanic_material")
-
-local setlualine = require("themes.util.setlualine")
--- setlualine("jellybeans")
