@@ -55,6 +55,7 @@ return packer.startup(function(use)
 	use("nvim-neorg/neorg") -- neorg
 	use("jalvesaq/nvim-r") -- R extensions for neovim
 	use("MunifTanjim/nui.nvim") -- ui plugin
+	use("hn275/simpleline.nvim") -- simple status line
 	use("williamboman/mason.nvim") -- lsp server installer
 	use("itchyny/vim-gitbranch")
 	-- LSP --
@@ -73,7 +74,7 @@ return packer.startup(function(use)
 	use("sheerun/vim-polyglot")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
 	-- LANGUAGE SYNTAX --
-	use("JoosepAlviste/nvim-ts-context-commentstring") -- comment string for react
+	-- use("JoosepAlviste/nvim-ts-context-commentstring") -- comment string for react
 	use("windwp/nvim-ts-autotag") -- auto close tsx and jsx tags
 	-- SNIPPETS --
 	use("L3MON4D3/LuaSnip") -- snippet engine

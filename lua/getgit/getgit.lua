@@ -4,6 +4,6 @@ if not getgit_ok then
 	return
 end
 
-getgit.setup()
 local k = require("util.keymap").keymap
+getgit.setup()
 k("n", "<leader>G", "<CMD>GetGit<CR>")
