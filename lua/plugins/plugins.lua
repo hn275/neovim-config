@@ -55,7 +55,6 @@ return packer.startup(function(use)
 	use("nvim-neorg/neorg") -- neorg
 	use("jalvesaq/nvim-r") -- R extensions for neovim
 	use("MunifTanjim/nui.nvim") -- ui plugin
-	use("hn275/simpleline.nvim") -- simple status line
 	use("williamboman/mason.nvim") -- lsp server installer
 	use("itchyny/vim-gitbranch")
 	-- LSP --
