@@ -14,3 +14,5 @@ require("themes.myspace")
 -- require("themes.onedark")
 -- require("themes.oceanic-material")
 -- require("themes.ayu")
+
+vim.cmd("hi Normal guibg=none")
