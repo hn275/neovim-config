@@ -6,7 +6,7 @@ if not null_ls_status then
 end
 
 local formatting = null_ls.builtins.formatting
-local diagnostics = null_ls.builtins.diagnostics
+-- local diagnostics = null_ls.builtins.diagnostics
 local codeAction = null_ls.builtins.code_actions
 null_ls.setup({
 	debounce = 500,

@@ -73,7 +73,6 @@ return packer.startup(function(use)
 	use("sheerun/vim-polyglot")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
 	-- LANGUAGE SYNTAX --
-	-- use("JoosepAlviste/nvim-ts-context-commentstring") -- comment string for react
 	use("windwp/nvim-ts-autotag") -- auto close tsx and jsx tags
 	-- SNIPPETS --
 	use("L3MON4D3/LuaSnip") -- snippet engine
@@ -89,6 +88,7 @@ return packer.startup(function(use)
 	-- use("~/plugins/chtsh.nvim")
 	-- use("~/plugins/simpleline.nvim")
 	use("hn275/simpleline.nvim")
+	use("~/plugins/icee.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

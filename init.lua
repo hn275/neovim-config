@@ -16,6 +16,7 @@ require("vimtex")
 require("telescope.telescope")
 require("mason").setup()
 require("getgit.getgit")
+require("icee.icee")
 -- require('chtsh').setup({
 --     lang = { 'python' }
 -- })
