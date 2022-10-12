@@ -23,7 +23,7 @@ local env_opts = {
 	expandtab = true, -- expanding tab to spaces
 	shiftwidth = 4, -- number of spaces indented
 	tabstop = 4, -- number of spaces tab key inserts
-	cursorline = true, -- highlighting current cursor lines
+	cursorline = false, -- highlighting current cursor lines
 	cursorcolumn = false, -- highlight current cursor column
 	number = true, -- line number
 	wrap = false, -- no wrap
@@ -77,5 +77,4 @@ augroup END
 " run time path
 set rtp+=./start
 
-" tranparent background
 ]])
