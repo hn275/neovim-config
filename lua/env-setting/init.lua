@@ -8,7 +8,6 @@ local env_opts = {
 	ignorecase = true, -- ignore case in search pattern
 	pumheight = 10, -- pop up menu height
 	showmode = false, -- mode is displayed in the status line already
-	showtabline = 2, -- always show tabs
 	smartcase = true, -- smart case
 	autoindent = true, -- automatically apply indentation from the last line to the next line
 	smartindent = true, -- enabling smart indent
@@ -34,6 +33,9 @@ local env_opts = {
 	foldcolumn = "1", -- dedicated column for fold symbols
 	foldlevelstart = 999, -- always open all folds when entering a file
 	mouse = "",
+	winbar = "%#PMenu#%m%f", -- win bar display file name an modifier flag
+	laststatus = 3, -- global status
+	showtabline = 1, -- always show tabs
 }
 
 for key, val in pairs(env_opts) do
