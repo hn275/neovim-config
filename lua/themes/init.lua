@@ -8,10 +8,10 @@ endif
 set background=dark
 ]])
 
-require("themes.myspace")
+-- require("themes.myspace")
 -- require("themes.dracula")
 -- require("themes.nord")
--- require("themes.onedark")
+require("themes.onedark")
 -- require("themes.oceanic-material")
 -- require("themes.ayu")
 

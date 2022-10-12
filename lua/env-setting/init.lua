@@ -33,7 +33,7 @@ local env_opts = {
 	foldcolumn = "1", -- dedicated column for fold symbols
 	foldlevelstart = 999, -- always open all folds when entering a file
 	mouse = "",
-	winbar = "%#PMenu#%m%f", -- win bar display file name an modifier flag
+	winbar = "%#StatuslineAccent#%=%m%f%=", -- win bar display file name an modifier flag
 	laststatus = 3, -- global status
 	showtabline = 1, -- always show tabs
 }
