@@ -1,6 +1,9 @@
 -- no need to do protected call here since
 -- cmp.lua is already quitting on failure
-local cmp = require("cmp")
+local cmp_ok, cmp = pcall(require, "cmp")
+if not cmp_ok or cmp == nil then
+	return
+end
 local luasnip = require("luasnip")
 
 -- check back space

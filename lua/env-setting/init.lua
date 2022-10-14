@@ -1,47 +1,40 @@
-local env_opts = {
-	backup = false, -- creates backup
-	clipboard = "unnamedplus", -- allow accessing the clipboard for neovim
-	cmdheight = 1, -- adding height to the command line
-	conceallevel = 0, -- making `` visible in markdown files
-	fileencoding = "utf-8",
-	hlsearch = false, -- highlight all matched search
-	ignorecase = true, -- ignore case in search pattern
-	pumheight = 10, -- pop up menu height
-	showmode = false, -- mode is displayed in the status line already
-	smartcase = true, -- smart case
-	autoindent = true, -- automatically apply indentation from the last line to the next line
-	smartindent = true, -- enabling smart indent
-	splitbelow = true, -- new vsplit is forced to opened up below
-	splitright = true, -- new hsplit is forced to opened up to the right
-	swapfile = false, -- prevent creating swap files
-	termguicolors = true, -- set term gui colors
-	timeoutlen = 1000, -- time to wait for a mapped sequence to reset
-	undofile = true, -- persistent undo
-	updatetime = 500, -- faster completion (4000ms by default)
-	writebackup = false, -- if a file is being edited by another program, or was written by another program, wont be allowed to write
-	expandtab = true, -- expanding tab to spaces
-	shiftwidth = 4, -- number of spaces indented
-	tabstop = 4, -- number of spaces tab key inserts
-	cursorline = false, -- highlighting current cursor lines
-	cursorcolumn = false, -- highlight current cursor column
-	number = true, -- line number
-	wrap = false, -- no wrap
-	relativenumber = true, -- enable relative number
-	numberwidth = 2, -- set number column width
-	signcolumn = "yes:1", -- show sign column when there is a sign
-	foldmethod = "manual", -- setting fold method
-	foldcolumn = "1", -- dedicated column for fold symbols
-	foldlevelstart = 999, -- always open all folds when entering a file
-	mouse = "",
-	winbar = "%#StatuslineAccent#%=%m%f%=", -- win bar display file name an modifier flag
-	laststatus = 3, -- global status
-	showtabline = 1, -- always show tabs
-}
-
-for key, val in pairs(env_opts) do
-	vim.opt[key] = val
-end
-
+vim.o.backup = false -- creates backup
+vim.o.clipboard = "unnamedplus" -- allow accessing the clipboard for neovim
+vim.o.cmdheight = 1 -- adding height to the command line
+vim.o.conceallevel = 0 -- making `` visible in markdown files
+vim.o.fileencoding = "utf-8"
+vim.o.hlsearch = false -- highlight all matched search
+vim.o.ignorecase = true -- ignore case in search pattern
+vim.o.pumheight = 10 -- pop up menu height
+vim.o.howmode = false -- mode is displayed in the status line already
+vim.o.martcase = true -- smart case
+vim.o.autoindent = true -- automatically apply indentation from the last line to the next line
+vim.o.smartindent = true -- enabling smart indent
+vim.o.splitbelow = true -- new vsplit is forced to opened up below
+vim.o.splitright = true -- new hsplit is forced to opened up to the right
+vim.o.swapfile = false -- prevent creating swap files
+vim.o.termguicolors = true -- set term gui colors
+vim.o.timeoutlen = 1000 -- time to wait for a mapped sequence to reset
+vim.o.undofile = true -- persistent undo
+vim.o.updatetime = 500 -- faster completion (4000ms by default)
+vim.o.writebackup = false -- if a file is being edited by another program or was written by another program wont be allowed to write
+vim.o.expandtab = true -- expanding tab to spaces
+vim.o.shiftwidth = 4 -- number of spaces indented
+vim.o.tabstop = 4 -- number of spaces tab key inserts
+vim.o.cursorline = false -- highlighting current cursor lines
+vim.o.cursorcolumn = false -- highlight current cursor column
+vim.o.number = true -- line number
+vim.o.wrap = false -- no wrap
+vim.o.relativenumber = true -- enable relative number
+vim.o.numberwidth = 2 -- set number column width
+-- vim.o.igncolumn = "yes:1" -- show sign column when there is a sign
+vim.o.foldmethod = "manual" -- setting fold method
+vim.o.foldcolumn = "1" -- dedicated column for fold symbols
+vim.o.foldlevelstart = 999 -- always open all folds when entering a file
+vim.o.mouse = ""
+vim.o.winbar = "%#StatuslineAccent#%=%m%f" -- win bar display file name an modifier flag
+vim.o.laststatus = 3 -- global status
+vim.o.showtabline = 1 -- always show tabs
 -- Font size for Mac
 require("env-setting.mac")
 
@@ -64,6 +57,14 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	callback = function()
 		vim.api.nvim_buf_set_option(0, "tabstop", 2)
 		vim.api.nvim_buf_set_option(0, "shiftwidth", 2)
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	pattern = { ".norg" },
+	callback = function()
+		vim.api.nvim_buf_set_option(0, "tabstop", 4)
+		vim.api.nvim_buf_set_option(0, "shiftwidth", 4)
 	end,
 })
 

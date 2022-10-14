@@ -26,6 +26,6 @@ null_ls.setup({
 		formatting.markdownlint, -- markdown
 		formatting.prettierd, -- js, jsx, ts, tsx, html, yaml
 		formatting.stylua, -- lua
-		formatting.clang_format, -- lua
+		-- formatting.clang_format, -- lua
 	},
 })

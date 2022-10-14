@@ -80,7 +80,7 @@ return packer.startup(function(use)
 	use("Mofiqul/dracula.nvim")
 	use("joshdick/onedark.vim")
 	use("shaunsingh/nord.nvim")
-	use("glepnir/oceanic-material")
+	use("EdenEast/nightfox.nvim")
 	use("Shatur/neovim-ayu")
 
 	-- My plugin
