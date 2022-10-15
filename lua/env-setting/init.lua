@@ -27,7 +27,7 @@ vim.o.number = true -- line number
 vim.o.wrap = false -- no wrap
 vim.o.relativenumber = true -- enable relative number
 vim.o.numberwidth = 2 -- set number column width
--- vim.o.igncolumn = "yes:1" -- show sign column when there is a sign
+vim.o.signcolumn = "yes:1" -- show sign column when there is a sign
 vim.o.foldmethod = "manual" -- setting fold method
 vim.o.foldcolumn = "1" -- dedicated column for fold symbols
 vim.o.foldlevelstart = 999 -- always open all folds when entering a file
@@ -53,18 +53,10 @@ vim.api.nvim_create_autocmd({ "BufWrite" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	pattern = { "*.js", "*.ts" },
-	callback = function()
-		vim.api.nvim_buf_set_option(0, "tabstop", 2)
-		vim.api.nvim_buf_set_option(0, "shiftwidth", 2)
-	end,
-})
-
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
 	pattern = { ".norg" },
 	callback = function()
-		vim.api.nvim_buf_set_option(0, "tabstop", 4)
-		vim.api.nvim_buf_set_option(0, "shiftwidth", 4)
+		vim.bo.shiftwidth = 4
+		vim.bo.tabstop = 4
 	end,
 })
 

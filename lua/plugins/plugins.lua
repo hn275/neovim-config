@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	-- PLUGINS --
 	use("folke/todo-comments.nvim") -- todo-comments
-	use("jiangmiao/auto-pairs") -- auto pairs
+	use("windwp/nvim-autopairs")
 	use("tpope/vim-commentary") -- comment toggler
 	use("wbthomason/packer.nvim") -- have packer manages itself
 	use("nvim-telescope/telescope.nvim")
@@ -70,7 +70,7 @@ return packer.startup(function(use)
 	use("davidgranstrom/nvim-markdown-preview") -- markdown preview
 	-- NVIM TREE SITTER --
 	use("ryanoasis/vim-devicons")
-	use("sheerun/vim-polyglot")
+	-- use("sheerun/vim-polyglot")
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
 	-- LANGUAGE SYNTAX --
 	use("windwp/nvim-ts-autotag") -- auto close tsx and jsx tags
