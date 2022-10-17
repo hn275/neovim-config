@@ -6,7 +6,14 @@ local i = ls.insert_node
 local file_name = vim.fn.expand("%")
 local today = os.date("%x")
 
+local docstring_snippets = require("snips.cpp.docstring")
+
 return {
+	s({
+		trig = "func",
+		name = "cpp functions with docstrings",
+	}, docstring_snippets.functions),
+
 	s({
 		trig = "!",
 		name = "cpp main function boiler plate",
@@ -57,10 +64,7 @@ return {
 		t("std::vector<"),
 		i(1),
 		t("> "),
-		i(2),
-		t(" {"),
-		i(3),
-		t({ "};", "" }),
+		i(0),
 	}),
 
 	s({
