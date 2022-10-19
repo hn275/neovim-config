@@ -57,6 +57,7 @@ return packer.startup(function(use)
 	use("MunifTanjim/nui.nvim") -- ui plugin
 	use("williamboman/mason.nvim") -- lsp server installer
 	use("itchyny/vim-gitbranch")
+	use("akinsho/toggleterm.nvim") -- toggle terminal
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server

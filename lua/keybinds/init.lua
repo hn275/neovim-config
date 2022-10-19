@@ -52,15 +52,6 @@ k("v", ">", ">gv")
 
 -- Terminal --
 -- Spawn a terminal
-k("n", "<C-t>", function()
-	local cmd = ""
-	if vim.o.columns > 100 then
-		cmd = "vsplit | terminal"
-	else
-		cmd = "split | terminal"
-	end
-	vim.cmd(cmd)
-	vim.o.number = false
-	vim.o.relativenumber = false
-end)
+
+-- k("n", "<C-t>", "<CMD>ToggleTerm direction=horizontal<CR>")
 k("t", "<Esc>", "<C-\\><C-N>") -- to normal mode in term
