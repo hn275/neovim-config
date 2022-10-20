@@ -35,6 +35,7 @@ vim.o.mouse = ""
 vim.o.winbar = "%#StatuslineAccent#%=%m%f" -- win bar display file name an modifier flag
 vim.o.laststatus = 3 -- global status
 vim.o.showtabline = 1 -- always show tabs
+vim.o.compatible = false
 -- Font size for Mac
 require("env-setting.mac")
 

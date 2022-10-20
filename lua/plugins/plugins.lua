@@ -75,6 +75,7 @@ return packer.startup(function(use)
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
 	-- LANGUAGE SYNTAX --
 	use("windwp/nvim-ts-autotag") -- auto close tsx and jsx tags
+	use("sheerun/vim-polyglot") -- syntax highlighting
 	-- SNIPPETS --
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	-- THEME PLUGINS --

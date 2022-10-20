@@ -11,8 +11,8 @@ set background=dark
 -- require("themes.myspace")
 -- require("themes.dracula")
 -- require("themes.nord")
--- require("themes.onedark")
-require("themes.nightfox")
+require("themes.onedark")
+-- require("themes.nightfox")
 -- require("themes.ayu")
 
 -- vim.cmd("hi Normal guibg=none")
