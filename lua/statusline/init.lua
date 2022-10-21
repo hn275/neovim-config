@@ -1,8 +1,14 @@
 local simpleline_status, simpleline = pcall(require, "simpleline")
+local tabline_ok, tabline = pcall(require, "luatab")
 
-if not simpleline_status then
-	print("simpleline:", simpleline_status)
-	return
+if simpleline_status then
+	simpleline.setup()
+else
+	print("simpleline not installed")
 end
 
-simpleline.setup()
+if tabline_ok then
+	tabline.setup()
+else
+	print("tabline not installed")
+end

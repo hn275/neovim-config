@@ -10,8 +10,9 @@ set background=dark
 
 -- require("themes.myspace")
 -- require("themes.dracula")
+require("themes.onenord")
 -- require("themes.nord")
-require("themes.onedark")
+-- require("themes.onedark")
 -- require("themes.nightfox")
 -- require("themes.ayu")
 

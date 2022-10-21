@@ -56,8 +56,9 @@ return packer.startup(function(use)
 	use("jalvesaq/nvim-r") -- R extensions for neovim
 	use("MunifTanjim/nui.nvim") -- ui plugin
 	use("williamboman/mason.nvim") -- lsp server installer
-	use("itchyny/vim-gitbranch")
+	use("itchyny/vim-gitbranch") -- git branch
 	use("akinsho/toggleterm.nvim") -- toggle terminal
+	use("alvarosevilla95/luatab.nvim") -- tabline
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
@@ -82,6 +83,7 @@ return packer.startup(function(use)
 	use("Mofiqul/dracula.nvim")
 	use("joshdick/onedark.vim")
 	use("shaunsingh/nord.nvim")
+	use("rmehri01/onenord.nvim")
 	use("EdenEast/nightfox.nvim")
 	use("Shatur/neovim-ayu")
 
