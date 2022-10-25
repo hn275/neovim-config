@@ -1,17 +1,33 @@
-local M = {}
 local rename = require("lsp-config.utils.rename")
 
+local M = {}
+
+local ignored_format_servers = {
+	"clangd",
+	"tsserver",
+}
+
 M.on_attach = function(client, bufnr)
+	-- Init
 	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-	-- Mappings.
-	-- See `:help vim.lsp.*` for documentation on any of the below functions
+	-- Set key map
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+	vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, bufopts)
+	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
 	vim.keymap.set("n", "ge", vim.diagnostic.open_float, bufopts)
 	vim.keymap.set("n", "gn", vim.diagnostic.goto_next, bufopts)
 	vim.keymap.set("n", "gp", vim.diagnostic.goto_prev, bufopts)
 	vim.keymap.set("n", "<leader>rn", rename, bufopts)
-	client.server_capabilities.documentFormattingProvider = false
+	-- Ignore autoformat on certain servers
+	client.server_capabilities.documentFormattingProvider = (function()
+		for _, v in pairs(ignored_format_servers) do
+			if v == client.name then
+				return false
+			end
+		end
+		return true
+	end)()
 end
 
 -- Flags

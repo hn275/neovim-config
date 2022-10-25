@@ -8,4 +8,5 @@ require("lspconfig")["clangd"].setup({
 	on_attach = opts.on_attach,
 	flags = opts.lsp_flags,
 	capabilities = capabilities,
+	cmd = { "clangd" },
 })
