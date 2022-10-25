@@ -11,3 +11,14 @@ term.setup({
 	shade_terminals = false,
 	insert_mappings = false,
 })
+
+local Term = require("toggleterm.terminal").Terminal
+require("toggleterm.util").init(Term)
+local exec = require("toggleterm.util").exec
+vim.api.nvim_create_user_command("Exec", exec, {})
+
+local git = require("toggleterm.util").git()
+local git_toggler = function()
+	git:toggle()
+end
+vim.api.nvim_create_user_command("Git", git_toggler, {})
