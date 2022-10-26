@@ -14,10 +14,20 @@ local dir_path = function()
 	return vim.fn.expand("%:p:h")
 end
 
-local cmd = {
-	["go"] = [[go run ]] .. file_name() .. [["]],
-	["cpp"] = [[sh ]] .. dir_path() .. [[/compiler.sh]],
-}
+local cmd = function()
+	local ft = {
+		["go"] = [[go run ]] .. file_name() .. [["]],
+		["cpp"] = [[sh ]] .. dir_path() .. [[/compiler.sh]],
+	}
+
+	for k, v in pairs(ft) do
+		if k == file_extension() then
+			return v
+		end
+	end
+
+	return error("Execution for this filetype has not been configured")
+end
 
 local M = {}
 
@@ -28,7 +38,7 @@ M.init = function(terminal)
 end
 
 M.exec = function()
-	vim.cmd([[9TermExec cmd=" ]] .. cmd[file_extension()] .. [["]])
+	vim.cmd([[9TermExec cmd=" ]] .. cmd() .. [["]])
 end
 
 M.git = function()
