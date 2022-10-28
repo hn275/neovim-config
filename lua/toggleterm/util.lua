@@ -33,8 +33,9 @@ local M = {}
 
 M.term = nil
 
-M.init = function(terminal)
-	M.term = terminal
+M.init = function()
+	local Term = require("toggleterm.terminal").Terminal
+	M.term = Term
 end
 
 M.exec = function()
@@ -53,7 +54,7 @@ M.git = function()
 			vim.cmd("startinsert!")
 		end,
 	})
-	return lazygit
+	lazygit:toggle()
 end
 
 return M

@@ -5,7 +5,6 @@ end
 
 local k = require("util.keymap").keymap
 
-local cmd = require("telescope.cmd")
 local fb = require("telescope.fb")
 
 telescope.setup({
@@ -31,13 +30,11 @@ telescope.setup({
 		},
 	},
 	extensions = {
-		command_palette = cmd,
 		file_browser = fb,
 	},
 })
 
 telescope.load_extension("gh")
-telescope.load_extension("command_palette")
 telescope.load_extension("file_browser")
 
 k("n", "<leader>ff", "<CMD>Telescope find_files theme=ivy<CR>")

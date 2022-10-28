@@ -57,12 +57,12 @@ return packer.startup(function(use)
 	use("itchyny/vim-gitbranch") -- git branch
 	use("akinsho/toggleterm.nvim") -- toggle terminal
 	use("alvarosevilla95/luatab.nvim") -- tabline
+	use({ "koenverburg/cmd-palette.nvim", requires = { { "stevearc/dressing.nvim" } } })
 	-- TELESCOPE
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
 			{ "nvim-telescope/telescope-github.nvim" },
-			{ "LinArcX/telescope-command-palette.nvim" },
 			{ "nvim-telescope/telescope-file-browser.nvim" },
 		},
 	})
