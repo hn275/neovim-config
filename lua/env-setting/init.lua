@@ -6,10 +6,10 @@ vim.o.fileencoding = "utf-8"
 vim.o.hlsearch = false -- highlight all matched search
 vim.o.ignorecase = true -- ignore case in search pattern
 vim.o.pumheight = 10 -- pop up menu height
-vim.o.howmode = false -- mode is displayed in the status line already
-vim.o.martcase = true -- smart case
+vim.o.showmode = false -- mode is displayed in the status line already
+vim.o.smartcase = true -- smart case
 vim.o.autoindent = true -- automatically apply indentation from the last line to the next line
-vim.o.smartindent = true -- enabling smart indent
+vim.o.smartindent = false -- enabling smart indent
 vim.o.splitbelow = true -- new vsplit is forced to opened up below
 vim.o.splitright = true -- new hsplit is forced to opened up to the right
 vim.o.swapfile = false -- prevent creating swap files
@@ -21,7 +21,7 @@ vim.o.writebackup = false -- if a file is being edited by another program or was
 vim.o.expandtab = true -- expanding tab to spaces
 vim.o.shiftwidth = 4 -- number of spaces indented
 vim.o.tabstop = 4 -- number of spaces tab key inserts
-vim.o.cursorline = false -- highlighting current cursor lines
+vim.o.cursorline = true -- highlighting current cursor lines
 vim.o.cursorcolumn = false -- highlight current cursor column
 vim.o.number = true -- line number
 vim.o.wrap = false -- no wrap
@@ -36,6 +36,7 @@ vim.o.winbar = "%#StatuslineAccent#%=%m%f" -- win bar display file name an modif
 vim.o.laststatus = 3 -- global status
 vim.o.showtabline = 1 -- always show tabs
 vim.o.compatible = false
+
 -- Font size for Mac
 require("env-setting.mac")
 
@@ -50,14 +51,27 @@ vim.api.nvim_create_autocmd({ "BufWrite" }, {
 	pattern = { "*.*" },
 	callback = function()
 		vim.lsp.buf.format()
+		print("Hell;o")
 	end,
 })
 
+-- 2 space tabs
+local ft = {
+	"*.js",
+	"*.jsx",
+	"*.ts",
+	"*.tsx",
+	"*.css",
+	"*.scss",
+	"*.html",
+	"*.svg",
+}
+
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	pattern = { ".norg" },
+	pattern = ft,
 	callback = function()
-		vim.bo.shiftwidth = 4
-		vim.bo.tabstop = 4
+		vim.bo.shiftwidth = 2
+		vim.bo.tabstop = 2
 	end,
 })
 
