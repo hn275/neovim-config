@@ -48,7 +48,6 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs")
 	use("tpope/vim-commentary") -- comment toggler
 	use("wbthomason/packer.nvim") -- have packer manages itself
-	use("nvim-telescope/telescope.nvim")
 	use("lewis6991/impatient.nvim") -- faster boot up time
 	use("kyazdani42/nvim-tree.lua") -- file explorer
 	use("lervag/vimtex") -- latex plugin
@@ -59,6 +58,15 @@ return packer.startup(function(use)
 	use("itchyny/vim-gitbranch") -- git branch
 	use("akinsho/toggleterm.nvim") -- toggle terminal
 	use("alvarosevilla95/luatab.nvim") -- tabline
+	-- TELESCOPE
+	use({
+		"nvim-telescope/telescope.nvim",
+		requires = {
+			{ "nvim-telescope/telescope-github.nvim" },
+			{ "LinArcX/telescope-command-palette.nvim" },
+			{ "nvim-telescope/telescope-file-browser.nvim" },
+		},
+	})
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
@@ -88,11 +96,7 @@ return packer.startup(function(use)
 	use("Shatur/neovim-ayu")
 
 	-- My plugin
-	use("~/plugins/git.nvim")
-	-- use("~/plugins/chtsh.nvim")
-	-- use("~/plugins/simpleline.nvim")
 	use("hn275/simpleline.nvim")
-	use("~/plugins/icee.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

@@ -42,9 +42,6 @@ k("n", "sl", "<C-w>l")
 -- quit
 k("n", "qq", "<CMD>q!<CR>")
 
--- NvimTree
-k("n", "<leader>t", "<CMD>NvimTreeToggle<CR>")
-
 -- Visual Mode --
 -- stay in visual mode while indenting
 k("v", "<", "<gv")
