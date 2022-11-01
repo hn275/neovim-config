@@ -6,18 +6,30 @@ end
 
 local fn = require("cmdpalette.cmd")
 
+local title = function(title)
+	local max_len = 20
+	local remaining_len = max_len - string.len(title)
+	if remaining_len % 2 == 1 then
+		remaining_len = remaining_len + 1
+	end
+	return string.rep("-", remaining_len / 2) .. title:upper() .. string.rep("-", remaining_len / 2)
+end
+
 cmd.setup({
-	{ label = "format", callback = fn.common.format },
+	{ label = title("common"), cmd = "CmdPalette" },
 	{ label = "exec", callback = fn.common.exec },
-	{ label = "diagnositics", cmd = "Telescope diagnositics" },
 	{ label = "buffers", cmd = "Telescope buffers" },
 	{ label = "clipboard", cmd = "Telescope registers" },
 	{ label = "marks", cmd = "Telescope marks" },
 	{ label = "todo", cmd = "TodoTelescope" },
-	{ label = "------Git------", cmd = "CmdPalette" },
-	{ label = "\tlazygit", callback = fn.git.lazygit },
-	{ label = "\tissues", cmd = "Telescope gh issues" },
-	{ label = "\tpull requests", cmd = "Telescope gh pull_request" },
+	{ label = title("lsp"), cmd = "CmdPalette" },
+	{ label = "format", callback = fn.lsp.format },
+	{ label = "code actions", callback = fn.lsp.code_actions },
+	{ label = "diagnositics", cmd = "Telescope diagnositics" },
+	{ label = title("git"), cmd = "CmdPalette" },
+	{ label = "lazygit", callback = fn.git.lazygit },
+	{ label = "issues", cmd = "Telescope gh issues" },
+	{ label = "pull requests", cmd = "Telescope gh pull_request" },
 })
 
 local k = require("util.keymap").keymap

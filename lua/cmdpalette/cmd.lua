@@ -1,8 +1,12 @@
 local M = {}
 
 M.common = {
-	format = vim.lsp.buf.format,
 	exec = require("toggleterm.util").exec,
+}
+
+M.lsp = {
+	format = vim.lsp.buf.format,
+	code_actions = vim.lsp.buf.code_actions,
 }
 
 -- Git
