@@ -5,6 +5,7 @@ M.init = function()
 	if not vt_ok then
 		vim.api.nvim_set_var("vt", false) -- enable by default
 	end
+	vim.diagnostic.config({ virtual_text = false })
 end
 
 M.toggle = function()

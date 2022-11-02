@@ -7,7 +7,7 @@ end
 local fn = require("cmdpalette.cmd")
 
 local title = function(title)
-	local max_len = 20
+	local max_len = vim.o.columns * 0.89
 	local remaining_len = max_len - string.len(title)
 	if remaining_len % 2 == 1 then
 		remaining_len = remaining_len + 1
@@ -24,8 +24,10 @@ cmd.setup({
 	{ label = "todo", cmd = "TodoTelescope" },
 	{ label = title("lsp"), cmd = "CmdPalette" },
 	{ label = "format", callback = fn.lsp.format },
-	{ label = "code actions", callback = fn.lsp.code_actions },
+	{ label = "code action", callback = fn.lsp.code_action },
 	{ label = "diagnositics", cmd = "Telescope diagnositics" },
+	{ label = "finder", cmd = "Lspsaga lsp_finder" },
+	{ label = "implement", cmd = "Lspsaga implement" },
 	{ label = title("git"), cmd = "CmdPalette" },
 	{ label = "lazygit", callback = fn.git.lazygit },
 	{ label = "issues", cmd = "Telescope gh issues" },

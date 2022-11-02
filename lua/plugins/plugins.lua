@@ -58,6 +58,8 @@ return packer.startup(function(use)
 	use("akinsho/toggleterm.nvim") -- toggle terminal
 	use("alvarosevilla95/luatab.nvim") -- tabline
 	use({ "koenverburg/cmd-palette.nvim", requires = { { "stevearc/dressing.nvim" } } })
+	use({ "nvim-lualine/lualine.nvim" }) -- lualine
+	use({ "kkharji/lspsaga.nvim" })
 	-- TELESCOPE
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -95,7 +97,7 @@ return packer.startup(function(use)
 	use("Shatur/neovim-ayu")
 
 	-- My plugin
-	use("hn275/simpleline.nvim")
+	-- use("hn275/simpleline.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

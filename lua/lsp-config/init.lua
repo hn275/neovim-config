@@ -3,6 +3,7 @@ local k = require("util.keymap").keymap
 -- server setting
 require("lsp-config.server")
 require("lsp-config.null-ls.null-ls")
+require("lsp-config.saga")
 
 local virtualtext_lsp = require("lsp-config.utils.virtualtext")
 virtualtext_lsp.init()

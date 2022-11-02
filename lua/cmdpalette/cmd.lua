@@ -6,7 +6,7 @@ M.common = {
 
 M.lsp = {
 	format = vim.lsp.buf.format,
-	code_actions = vim.lsp.buf.code_actions,
+	code_action = vim.lsp.buf.code_action,
 }
 
 -- Git
