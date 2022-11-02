@@ -59,15 +59,8 @@ return packer.startup(function(use)
 	use("alvarosevilla95/luatab.nvim") -- tabline
 	use({ "koenverburg/cmd-palette.nvim", requires = { { "stevearc/dressing.nvim" } } })
 	use({ "nvim-lualine/lualine.nvim" }) -- lualine
-	use({ "kkharji/lspsaga.nvim" })
-	-- TELESCOPE
-	use({
-		"nvim-telescope/telescope.nvim",
-		requires = {
-			{ "nvim-telescope/telescope-github.nvim" },
-			{ "nvim-telescope/telescope-file-browser.nvim" },
-		},
-	})
+	use({ "kkharji/lspsaga.nvim" }) -- lsp ui
+	use({ "ibhagwan/fzf-lua" }) -- fzf
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
