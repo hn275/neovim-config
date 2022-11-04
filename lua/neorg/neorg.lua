@@ -27,7 +27,7 @@ neorg.setup({
 		["core.norg.concealer"] = {
 			config = {
 				dim_code_blocks = {
-					width = "content",
+					-- width = "content",
 					conceal = true,
 				},
 			},

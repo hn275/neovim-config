@@ -56,7 +56,6 @@ return packer.startup(function(use)
 	use("williamboman/mason.nvim") -- lsp server installer
 	use("itchyny/vim-gitbranch") -- git branch
 	use("akinsho/toggleterm.nvim") -- toggle terminal
-	use("alvarosevilla95/luatab.nvim") -- tabline
 	use({ "koenverburg/cmd-palette.nvim", requires = { { "stevearc/dressing.nvim" } } })
 	use({ "nvim-lualine/lualine.nvim" }) -- lualine
 	use({ "kkharji/lspsaga.nvim" }) -- lsp ui

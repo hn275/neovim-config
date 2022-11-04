@@ -24,11 +24,15 @@ else
 			lualine_y = {},
 			lualine_z = { "location" },
 		},
+		tabline = {
+			lualine_a = {
+				{
+					"tabs",
+					mode = 2,
+					max_length = vim.o.columns,
+				},
+			},
+			lualine_z = { "filename" },
+		},
 	})
-end
-
-if tabline_ok then
-	tabline.setup()
-else
-	print("tabline not installed")
 end
