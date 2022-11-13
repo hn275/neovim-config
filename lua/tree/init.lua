@@ -5,7 +5,12 @@ if not tree_ok then
 	return
 end
 
+vim.g.loaded_netwr = 1
+vim.g.loaded_netwrPlugin = 1
+vim.opt.termguicolors = true
+
 tree.setup({
+	auto_reload_on_write = true,
 	view = {
 		adaptive_size = true,
 		mappings = {
@@ -20,6 +25,17 @@ tree.setup({
 				{ key = "<CR>", action = "" }, -- unmap Return key
 			},
 		},
+		float = {
+			enable = true,
+			quit_on_focus_loss = true,
+			open_win_config = {
+				relative = "cursor",
+				border = "single",
+			},
+		},
+	},
+	filters = {
+		dotfiles = true,
 	},
 })
 
