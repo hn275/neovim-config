@@ -61,6 +61,7 @@ return packer.startup(function(use)
 	use({ "kkharji/lspsaga.nvim" }) -- lsp ui
 	use({ "ibhagwan/fzf-lua" }) -- fzf
 	use({ "nvim-tree/nvim-tree.lua" })
+	use({ "seblj/nvim-tabline" })
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server

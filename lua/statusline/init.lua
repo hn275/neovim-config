@@ -1,5 +1,13 @@
 -- local lualine_ok, lualine = pcall(require, "lualine")
--- local tabline_ok, tabline = pcall(require, "luatab")
+local tabline_ok, tabline = pcall(require, "luatab")
+
+if not tabline_ok then
+	print("failed to load tabline")
+else
+	tabline.setup({
+		show_index = true,
+	})
+end
 
 -- if not lualine_ok then
 -- 	print("failed: lualine")
