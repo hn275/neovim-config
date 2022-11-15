@@ -47,8 +47,6 @@
 -- %=                                             left/right separator
 -- %l/%L,%c                                       rownumber/total,colnumber
 -- %{&fileencoding?&fileencoding:&encoding}       file encoding
-local mode = require("statusline.modes").mode
-
 vim.opt.statusline =
 	"[%{toupper(mode())}] %< %{gitbranch#name()} | %f %m %r %w %= %l:%c %{&fileencoding?&fileencoding:&encoding}"
 
