@@ -88,6 +88,7 @@ return packer.startup(function(use)
 	use("rmehri01/onenord.nvim")
 	use("EdenEast/nightfox.nvim")
 	use("Shatur/neovim-ayu")
+	use("projekt0n/github-nvim-theme")
 
 	-- My plugin
 	-- use("hn275/simpleline.nvim")

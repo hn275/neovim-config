@@ -10,10 +10,11 @@ set background=dark
 
 -- require("themes.myspace")
 -- require("themes.dracula")
-require("themes.onenord")
+-- require("themes.onenord")
 -- require("themes.nord")
 -- require("themes.onedark")
 -- require("themes.nightfox")
 -- require("themes.ayu")
+require("themes.github")
 
 -- vim.cmd("hi Normal guibg=none")

@@ -26,7 +26,7 @@ tree.setup({
 			},
 		},
 		float = {
-			enable = true,
+			enable = false,
 			quit_on_focus_loss = true,
 			open_win_config = {
 				relative = "cursor",
