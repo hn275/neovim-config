@@ -51,15 +51,7 @@ end
 -- end
 
 -- statusline
--- %<                                             trim from here
--- %{gitbranch#name()}                            name of the current branch (needs fugitive.vim)
--- %f                                             path+filename
--- %m                                             check modifi{ed,able}
--- %r                                             check readonly
--- %w                                             check preview window
--- %=                                             left/right separator
--- %l/%L,%c                                       rownumber/total,colnumber
--- %{&fileencoding?&fileencoding:&encoding}       file encoding
+--[[ 
 vim.opt.statusline =
 	"[%{toupper(mode())}] %< %{gitbranch#name()} | %f %m %r %w %= %l:%c %{&fileencoding?&fileencoding:&encoding}"
 
@@ -76,3 +68,6 @@ vim.keymap.set("n", "<space>z", function()
 	end
 	vim.opt.laststatus = _G.laststatus
 end, { noremap = true, silent = true })
+--]]
+
+require("simpleline").setup()

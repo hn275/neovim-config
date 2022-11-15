@@ -57,11 +57,12 @@ return packer.startup(function(use)
 	use("itchyny/vim-gitbranch") -- git branch
 	use("akinsho/toggleterm.nvim") -- toggle terminal
 	use({ "koenverburg/cmd-palette.nvim", requires = { { "stevearc/dressing.nvim" } } })
-	use({ "nvim-lualine/lualine.nvim" }) -- lualine
 	use({ "kkharji/lspsaga.nvim" }) -- lsp ui
 	use({ "ibhagwan/fzf-lua" }) -- fzf
 	use({ "nvim-tree/nvim-tree.lua" })
+	use({ "nvim-lualine/lualine.nvim" }) -- lualine
 	use({ "seblj/nvim-tabline" })
+	use({ "hn275/simpleline.nvim" })
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
@@ -90,9 +91,9 @@ return packer.startup(function(use)
 	use("EdenEast/nightfox.nvim")
 	use("Shatur/neovim-ayu")
 	use("projekt0n/github-nvim-theme")
+	use("kwsp/halcyon-neovim")
+	use("Yagua/nebulous.nvim")
 
-	-- My plugin
-	-- use("hn275/simpleline.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
