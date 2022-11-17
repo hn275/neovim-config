@@ -32,7 +32,7 @@ vim.o.foldmethod = "manual" -- setting fold method
 vim.o.foldcolumn = "1" -- dedicated column for fold symbols
 vim.o.foldlevelstart = 999 -- always open all folds when entering a file
 vim.o.mouse = ""
--- vim.o.winbar = "%#StatuslineAccent#%=%m%f" -- win bar display file name an modifier flag
+vim.o.winbar = "%#StatuslineAccent#%=%m%f" -- win bar display file name an modifier flag
 vim.o.laststatus = 3 -- global status
 vim.o.showtabline = 1 -- always show tabs
 vim.o.compatible = false
