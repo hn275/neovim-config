@@ -13,9 +13,6 @@ local check_backspace = function()
 end
 
 local M = {
-	["<C-p>"] = cmp.mapping.select_prev_item(), -- next item
-
-	["<C-n>"] = cmp.mapping.select_next_item(), -- previous item
 
 	["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
 
@@ -50,6 +47,22 @@ local M = {
 			luasnip.jump(-1)
 		else
 			fallback()
+		end
+	end, { "i" }),
+
+	["<C-n>"] = cmp.mapping(function()
+		if luasnip.choice_active() then
+			luasnip.change_choice(1)
+		else
+			cmp.select_next_item()
+		end
+	end, { "i" }),
+
+	["<C-p>"] = cmp.mapping(function()
+		if luasnip.choice_active() then
+			luasnip.change_choice(-1)
+		else
+			cmp.select_prev_item()
 		end
 	end, { "i" }),
 }

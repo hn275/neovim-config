@@ -2,26 +2,43 @@ local ls = require("luasnip")
 local s = ls.snippet
 local i = ls.insert_node
 local t = ls.text_node
+local d = ls.dynamic_node
+local c = ls.choice_node
+
+local snip_func = require("snips.go.functions")
 
 return {
-	s({
-		trig = "!main",
-		name = "boilerplate for a main Go file",
-	}, {
-		t({ "package main", "", "" }),
-		t({ "import ", "", "" }),
-		t({ "func main() {", "\t" }),
+	s("err", {
+		t({ "err != nil {", "\t" }),
 		i(0),
-		t({ "", "}" }),
+		t({ "", "}", "" }),
 	}),
-	s({
-		trig = "!",
-		name = "boilerplate for a new go file",
-	}, {
-		t("func "),
+
+	s(
+		"func",
+		c(1, {
+			d(nil, snip_func.goroutines),
+			d(nil, snip_func.anonymous),
+			d(nil, snip_func.regular),
+			d(nil, snip_func.methods),
+		})
+	),
+
+	s("bson", {
+		t('bson:"'),
 		i(1),
-		t({ "() {", "\t" }),
-		i(0),
-		t({ "", "}" }),
+		t('"'),
+	}),
+
+	s("json", {
+		t('json:"'),
+		i(1),
+		t('"'),
+	}),
+
+	s("binding", {
+		t('binding:"'),
+		i(1),
+		t('"'),
 	}),
 }
