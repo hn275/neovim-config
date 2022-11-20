@@ -93,7 +93,7 @@ return packer.startup(function(use)
 	use("projekt0n/github-nvim-theme")
 	use("kwsp/halcyon-neovim")
 	use("Yagua/nebulous.nvim")
-
+	use("lewpoly/sherbet.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

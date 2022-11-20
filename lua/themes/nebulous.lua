@@ -6,7 +6,7 @@ if not nebulous_ok then
 end
 
 nebulous.setup({
-	variant = "nova",
+	variant = "midnight",
 	disable = {
 		endOfBuffer = true,
 	},
