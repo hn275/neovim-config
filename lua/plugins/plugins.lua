@@ -73,7 +73,12 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
 	use("saadparwaiz1/cmp_luasnip") -- for luasnip
-	use("davidgranstrom/nvim-markdown-preview") -- markdown preview
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
 	-- NVIM TREE SITTER --
 	use("ryanoasis/vim-devicons")
 	-- use("sheerun/vim-polyglot")
