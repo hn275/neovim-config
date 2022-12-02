@@ -13,8 +13,20 @@ local lua_snips = require("snips.luaa")
 
 local map_snippets_ft = {
 	{
+		filetype = "javascriptreact",
+		snippets = js_snips,
+	},
+	{
 		filetype = "javascript",
 		snippets = js_snips,
+	},
+	{
+		filetype = "typescriptreact",
+		snippets = ts_snips,
+	},
+	{
+		filetype = "typescript",
+		snippets = ts_snips,
 	},
 	{
 		filetype = "cpp",
@@ -31,10 +43,6 @@ local map_snippets_ft = {
 	{
 		filetype = "tex",
 		snippets = tex_snips,
-	},
-	{
-		filetype = "typescript",
-		snippets = ts_snips,
 	},
 	{
 		filetype = "lua",
