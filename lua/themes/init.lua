@@ -8,16 +8,9 @@ endif
 set background=dark
 ]])
 
--- require("themes.myspace")
--- require("themes.dracula")
 -- require("themes.onenord")
 -- require("themes.nord")
 -- require("themes.onedark")
--- require("themes.nightfox")
--- require("themes.ayu")
--- require("themes.github")
--- require("themes.halcyon")
--- require("themes.nebulous")
-require("themes.sherbet")
+require("themes.aylin")
 
 -- vim.cmd("hi Normal guibg=none")

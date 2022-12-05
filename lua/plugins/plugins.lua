@@ -89,16 +89,10 @@ return packer.startup(function(use)
 	-- SNIPPETS --
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	-- THEME PLUGINS --
-	use("Mofiqul/dracula.nvim")
 	use("joshdick/onedark.vim")
-	use("shaunsingh/nord.nvim")
 	use("rmehri01/onenord.nvim")
-	use("EdenEast/nightfox.nvim")
-	use("Shatur/neovim-ayu")
-	use("projekt0n/github-nvim-theme")
-	use("kwsp/halcyon-neovim")
-	use("Yagua/nebulous.nvim")
-	use("lewpoly/sherbet.nvim")
+	use("shaunsingh/nord.nvim")
+	use("AhmedAbdulrahman/aylin.vim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

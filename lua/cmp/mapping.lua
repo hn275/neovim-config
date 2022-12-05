@@ -53,7 +53,13 @@ local M = {
 	["<C-n>"] = cmp.mapping(function(callback)
 		if cmp.visible() then
 			cmp.select_next_item()
-		elseif luasnip.choice_active() then
+		else
+			callback()
+		end
+	end, { "i" }),
+
+	["<C-j>"] = cmp.mapping(function(callback)
+		if luasnip.choice_active() then
 			luasnip.change_choice(1)
 		else
 			callback()
@@ -63,7 +69,13 @@ local M = {
 	["<C-p>"] = cmp.mapping(function(callback)
 		if cmp.visible() then
 			cmp.select_prev_item()
-		elseif luasnip.choice_active() then
+		else
+			callback()
+		end
+	end, { "i" }),
+
+	["<C-k>"] = cmp.mapping(function(callback)
+		if luasnip.choice_active() then
 			luasnip.change_choice(-1)
 		else
 			callback()
