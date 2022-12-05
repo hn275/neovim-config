@@ -11,6 +11,7 @@ set background=dark
 -- require("themes.onenord")
 -- require("themes.nord")
 -- require("themes.onedark")
+-- require("themes.oxocarbon")
 require("themes.aylin")
 
 -- vim.cmd("hi Normal guibg=none")

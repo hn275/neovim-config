@@ -92,6 +92,7 @@ return packer.startup(function(use)
 	use("joshdick/onedark.vim")
 	use("rmehri01/onenord.nvim")
 	use("shaunsingh/nord.nvim")
+	use("B4mbus/oxocarbon-lua.nvim")
 	use("AhmedAbdulrahman/aylin.vim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
