@@ -94,6 +94,8 @@ return packer.startup(function(use)
 	use("shaunsingh/nord.nvim")
 	use("B4mbus/oxocarbon-lua.nvim")
 	use("AhmedAbdulrahman/aylin.vim")
+	use("olivercederborg/poimandres.nvim")
+	use("NTBBloodbath/doom-one.nvim")
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
