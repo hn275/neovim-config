@@ -13,7 +13,9 @@ local get_var_name = function(input, _, _)
 	return "set" .. firstToUpper(var_name)
 end
 
-return {
+local hooks = {}
+
+hooks.useState = {
 	t("const ["),
 	i(1),
 	t(", "),
@@ -24,3 +26,12 @@ return {
 	i(3),
 	t(");"),
 }
+
+hooks.useEffect = {
+	t({ "useEffect(() => {", "\t" }),
+	i(0),
+	t({ "", "}, [" }),
+	i(1),
+	t("])"),
+}
+return hooks

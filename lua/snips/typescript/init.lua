@@ -6,14 +6,19 @@ local c = ls.choice_node
 local d = ls.dynamic_node
 local sn = ls.snippet_node
 
-local useState = require("snips.typescript.utils.useState")
+local hooks = require("snips.typescript.utils.hooks")
 local boilerCode = require("snips.typescript.utils.boilerplate")
 
 return {
 	s({
 		trig = "tus",
 		name = "typescript react useState hook",
-	}, useState),
+	}, hooks.useState),
+
+	s({
+		trig = "tue",
+		name = "typescript react useEffect hook",
+	}, hooks.useEffect),
 
 	s({
 		trig = "!",

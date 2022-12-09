@@ -1,16 +1,25 @@
 local ls = require("luasnip")
 local t = ls.text_node
 local i = ls.insert_node
+local fn = ls.function_node
 
-local file_name = vim.fn.expand("%:t:r")
-local file_name_type = file_name .. "Type"
+local component = function(input)
+	return input[1][1]
+end
 
 return {
 	t({ "import React from 'react';", "", "" }),
-	t({ "interface " .. file_name_type .. " {", "\t" }),
+	t("interface "),
 	i(1),
-	t({ "", "}", "", "" }),
-	t({ "export const " .. file_name .. ": React.FC<" .. file_name_type .. "> = () => {", "", "\t" }),
+	t({ "PropTypes {", "\t" }),
 	i(2),
-	t({ "", "\treturn(<div>" .. file_name .. "</div>);", "}" }),
+	t({ "", "}", "", "", "export const " }),
+	fn(component, { 1 }, nil),
+	t({ " = ({" }),
+	i(3),
+	t("}: "),
+	fn(component, { 1 }, nil),
+	t({ "PropTypes) => {", "\treturn" }),
+	i(0),
+	t({ "", "}" }),
 }
