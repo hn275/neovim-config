@@ -48,7 +48,7 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs")
 	use("tpope/vim-commentary") -- comment toggler
 	use("wbthomason/packer.nvim") -- have packer manages itself
-	use("lewis6991/impatient.nvim") -- faster boot up time
+	-- use("lewis6991/impatient.nvim") -- faster boot up time
 	use("lervag/vimtex") -- latex plugin
 	use({ "nvim-neorg/neorg", run = ":Neorg sync-parsers" }) -- neorg
 	use("jalvesaq/nvim-r") -- R extensions for neovim

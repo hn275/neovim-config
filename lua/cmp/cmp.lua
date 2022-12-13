@@ -21,7 +21,7 @@ cmp.setup({
 		end,
 	},
 	window = {
-		-- completion = cmp.config.window.bordered(), -- completion border
+		completion = cmp.config.window.bordered(), -- completion border
 		documentation = cmp.config.window.bordered(), -- documentation border
 	},
 	mapping = mapping,
@@ -31,8 +31,8 @@ cmp.setup({
 	},
 	formatting = formatting,
 	sources = cmp.config.sources({
-		{ name = "luasnip" },
 		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
 	}),
@@ -41,7 +41,7 @@ cmp.setup({
 		select = false,
 	},
 	experimental = {
-		ghost_text = false,
+		ghost_text = true,
 	},
 })
 

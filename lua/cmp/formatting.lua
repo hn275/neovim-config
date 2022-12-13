@@ -1,29 +1,29 @@
 local kind_icons = {
-	Text = "",
-	Method = "m",
-	Function = "",
-	Constructor = "",
-	Field = "",
-	Variable = "",
 	Class = "",
+	Color = "",
+	Constant = "",
+	Constructor = "",
+	Enum = "",
+	EnumMember = "",
+	Event = "",
+	Field = "",
+	File = "",
+	Folder = "",
+	Function = "",
 	Interface = "",
+	Keyword = "",
+	Method = "m",
 	Module = "",
+	Operator = "",
 	Property = "",
+	Reference = "",
+	Snippet = "",
+	Struct = "",
+	Text = "",
+	TypeParameter = "",
 	Unit = "",
 	Value = "",
-	Enum = "",
-	Keyword = "",
-	Snippet = "",
-	Color = "",
-	File = "",
-	Reference = "",
-	Folder = "",
-	EnumMember = "",
-	Constant = "",
-	Struct = "",
-	Event = "",
-	Operator = "",
-	TypeParameter = "",
+	Variable = "",
 }
 
 local M = {
@@ -33,11 +33,15 @@ local M = {
 		vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 		-- autocompletion source
 		vim_item.menu = ({
-			luasnip = "[SNIP]",
-			nvim_lsp = "[LSP]",
-			buffer = "[BUF]",
-			path = "[PATH]",
+			luasnip = "SNIP",
+			nvim_lsp = "LSP",
+			buffer = "BUF",
+			path = "PATH",
 		})[entry.source.name]
+
+		vim_item.kind = " " .. vim_item.kind .. " "
+		vim_item.menu = "<" .. vim_item.menu .. ">"
+
 		return vim_item
 	end,
 }
