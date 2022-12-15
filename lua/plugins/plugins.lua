@@ -89,7 +89,7 @@ return packer.startup(function(use)
 	-- SNIPPETS --
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	-- THEME PLUGINS --
-	use("joshdick/onedark.vim")
+	use("navarasu/onedark.nvim")
 	use("rmehri01/onenord.nvim")
 	use("shaunsingh/nord.nvim")
 	use("B4mbus/oxocarbon-lua.nvim")
