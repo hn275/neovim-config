@@ -96,6 +96,7 @@ return packer.startup(function(use)
 	use("AhmedAbdulrahman/aylin.vim")
 	use("olivercederborg/poimandres.nvim")
 	use("NTBBloodbath/doom-one.nvim")
+	use({ "kartikp10/noctis.nvim", requires = { { "rktjmp/lush.nvim" } } })
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
