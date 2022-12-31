@@ -6,15 +6,6 @@ end
 
 local fn = require("cmdpalette.cmd")
 
-local title = function(title)
-	local max_len = vim.o.columns * 0.89
-	local remaining_len = max_len - string.len(title)
-	if remaining_len % 2 == 1 then
-		remaining_len = remaining_len + 1
-	end
-	return string.rep("_", remaining_len / 2) .. title:upper() .. string.rep("_", remaining_len / 2)
-end
-
 cmd.setup({
 	{ label = "exec", callback = fn.common.exec },
 	{ label = "buffers", cmd = "FzfLua buffers" },
@@ -29,6 +20,8 @@ cmd.setup({
 	{ label = "LSP symbols", cmd = "FzfLua lsp_document_symbols" },
 	{ label = "GIT lazygit", callback = fn.git.lazygit },
 	{ label = "GIT branches", cmd = "FzfLua git_branches" },
+	{ label = "SESSION save", cmd = "SessionSave" },
+	{ label = "SESSION load", cmd = "SessionLoad" },
 })
 
 local k = require("util.keymap").keymap
