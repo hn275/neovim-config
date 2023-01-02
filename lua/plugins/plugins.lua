@@ -59,6 +59,7 @@ return packer.startup(function(use)
 	use({ "koenverburg/cmd-palette.nvim", requires = { { "stevearc/dressing.nvim" } } })
 	use({ "kkharji/lspsaga.nvim" }) -- lsp ui
 	use({ "ibhagwan/fzf-lua" }) -- fzf
+	use("vijaymarupudi/nvim-fzf")
 	use("nvim-telescope/telescope.nvim")
 	use({ "nvim-tree/nvim-tree.lua" })
 	use({ "nvim-lualine/lualine.nvim" }) -- lualine

@@ -6,7 +6,7 @@ local path = vim.fn.stdpath("data") .. "/sessions"
 local f = io.popen("ls " .. path)
 
 if f == nil then
-	error("Can't find session path")
+	error("Failed to find session path")
 	return
 end
 
@@ -14,14 +14,9 @@ local output = f:read("*a")
 if output ~= nil then
 	local handle = io.popen("mkdir -p " .. path)
 	if handle == nil then
-		error("Can't create a cache sesison dir")
+		error("Failed to create a cache sesison dir")
 	end
 end
-
--- key map
-k("n", "<C-s>s", ":mksession! " .. path .. "/ ", { noremap = true }) -- TODO: change this to path, add NUI
-k("n", "<C-s>l", "<CMD>source " .. path .. "/.cache_session.vim<CR>", { noremap = true })
-k("n", "<C-s>d", ":!rm ~/.nvim/sessions/", { noremap = true })
 
 vim.api.nvim_create_autocmd({ "VimLeave" }, {
 	pattern = { "*.*" },
@@ -29,3 +24,10 @@ vim.api.nvim_create_autocmd({ "VimLeave" }, {
 		vim.cmd("mksession! " .. path .. "/.cache_session.vim")
 	end,
 })
+
+local picker = require("session-manager.finder")
+
+k("n", "<leader>sf", picker.find_session)
+k("n", "<leader>ss", picker.new_session)
+k("n", "<leader>sd", picker.delete_session)
+k("n", "<leader>sl", picker.last_session)

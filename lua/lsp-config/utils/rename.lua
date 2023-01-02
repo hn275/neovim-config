@@ -1,7 +1,7 @@
 local status, Input = pcall(require, "nui.input")
 
 if not status then
-	print("Nui failed, revert to regular command line")
+	print("Nui failed")
 	return
 end
 
