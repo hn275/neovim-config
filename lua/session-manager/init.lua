@@ -6,7 +6,7 @@ local path = vim.fn.stdpath("data") .. "/sessions"
 local f = io.popen("ls " .. path)
 
 if f == nil then
-	error("Can't execute zsh command")
+	error("Can't find session path")
 	return
 end
 
@@ -14,7 +14,7 @@ local output = f:read("*a")
 if output ~= nil then
 	local handle = io.popen("mkdir -p " .. path)
 	if handle == nil then
-		error("Cant create a new dir")
+		error("Can't create a cache sesison dir")
 	end
 end
 
