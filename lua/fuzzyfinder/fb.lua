@@ -4,10 +4,10 @@ return {
 	hijack_netrw = true,
 	mappings = {
 		["n"] = {
-			["a"] = fb.create,
+			["<C-n>"] = fb.create,
 			["d"] = fb.remove,
-			["o"] = fb.open,
 			["r"] = fb.rename,
+			["u"] = fb.goto_parent_dir,
 		},
 	},
 }

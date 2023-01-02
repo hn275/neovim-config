@@ -56,11 +56,14 @@ return packer.startup(function(use)
 	use("williamboman/mason.nvim") -- lsp server installer
 	use("itchyny/vim-gitbranch") -- git branch
 	use("akinsho/toggleterm.nvim") -- toggle terminal
-	use({ "koenverburg/cmd-palette.nvim", requires = { { "stevearc/dressing.nvim" } } })
 	use({ "kkharji/lspsaga.nvim" }) -- lsp ui
-	use({ "ibhagwan/fzf-lua" }) -- fzf
-	use("vijaymarupudi/nvim-fzf")
-	use("nvim-telescope/telescope.nvim")
+	use({
+		"nvim-telescope/telescope.nvim",
+		requires = {
+			{ "nvim-telescope/telescope-github.nvim" },
+			{ "LinArcX/telescope-command-palette.nvim" },
+		},
+	})
 	use({ "nvim-tree/nvim-tree.lua" })
 	use({ "nvim-lualine/lualine.nvim" }) -- lualine
 	use({ "seblj/nvim-tabline" })
