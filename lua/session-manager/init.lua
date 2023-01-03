@@ -19,6 +19,7 @@ if output ~= nil then
 end
 
 vim.api.nvim_create_autocmd({ "VimLeave" }, {
+	group = vim.api.nvim_create_augroup("SessionManager", { clear = true }),
 	pattern = { "*.*" },
 	callback = function()
 		vim.cmd("mksession! " .. path .. "/.cache_session.vim")

@@ -9,9 +9,20 @@ local k = require("util.keymap").keymap
 
 telescope.setup({
 	defaults = {
-		layout_strategy = "vertical",
+		layout_strategy = "horizontal",
 		layout_config = {
-			vertical = { width = vim.o.columns },
+			vertical = { width = 0.5 },
+
+			bottom_pane = {
+				preview_cutoff = 40,
+				prompt_position = "top",
+			},
+
+			cursor = {
+				height = 0.9,
+				preview_cutoff = 40,
+				width = 0.8,
+			},
 		},
 		prompt_prefix = " > ",
 		path_display = { "truncate" },
@@ -19,14 +30,11 @@ telescope.setup({
 		border = true,
 	},
 	pickers = {
-		buffers = {
-			theme = "cursor",
-		},
 		live_grep = {
-			theme = "dropdown",
+			theme = "ivy",
 		},
 		find_files = {
-			theme = "dropdown",
+			theme = "ivy",
 		},
 		file_browser = {
 			theme = "ivy",

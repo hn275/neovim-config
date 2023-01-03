@@ -3,7 +3,7 @@ local finder = require("telescope.finders")
 local conf = require("telescope.config").values
 local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
-local theme = require("telescope.themes").get_dropdown
+local theme = require("telescope.themes").get_cursor
 
 SESSION_DIR = vim.fn.stdpath("data") .. "/sessions"
 
