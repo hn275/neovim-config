@@ -1,0 +1,8 @@
+require("hn275.lsp.server.pyright")
+require("hn275.lsp.server.tsserver")
+require("hn275.lsp.server.sumneko_lua")
+require("hn275.lsp.server.marksman")
+require("hn275.lsp.server.cpp")
+require("hn275.lsp.server.go")
+require("hn275.lsp.server.bash")
+require("hn275.lsp.server.jsonls")
