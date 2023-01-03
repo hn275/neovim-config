@@ -1,7 +1,8 @@
 local tree_ok, tree = pcall(require, "nvim-tree")
 
 if not tree_ok then
-	error("FAILED: nvim-tree")
+	vim.cmd.PackerSync()
+	print("Restart nvim to apply changes.")
 	return
 end
 

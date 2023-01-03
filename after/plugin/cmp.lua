@@ -1,6 +1,9 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok or cmp == nil then
-	return
+local luasnip_ok, luasnip = pcall(require, "luasnip")
+
+if not cmp_status_ok or not luasnip_ok then
+	vim.cmd.PackerSync()
+	print("Restart nvim to apply changes.")
 end
 
 local mapping = require("hn275.plugin-config.cmp.mapping") -- mapping
@@ -44,6 +47,13 @@ cmp.setup({
 	experimental = {
 		ghost_text = false,
 	},
+})
+
+luasnip.filetype_extend("javascript", { "javascriptreact" })
+luasnip.filetype_extend("typescript", { "typescriptreact" })
+luasnip.config.set_config({
+	history = true,
+	update_events = "TextChanged,TextChangedI",
 })
 
 -- Custom luasnips

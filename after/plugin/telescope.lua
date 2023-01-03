@@ -1,6 +1,8 @@
 local has_telescope, telescope = pcall(require, "telescope")
+
 if not has_telescope then
-	print("restart pls")
+	vim.cmd.PackerSync()
+	print("Restart nvim to apply changes.")
 	return
 end
 

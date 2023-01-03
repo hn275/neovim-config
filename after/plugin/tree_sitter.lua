@@ -1,5 +1,8 @@
-local status, tree = pcall(require, "nvim-treesitter.configs")
-if not status then
+local treesitter_status, treesitter = pcall(require, "nvim-treesitter.configs")
+
+if not treesitter_status then
+	vim.cmd.PackerSync()
+	print("Restart nvim to apply changes.")
 	return
 end
 
@@ -41,7 +44,7 @@ local autotag_filetypes = { -- enabled file types
 -- context-commentstring configuration
 local context_commentstring_config = require("hn275.plugin-config.tree-sitter.ts-context-commentstring")
 
-tree.setup({
+treesitter.setup({
 	ensure_installed = highlight_parsers, -- install all parsers name
 	highlight = {
 		enable = true, -- enabling highlight

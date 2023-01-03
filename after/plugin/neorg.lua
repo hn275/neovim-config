@@ -1,6 +1,8 @@
-local status, neorg = pcall(require, "neorg")
+local neorg_ok, neorg = pcall(require, "neorg")
 
-if not status then
+if not neorg_ok then
+	vim.cmd.PackerSync()
+	print("Restart nvim to apply changes")
 	return
 end
 
