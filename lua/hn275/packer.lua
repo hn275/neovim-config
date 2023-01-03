@@ -81,6 +81,7 @@ return packer.startup(function(use)
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
+	use({ "lukas-reineke/indent-blankline.nvim" })
 	-- NVIM TREE SITTER --
 	use("ryanoasis/vim-devicons")
 	-- use("sheerun/vim-polyglot")
