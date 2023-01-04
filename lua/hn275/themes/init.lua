@@ -1,3 +1,5 @@
+local get_color = require("hn275.util.get_color")
+
 -- require("hn275.themes.onenord")
 -- require("hn275.themes.nord")
 require("hn275.themes.onedark")
@@ -15,5 +17,7 @@ if (empty($TMUX))
   endif
 endif
 set background=dark
-"hi Normal guibg=none
 ]])
+
+local hl_color = get_color("Keyword").fg
+vim.api.nvim_set_hl(0, "MatchParen", { bold = true, bg = "none", fg = hl_color })

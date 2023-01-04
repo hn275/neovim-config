@@ -6,8 +6,7 @@ end
 
 theme.setup({
 	style = "dark",
-	ending_tildes = true,
+	ending_tildes = false,
 })
-theme.load()
 
-vim.cmd("hi MatchParen gui=bold guibg=none guifg=skyblue")
+theme.load()
