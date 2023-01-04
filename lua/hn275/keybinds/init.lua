@@ -4,7 +4,6 @@ local k = require("hn275.util.keymap").keymap
 -- Unbinding key
 local normal_keys = {
 	"<C-t>",
-	"qq",
 	"ZQ",
 	"s",
 	"S",
@@ -38,9 +37,16 @@ k("n", "sh", "<C-w>h")
 k("n", "sj", "<C-w>j")
 k("n", "sk", "<C-w>k")
 k("n", "sl", "<C-w>l")
+-- quick jump but centers the cursor
+k("n", "<C-d>", "<C-d>zz")
+k("n", "<C-u>", "<C-u>zz")
+k("n", "<C-f>", "<C-f>zz")
+k("n", "<C-b>", "<C-b>zz")
+k("n", "{", "{zz")
+k("n", "}", "}zz")
 
 -- quit
-k("n", "qq", "<CMD>q!<CR>")
+k("n", "QQ", "<CMD>q!<CR>")
 
 -- Visual Mode --
 -- stay in visual mode while indenting

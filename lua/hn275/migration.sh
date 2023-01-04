@@ -1,3 +1,0 @@
-mv \
-    ./vimtex/ \
-    ./plugin-config/
