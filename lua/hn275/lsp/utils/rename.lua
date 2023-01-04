@@ -5,6 +5,8 @@ if not status then
 	return
 end
 
+local event = require("nui.utils.autocmd").event
+
 local input_config = {
 	relative = "cursor",
 	position = {
@@ -34,9 +36,15 @@ return function()
 			vim.lsp.buf.rename(val)
 		end,
 	})
+
 	-- overload escape to close input
 	input:map("n", "<ESC>", function()
 		input:unmount()
 	end, { noremap = true, silent = true })
+
+	input:on(event.BufLeave, function()
+		input:unmount()
+	end)
+
 	input:mount()
 end
