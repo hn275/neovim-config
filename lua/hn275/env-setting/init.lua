@@ -79,8 +79,14 @@ augroup remember_folds
     autocmd BufWinLeave *.* if &ft !=# 'help' | mkview | endif
     autocmd BufWinEnter *.* if &ft !=# 'help' | silent! loadview | endif
 augroup END
-
-" run time path
-set rtp+=./start
-
 ]])
+
+-- Start in insert for vim fugitive commit
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	desc = "Start in insert mode for a Git fugitive commit",
+	pattern = { "gitcommit" },
+	group = vim.api.nvim_create_augroup("GITFUGITIVE", { clear = true }),
+	callback = function()
+		vim.cmd.startinsert()
+	end,
+})

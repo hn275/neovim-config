@@ -71,6 +71,7 @@ return packer.startup(function(use)
 	-- STATUSLINE --
 	use({ "seblj/nvim-tabline" })
 	use({ "hn275/simpleline.nvim" })
+	use("~/plugins/sessions.nvim")
 	-- use({ "~/plugins/simpleline.nvim" })
 	-- NVIM TREE SITTER --
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter

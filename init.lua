@@ -1,6 +1,5 @@
 require("hn275.env-setting")
 require("hn275.keybinds")
 require("hn275.lsp")
-require("hn275.session-manager")
 require("hn275.themes")
 require("hn275.packer")
