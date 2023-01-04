@@ -19,7 +19,7 @@ end
 vim.cmd([[
   augroup packer_user_config
   autocmd!
-  autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  autocmd BufWritePost packer.lua source <afile> | PackerSync
   augroup end
 ]])
 
@@ -54,6 +54,7 @@ return packer.startup(function(use)
 	use("MunifTanjim/nui.nvim") -- ui plugin
 	use("williamboman/mason.nvim") -- lsp server installer
 	use("itchyny/vim-gitbranch") -- git branch
+	use("tpope/vim-fugitive")
 	use({ "kkharji/lspsaga.nvim" }) -- lsp ui
 	use({
 		"nvim-telescope/telescope.nvim",
