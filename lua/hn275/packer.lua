@@ -44,17 +44,15 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	-- PLUGINS --
-	use("folke/todo-comments.nvim") -- todo-comments
 	use("windwp/nvim-autopairs")
+	use({ "nvim-tree/nvim-tree.lua" }) -- tree
 	use("tpope/vim-commentary") -- comment toggler
+	use("tpope/vim-fugitive") -- git integration
 	use("wbthomason/packer.nvim") -- have packer manages itself
 	use("lervag/vimtex") -- latex plugin
 	use({ "nvim-neorg/neorg", run = ":Neorg sync-parsers" }) -- neorg
-	use("jalvesaq/nvim-r") -- R extensions for neovim
 	use("MunifTanjim/nui.nvim") -- ui plugin
 	use("williamboman/mason.nvim") -- lsp server installer
-	use("itchyny/vim-gitbranch") -- git branch
-	use("tpope/vim-fugitive")
 	use({ "kkharji/lspsaga.nvim" }) -- lsp ui
 	use({
 		"nvim-telescope/telescope.nvim",
@@ -63,9 +61,19 @@ return packer.startup(function(use)
 			{ "LinArcX/telescope-command-palette.nvim" },
 		},
 	})
-	use({ "nvim-tree/nvim-tree.lua" })
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+	use({ "lukas-reineke/indent-blankline.nvim" })
+	-- STATUSLINE --
 	use({ "seblj/nvim-tabline" })
 	use({ "hn275/simpleline.nvim" })
+	-- use({ "~/plugins/simpleline.nvim" })
+	-- NVIM TREE SITTER --
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim") -- null ls
 	use("neovim/nvim-lspconfig") -- LSP server
@@ -75,23 +83,11 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-path")
 	use("hrsh7th/nvim-cmp")
+	use("L3MON4D3/LuaSnip") -- snippet engine
 	use("saadparwaiz1/cmp_luasnip") -- for luasnip
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = function()
-			vim.fn["mkdp#util#install"]()
-		end,
-	})
-	use({ "lukas-reineke/indent-blankline.nvim" })
-	-- NVIM TREE SITTER --
-	use("ryanoasis/vim-devicons")
-	-- use("sheerun/vim-polyglot")
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
 	-- LANGUAGE SYNTAX --
 	use("windwp/nvim-ts-autotag") -- auto close tsx and jsx tags
 	use("sheerun/vim-polyglot") -- syntax highlighting
-	-- SNIPPETS --
-	use("L3MON4D3/LuaSnip") -- snippet engine
 	-- THEME PLUGINS --
 	use("navarasu/onedark.nvim")
 	use("rmehri01/onenord.nvim")
