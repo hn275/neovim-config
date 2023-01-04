@@ -33,6 +33,16 @@ cmp.setup({
 	},
 	formatting = {
 		fields = { "abbr", "menu" },
+		format = function(entry, vim_item)
+			vim_item.kind = nil -- no icons
+			vim_item.menu = ({
+				nvim_lsp = "[LSP]",
+				luasnip = "[SNIP]",
+				buffer = "[BUFF]",
+				path = "[PATH]",
+			})[entry.source.name]
+			return vim_item
+		end,
 	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
