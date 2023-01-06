@@ -6,10 +6,19 @@ if not has_telescope then
 	return
 end
 
+local actions = require("telescope.actions")
+
 local k = require("hn275.util.keymap").keymap
+
+THEME = "ivy"
 
 telescope.setup({
 	defaults = {
+		mappings = {
+			n = {
+				["<Esc>"] = actions.close,
+			},
+		},
 		layout_strategy = "horizontal",
 		layout_config = {
 			vertical = { width = 0.5 },
@@ -32,13 +41,21 @@ telescope.setup({
 	},
 	pickers = {
 		live_grep = {
-			theme = "ivy",
+			theme = THEME,
 		},
 		find_files = {
-			theme = "ivy",
+			theme = THEME,
+			no_ignore = true,
+			hidden = true,
 		},
 		file_browser = {
-			theme = "ivy",
+			theme = THEME,
+		},
+		lsp_references = {
+			theme = THEME,
+		},
+		buffers = {
+			theme = THEME,
 		},
 	},
 	extensions = {
@@ -59,6 +76,8 @@ telescope.setup({
 telescope.load_extension("gh")
 telescope.load_extension("command_palette")
 
-k("n", "<leader>ff", "<CMD>Telescope find_files<CR>")
-k("n", "<leader>fg", "<CMD>Telescope live_grep<CR>")
+local t = require("telescope.builtin")
+k("n", "<leader>ff", t.find_files)
+k("n", "<leader>fg", t.live_grep)
 k("n", "<leader>c", "<CMD>Telescope command_palette<CR>")
+k("n", "<leader>fb", t.buffers)

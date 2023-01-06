@@ -1,5 +1,3 @@
-local rename = require("hn275.lsp.utils.rename")
-
 local M = {}
 
 local ignored_format_servers = {
@@ -7,23 +5,17 @@ local ignored_format_servers = {
 	"tsserver",
 }
 
+local fnMap = require("hn275.lsp.default.lsp_func")
+
 M.on_attach = function(client, bufnr)
-	-- Init
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc") -- init
+
 	-- Set key map
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
-	-- vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-	vim.keymap.set("n", "K", "<CMD>Lspsaga hover_doc<CR>", bufopts)
-	-- vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, bufopts)
-	vim.keymap.set("n", "gs", "<CMD>Lspsaga signature_help<CR>", bufopts)
-	-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-	vim.keymap.set("n", "gd", "<CMD>Lspsaga preview_definition<CR>", bufopts)
-	vim.keymap.set("n", "gD", "<CMD>sp<CR><C-w>T<CMD>lua vim.lsp.buf.definition()<CR>", bufopts)
-	-- vim.keymap.set("n", "ge", vim.diagnostic.open_float, bufopts)
-	vim.keymap.set("n", "ge", "<CMD>Lspsaga show_line_diagnostics<CR>", bufopts)
-	vim.keymap.set("n", "gn", vim.diagnostic.goto_next, bufopts)
-	vim.keymap.set("n", "gp", vim.diagnostic.goto_prev, bufopts)
-	vim.keymap.set("n", "<leader>rn", rename, bufopts)
+	for _, v in pairs(fnMap) do
+		vim.keymap.set(v.mode, v.key, v.fn, bufopts)
+	end
+
 	-- Ignore autoformat on certain servers
 	client.server_capabilities.documentFormattingProvider = (function()
 		for _, v in pairs(ignored_format_servers) do
@@ -71,11 +63,11 @@ M.default_settings = function()
 	vim.diagnostic.config(config)
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "single",
+		border = "none",
 	})
 
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "single",
+		border = "none",
 	})
 end
 
