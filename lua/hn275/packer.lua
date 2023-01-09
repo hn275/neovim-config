@@ -76,8 +76,8 @@ return packer.startup(function(use)
 	-- NVIM TREE SITTER --
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) -- nvim treesitter
 	-- LSP --
-	use("jose-elias-alvarez/null-ls.nvim") -- null ls
-	use("neovim/nvim-lspconfig") -- LSP server
+	use("jose-elias-alvarez/null-ls.nvim")
+	use("neovim/nvim-lspconfig")
 	-- CMP COMPLETION --
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-cmdline")
@@ -92,11 +92,6 @@ return packer.startup(function(use)
 	-- THEME PLUGINS --
 	use("navarasu/onedark.nvim")
 	use("rmehri01/onenord.nvim")
-	use("shaunsingh/nord.nvim")
-	use("B4mbus/oxocarbon-lua.nvim")
-	use("AhmedAbdulrahman/aylin.vim")
-	use("olivercederborg/poimandres.nvim")
-	use("NTBBloodbath/doom-one.nvim")
 	use({ "kartikp10/noctis.nvim", requires = { { "rktjmp/lush.nvim" } } })
 	-- Automatically set up your configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

@@ -14,7 +14,7 @@ end
 return {
 	{
 		mode = "n",
-		key = "gk",
+		key = "K",
 		fn = lsp.hover,
 	},
 	{
@@ -49,7 +49,7 @@ return {
 	},
 	{
 		mode = "n",
-		key = "gr",
+		key = "<leader>rn",
 		fn = lsp.rename,
 	},
 }

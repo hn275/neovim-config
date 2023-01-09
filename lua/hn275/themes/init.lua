@@ -1,12 +1,7 @@
 local get_color = require("hn275.util.get_color")
 
--- require("hn275.themes.onenord")
--- require("hn275.themes.nord")
-require("hn275.themes.onedark")
--- require("hn275.themes.oxocarbon")
--- require("hn275,themes.aylin")
--- require("hn275.themes.poimandres")
--- require("hn275.themes.doomone")
+require("hn275.themes.onenord")
+-- require("hn275.themes.onedark")
 -- require("hn275.themes.noctis")
 
 -- Color correction
