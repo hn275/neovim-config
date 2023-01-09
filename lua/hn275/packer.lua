@@ -53,7 +53,6 @@ return packer.startup(function(use)
 	use({ "nvim-neorg/neorg", run = ":Neorg sync-parsers" }) -- neorg
 	use("MunifTanjim/nui.nvim") -- ui plugin
 	use("williamboman/mason.nvim") -- lsp server installer
-	use({ "kkharji/lspsaga.nvim" }) -- lsp ui
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
@@ -78,6 +77,7 @@ return packer.startup(function(use)
 	-- LSP --
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("neovim/nvim-lspconfig")
+	use("glepnir/lspsaga.nvim")
 	-- CMP COMPLETION --
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-cmdline")

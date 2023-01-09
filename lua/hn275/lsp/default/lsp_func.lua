@@ -1,21 +1,14 @@
-local telescope_ok, t = pcall(require, "telescope.builtin")
-
 local lsp = vim.lsp.buf
 local diag = vim.diagnostic
-
-local register = function(defaultFn, fallbackFn)
-	if telescope_ok then
-		return defaultFn
-	else
-		return fallbackFn
-	end
+local lspsaga = function(arg)
+	return "<CMD>Lspsaga " .. arg .. "<CR>"
 end
 
 return {
 	{
 		mode = "n",
 		key = "K",
-		fn = lsp.hover,
+		fn = lspsaga("hover_doc"),
 	},
 	{
 		mode = "n",
@@ -24,13 +17,18 @@ return {
 	},
 	{
 		mode = "n",
+		key = "ga",
+		fn = lspsaga("code_action"),
+	},
+	{
+		mode = "n",
 		key = "gd",
-		fn = "<CMD>sp<CR><C-w>T<CMD>lua vim.lsp.buf.definition()<CR>",
+		fn = lspsaga("peek_definition"),
 	},
 	{
 		mode = "n",
 		key = "gf",
-		fn = register(t.lsp_references, lsp.references),
+		fn = lspsaga("lsp_finder"),
 	},
 	{
 		mode = "n",
@@ -40,12 +38,12 @@ return {
 	{
 		mode = "n",
 		key = "gn",
-		fn = diag.goto_next,
+		fn = lspsaga("diagnostic_jump_next"),
 	},
 	{
 		mode = "n",
 		key = "gp",
-		fn = diag.goto_prev,
+		fn = lspsaga("diagnostic_jump_prev"),
 	},
 	{
 		mode = "n",
